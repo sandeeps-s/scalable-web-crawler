@@ -1,0 +1,1992 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <style>body {
+        transition: opacity ease-in 0.2s;
+    }
+
+    body[unresolved] {
+        opacity: 0;
+        display: block;
+        overflow: hidden;
+        position: relative;
+    }
+    </style>
+
+    <title>Learn the Kotlin programming language &nbsp;|&nbsp; Android Developers</title>
+
+    <meta content="Learn the Kotlin programming language &nbsp;|&nbsp; Android Developers" property="og:title">
+
+
+    <meta content="https://developer.android.com/kotlin/learn" property="og:url">
+
+    <meta content="/images/android-developers.png" property="og:image">
+    <meta content="/images/android-developers.png" property="og:image:secure_url">
+    <meta content="1200" property="og:image:width">
+    <meta content="675" property="og:image:height">
+    <meta content="en" property="og:locale">
+    <meta content="summary_large_image" name="twitter:card">
+
+
+    <meta content="Android Developers" property="og:site_name">
+    <meta content="website" property="og:type">
+
+    <meta content="#78c257" name="theme-color">
+
+    <meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link crossorigin="use-credentials" href="https://developer.android.com/_pwa/android/manifest.json" rel="manifest">
+    <link crossorigin="" href="https://www.gstatic.com/" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect">
+    <link crossorigin="" href="https://fonts.googleapis.com/" rel="preconnect">
+    <link href="Learn%20the%20Kotlin%20programming%20language%20%C2%A0%20%C2%A0%20Android%20Developers_files/css.css" rel="stylesheet">
+    <link href="Learn%20the%20Kotlin%20programming%20language%20%C2%A0%20%C2%A0%20Android%20Developers_files/app.css" rel="stylesheet">
+    <noscript>
+        <link href="https://www.gstatic.com/devrel-devsite/vaf8baf42c0837f5f008e8c7cd622dab17fda7175a36251cef2ba8d3369798ea7/android/css/ce_bundle.css"
+              rel="stylesheet">
+    </noscript>
+    <link href="https://www.gstatic.com/devrel-devsite/vaf8baf42c0837f5f008e8c7cd622dab17fda7175a36251cef2ba8d3369798ea7/android/images/favicon.png"
+          rel="shortcut icon">
+    <link href="https://www.gstatic.com/devrel-devsite/vaf8baf42c0837f5f008e8c7cd622dab17fda7175a36251cef2ba8d3369798ea7/android/images/touchicon-180.png"
+          rel="apple-touch-icon">
+    <link href="https://developer.android.com/kotlin/learn" rel="canonical">
+    <link data-title="Android Developers" href="https://developer.android.com/s/opensearch.xml" rel="search"
+          type="application/opensearchdescription+xml">
+    <script async="" src="Learn%20the%20Kotlin%20programming%20language%20%C2%A0%20%C2%A0%20Android%20Developers_files/linkid.js"
+            type="text/javascript"></script>
+    <script async="" src="Learn%20the%20Kotlin%20programming%20language%20%C2%A0%20%C2%A0%20Android%20Developers_files/gtm.js"></script>
+    <script src="Learn%20the%20Kotlin%20programming%20language%20%C2%A0%20%C2%A0%20Android%20Developers_files/webcomponents-lite.js"></script>
+    <script src="Learn%20the%20Kotlin%20programming%20language%20%C2%A0%20%C2%A0%20Android%20Developers_files/devsite_app.js"></script>
+    <script src="Learn%20the%20Kotlin%20programming%20language%20%C2%A0%20%C2%A0%20Android%20Developers_files/analytics.js"></script>
+    <style type="text/css"></style>
+    <script src="Learn%20the%20Kotlin%20programming%20language%20%C2%A0%20%C2%A0%20Android%20Developers_files/devsite_code_module.js"></script>
+    <link href="Learn%20the%20Kotlin%20programming%20language%20%C2%A0%20%C2%A0%20Android%20Developers_files/devsite_code.css" rel="stylesheet"
+          type="text/css">
+    <script src="Learn%20the%20Kotlin%20programming%20language%20%C2%A0%20%C2%A0%20Android%20Developers_files/devsite_heading_module.js"></script>
+    <link href="Learn%20the%20Kotlin%20programming%20language%20%C2%A0%20%C2%A0%20Android%20Developers_files/devsite_heading.css" rel="stylesheet"
+          type="text/css">
+    <script src="Learn%20the%20Kotlin%20programming%20language%20%C2%A0%20%C2%A0%20Android%20Developers_files/devsite_page_rating_module.js"></script>
+    <link href="Learn%20the%20Kotlin%20programming%20language%20%C2%A0%20%C2%A0%20Android%20Developers_files/devsite_page_rating.css" rel="stylesheet"
+          type="text/css">
+    <script src="Learn%20the%20Kotlin%20programming%20language%20%C2%A0%20%C2%A0%20Android%20Developers_files/devsite_snackbar_module.js"></script>
+    <link href="Learn%20the%20Kotlin%20programming%20language%20%C2%A0%20%C2%A0%20Android%20Developers_files/devsite_snackbar.css" rel="stylesheet"
+          type="text/css">
+    <script src="Learn%20the%20Kotlin%20programming%20language%20%C2%A0%20%C2%A0%20Android%20Developers_files/devsite_tooltip_module.js"></script>
+    <link href="Learn%20the%20Kotlin%20programming%20language%20%C2%A0%20%C2%A0%20Android%20Developers_files/devsite_tooltip.css" rel="stylesheet"
+          type="text/css">
+    <link href="Learn%20the%20Kotlin%20programming%20language%20%C2%A0%20%C2%A0%20Android%20Developers_files/devsite_content_footer.css" rel="stylesheet"
+          type="text/css">
+</head>
+<body class="" layout="docs" ready="" theme="android-theme" type="article">
+<devsite-progress id="app-progress"></devsite-progress>
+<div class="devsite-wrapper">
+    <devsite-header bottom-row--height="104" bottom-tabs--height="48" fixed="" top-row--height="48">
+
+
+        <div class="devsite-header--inner">
+            <div class="devsite-top-logo-row-wrapper-wrapper">
+                <div class="devsite-top-logo-row-wrapper">
+                    <div class="devsite-top-logo-row">
+                        <button aria-label="Close menu" class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+                                data-category="Site-Wide Custom Events"
+                                data-label="Navigation menu button" id="devsite-hamburger-menu" type="button">
+                        </button>
+                        <div class="devsite-product-name-wrapper">
+                            <a class="devsite-site-logo-link gc-analytics-event" data-category="Site-Wide Custom Events"
+                               data-label="Site logo" href="https://developer.android.com/">
+                                <img alt="Android Developers"
+                                     class="devsite-site-logo" src="Learn%20the%20Kotlin%20programming%20language%20%C2%A0%20%C2%A0%20Android%20Developers_files/lockup.svg">
+                            </a>
+                            <span class="devsite-product-name">
+            <ul class="devsite-breadcrumb-list">
+    <li class="devsite-breadcrumb-item
+             ">
+                              </li>
+  </ul>
+          </span>
+
+                        </div>
+                        <div class="devsite-top-logo-row-middle">
+                            <div class="devsite-header-upper-tabs">
+                                <devsite-tabs class="upper-tabs" connected="">
+
+                                    <div class="devsite-tabs-wrapper">
+                                        <tab>
+                                            <a class="gc-analytics-event" data-category="Site-Wide Custom Events"
+                                               data-label="Tab: Platform" href="https://developer.android.com/about">
+                                                Platform
+                                            </a>
+
+                                        </tab>
+                                        <tab>
+                                            <a class="gc-analytics-event" data-category="Site-Wide Custom Events"
+                                               data-label="Tab: Android Studio" href="https://developer.android.com/studio">
+                                                Android Studio
+                                            </a>
+
+                                        </tab>
+                                        <tab>
+                                            <a class="gc-analytics-event" data-category="Site-Wide Custom Events"
+                                               data-label="Tab: Google Play" href="https://developer.android.com/distribute">
+                                                Google Play
+                                            </a>
+
+                                        </tab>
+                                        <tab>
+                                            <a class="gc-analytics-event" data-category="Site-Wide Custom Events"
+                                               data-label="Tab: Jetpack" href="https://developer.android.com/jetpack">
+                                                Jetpack
+                                            </a>
+
+                                        </tab>
+                                        <tab active="">
+                                            <a aria-label="Kotlin, selected" class="gc-analytics-event" data-category="Site-Wide Custom Events"
+                                               data-label="Tab: Kotlin" href="https://developer.android.com/kotlin">
+                                                Kotlin
+                                            </a>
+
+                                        </tab>
+                                        <tab>
+                                            <a class="gc-analytics-event" data-category="Site-Wide Custom Events"
+                                               data-label="Tab: Docs" href="https://developer.android.com/docs">
+                                                Docs
+                                            </a>
+
+                                        </tab>
+                                        <tab>
+                                            <a class="gc-analytics-event" data-category="Site-Wide Custom Events"
+                                               data-label="Tab: News" href="https://developer.android.com/news">
+                                                News
+                                            </a>
+
+                                        </tab>
+                                        <tab hidden="" overflow-tab=""><a class="devsite-icon devsite-icon-arrow-drop-down" href="#">More</a>
+                                            <div class="devsite-tabs-overflow-menu" hidden="" scrollbars=""></div>
+                                        </tab>
+                                    </div>
+                                </devsite-tabs>
+
+                            </div>
+                            <devsite-search enable-query-completion="" enable-search="" enable-signin="" enable-suggestions="">
+                                <form action="https://developer.android.com/s/results/" class="devsite-search-form" method="GET">
+                                    <div class="devsite-search-container">
+                                        <div class="devsite-searchbox">
+                                            <input aria-label="Search box" autocomplete="off" class="devsite-search-field devsite-search-query" name="q"
+                                                   placeholder="Search" type="text">
+                                            <div aria-hidden="true" class="devsite-search-image material-icons"></div>
+                                        </div>
+                                        <button aria-label="Open search box" class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                                                search-open=""
+                                                type="button"></button>
+                                    </div>
+                                    <div class="devsite-popout">
+                                        <div aria-haspopup="true" class="devsite-popout-result devsite-suggest-results-container" devsite-hide=""
+                                             role="menu"></div>
+                                        <div aria-haspopup="true" class="devsite-popout-result devsite-history-container" devsite-hide=""
+                                             role="menu"></div>
+                                    </div>
+                                </form>
+                                <button aria-label="Close search box" class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                                        search-close=""
+                                        type="button"></button>
+                            </devsite-search>
+
+                            <devsite-search-background style="opacity: 1;"></devsite-search-background>
+                        </div>
+
+                        <devsite-language-selector>
+                            <devsite-select class="devsite-language-selector-menu">
+                                <select class="devsite-language-selector-select" name="language" track-name="click" track-type="languageSelector">
+                                    <option selected="selected">Language</option>
+                                    <option track-metadata-original-language="en" track-metadata-selected-language="id" track-name="changed"
+                                            track-type="languageSelector" value="id">
+                                        Bahasa Indonesia
+                                    </option>
+                                    <option track-metadata-original-language="en" track-metadata-selected-language="de" track-name="changed"
+                                            track-type="languageSelector" value="de">
+                                        Deutsch
+                                    </option>
+                                    <option track-metadata-original-language="en" track-metadata-selected-language="en" track-name="changed"
+                                            track-type="languageSelector" value="en">
+                                        English
+                                    </option>
+                                    <option track-metadata-original-language="en" track-metadata-selected-language="es" track-name="changed"
+                                            track-type="languageSelector" value="es">
+                                        Español
+                                    </option>
+                                    <option track-metadata-original-language="en" track-metadata-selected-language="es_419" track-name="changed"
+                                            track-type="languageSelector" value="es_419">
+                                        Español – América Latina
+                                    </option>
+                                    <option track-metadata-original-language="en" track-metadata-selected-language="fr" track-name="changed"
+                                            track-type="languageSelector" value="fr">
+                                        Français
+                                    </option>
+                                    <option track-metadata-original-language="en" track-metadata-selected-language="pt_br" track-name="changed"
+                                            track-type="languageSelector" value="pt_br">
+                                        Português – Brasil
+                                    </option>
+                                    <option track-metadata-original-language="en" track-metadata-selected-language="vi" track-name="changed"
+                                            track-type="languageSelector" value="vi">
+                                        Tiếng Việt
+                                    </option>
+                                    <option track-metadata-original-language="en" track-metadata-selected-language="tr" track-name="changed"
+                                            track-type="languageSelector" value="tr">
+                                        Türkçe
+                                    </option>
+                                    <option track-metadata-original-language="en" track-metadata-selected-language="ru" track-name="changed"
+                                            track-type="languageSelector" value="ru">
+                                        Русский
+                                    </option>
+                                    <option track-metadata-original-language="en" track-metadata-selected-language="th" track-name="changed"
+                                            track-type="languageSelector" value="th">
+                                        ภาษาไทย
+                                    </option>
+                                    <option track-metadata-original-language="en" track-metadata-selected-language="zh_cn" track-name="changed"
+                                            track-type="languageSelector" value="zh_cn">
+                                        中文 – 简体
+                                    </option>
+                                    <option track-metadata-original-language="en" track-metadata-selected-language="zh_tw" track-name="changed"
+                                            track-type="languageSelector" value="zh_tw">
+                                        中文 – 繁體
+                                    </option>
+                                    <option track-metadata-original-language="en" track-metadata-selected-language="ja" track-name="changed"
+                                            track-type="languageSelector" value="ja">
+                                        日本語
+                                    </option>
+                                    <option track-metadata-original-language="en" track-metadata-selected-language="ko" track-name="changed"
+                                            track-type="languageSelector" value="ko">
+                                        한국어
+                                    </option>
+                                </select>
+                                <div class="devsite-select">
+                                    <button class="devsite-select-toggle">Language</button>
+                                    <ul class="devsite-select-list" scrollbars="">
+                                        <li class="devsite-select-item" data-index="0">Language</li>
+                                        <li class="devsite-select-item" data-index="1">Bahasa Indonesia</li>
+                                        <li class="devsite-select-item" data-index="2">Deutsch</li>
+                                        <li class="devsite-select-item" data-index="3">English</li>
+                                        <li class="devsite-select-item" data-index="4">Español</li>
+                                        <li class="devsite-select-item" data-index="5">Español – América Latina</li>
+                                        <li class="devsite-select-item" data-index="6">Français</li>
+                                        <li class="devsite-select-item" data-index="7">Português – Brasil</li>
+                                        <li class="devsite-select-item" data-index="8">Tiếng Việt</li>
+                                        <li class="devsite-select-item" data-index="9">Türkçe</li>
+                                        <li class="devsite-select-item" data-index="10">Русский</li>
+                                        <li class="devsite-select-item" data-index="11">ภาษาไทย</li>
+                                        <li class="devsite-select-item" data-index="12">中文 – 简体</li>
+                                        <li class="devsite-select-item" data-index="13">中文 – 繁體</li>
+                                        <li class="devsite-select-item" data-index="14">日本語</li>
+                                        <li class="devsite-select-item" data-index="15">한국어</li>
+                                    </ul>
+                                </div>
+                            </devsite-select>
+                        </devsite-language-selector>
+
+
+                        <devsite-user
+                                sign-in-url="https://developer.android.com/_d/signin?continue=https%3A%2F%2Fdeveloper.android.com%2Fkotlin%2Flearn"
+                                sign-out-url="https://developer.android.com/_d/signout?continue=https%3A%2F%2Fdeveloper.android.com%2Fkotlin%2Flearn"
+                                url="https://developer.android.com/_d/signout?continue=https%3A%2F%2Fdeveloper.android.com%2Fkotlin%2Flearn">
+                            <div class="ogb-wrapper ogb-si"><a
+                                    class="devsite-user-signin button devsite-top-button"
+                                    href="https://developer.android.com/_d/signin?continue=https%3A%2F%2Fdeveloper.android.com%2Fkotlin%2Flearn">
+                                Sign in
+                            </a></div>
+                        </devsite-user>
+                    </div>
+                </div>
+            </div>
+            <div class="devsite-collapsible-section
+    " style="transform: translate3d(0px, 0px, 0px);">
+                <div class="devsite-header-background">
+                    <div class="devsite-product-id-row">
+                        <div class="devsite-product-description-row">
+                            <ul class="devsite-breadcrumb-list">
+                                <li class="devsite-breadcrumb-item
+             ">
+                                    <a class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events"
+                                       data-label="Lower Header" data-value="1" href="https://developer.android.com/kotlin">
+                                        Kotlin
+
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="devsite-doc-set-nav-row">
+                        <devsite-tabs class="lower-tabs" connected="">
+
+                            <div class="devsite-tabs-wrapper">
+                                <tab>
+                                    <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Overview"
+                                       href="https://developer.android.com/kotlin">
+                                        Overview
+                                    </a>
+
+                                </tab>
+                                <tab active="">
+                                    <a aria-label="Guides, selected" class="gc-analytics-event" data-category="Site-Wide Custom Events"
+                                       data-label="Tab: Guides" href="https://developer.android.com/kotlin/learn">
+                                        Guides
+                                    </a>
+
+                                </tab>
+                                <tab hidden="" overflow-tab=""><a class="devsite-icon devsite-icon-arrow-drop-down" href="#">More</a>
+                                    <div class="devsite-tabs-overflow-menu" hidden="" scrollbars=""></div>
+                                </tab>
+                            </div>
+                        </devsite-tabs>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </devsite-header>
+    <div class="devsite-book-nav-bg" fixed=""></div>
+    <devsite-book-nav animatable="" fixed="" scrollbars="" style="top: 152px; max-height: 1132px;">
+
+
+        <nav class="devsite-book-nav devsite-nav nocontent">
+            <div class="devsite-mobile-header">
+                <button aria-label="Close navigation" class="devsite-header-icon-button button-flat material-icons gc-analytics-event" data-category="Site-Wide Custom Events"
+                        data-label="Close navigation" id="devsite-close-nav" type="button">
+                </button>
+            </div>
+
+            <div class="devsite-book-nav-wrapper">
+                <div class="devsite-mobile-nav-top">
+                    <ul class="devsite-nav-list">
+                        <li class="devsite-nav-item">
+                            <a class="devsite-nav-title gc-analytics-event
+            " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Platform" href="https://developer.android.com/about"><span>
+      </span><span class="devsite-nav-text"><span>Platform</span></span><span>
+        </span></a>
+
+                        </li>
+                        <li class="devsite-nav-item">
+                            <a class="devsite-nav-title gc-analytics-event
+            " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Android Studio" href="https://developer.android.com/studio"><span>
+      </span><span class="devsite-nav-text"><span>Android Studio</span></span><span>
+        </span></a>
+
+                        </li>
+                        <li class="devsite-nav-item">
+                            <a class="devsite-nav-title gc-analytics-event
+            " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Google Play" href="https://developer.android.com/distribute"><span>
+      </span><span class="devsite-nav-text"><span>Google Play</span></span><span>
+        </span></a>
+
+                        </li>
+                        <li class="devsite-nav-item">
+                            <a class="devsite-nav-title gc-analytics-event
+            " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Jetpack" href="https://developer.android.com/jetpack"><span>
+      </span><span class="devsite-nav-text"><span>Jetpack</span></span><span>
+        </span></a>
+
+                        </li>
+                        <li class="devsite-nav-item">
+                            <a class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events"
+                               data-label="Responsive Tab: Kotlin" href="https://developer.android.com/kotlin"><span>
+      </span><span class="devsite-nav-text"><span>Kotlin</span></span><span>
+        </span></a>
+
+                            <ul class="devsite-nav-responsive-tabs">
+                                <li class="devsite-nav-item">
+                                    <a class="devsite-nav-title gc-analytics-event
+            " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Overview" href="https://developer.android.com/kotlin"><span>
+      </span><span class="devsite-nav-text"><span>Overview</span></span><span>
+        </span></a>
+                                </li>
+
+                                <li class="devsite-nav-item">
+                                    <a class="devsite-nav-title gc-analytics-event devsite-nav-active" data-category="Site-Wide Custom Events"
+                                       data-label="Responsive Tab: Guides" href="https://developer.android.com/kotlin/learn"
+                                       id="devsite-nav-forward"><span>
+      </span><span class="devsite-nav-text" menu="_book"><span>Guides</span></span><span>
+        </span><span aria-hidden="true" class="devsite-nav-icon material-icons" data-icon="forward" menu="_book"><span>
+    </span></span><span>
+        </span></a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="devsite-nav-item">
+                            <a class="devsite-nav-title gc-analytics-event
+            " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Docs" href="https://developer.android.com/docs"><span>
+      </span><span class="devsite-nav-text"><span>Docs</span></span><span>
+        </span></a>
+
+                        </li>
+                        <li class="devsite-nav-item">
+                            <a class="devsite-nav-title gc-analytics-event
+            " data-category="Site-Wide Custom Events" data-label="Responsive Tab: News" href="https://developer.android.com/news"><span>
+      </span><span class="devsite-nav-text"><span>News</span></span><span>
+        </span></a>
+
+                        </li>
+                    </ul>
+                </div>
+                <div class="devsite-mobile-nav-bottom">
+                    <ul class="devsite-nav-list" menu="_book">
+                        <li class="devsite-nav-item"><a class="devsite-nav-title devsite-nav-active"
+                                                        href="https://developer.android.com/kotlin/learn"><span class="devsite-nav-text"><span>Learn the Kotlin language</span></span></a>
+                        </li>
+                        <li class="devsite-nav-item"><a class="devsite-nav-title" href="https://developer.android.com/kotlin/resources"><span
+                                class="devsite-nav-text"><span>Additional Kotlin resources</span></span></a></li>
+                        <li class="devsite-nav-item"><a class="devsite-nav-title" href="https://developer.android.com/kotlin/faq"><span
+                                class="devsite-nav-text"><span>Kotlin on Android FAQ</span></span></a></li>
+                        <li class="devsite-nav-item"><a class="devsite-nav-title" href="https://developer.android.com/kotlin/add-kotlin"><span
+                                class="devsite-nav-text"><span>Add Kotlin to an existing app</span></span></a></li>
+                        <li class="devsite-nav-item"><a class="devsite-nav-title" href="https://developer.android.com/kotlin/common-patterns"><span
+                                class="devsite-nav-text"><span>Use common Kotlin patterns with Android</span></span></a></li>
+                        <li class="devsite-nav-item"><a class="devsite-nav-title" href="https://developer.android.com/kotlin/ktx"><span
+                                class="devsite-nav-text"><span>Android KTX</span></span></a></li>
+                        <li class="devsite-nav-item"><a class="devsite-nav-title" href="https://developer.android.com/kotlin/coroutines"><span
+                                class="devsite-nav-text"><span>Improve app performance with Kotlin coroutines</span></span></a></li>
+                        <li class="devsite-nav-item"><a class="devsite-nav-title"
+                                                        href="https://developer.android.com/kotlin/adopt-for-large-teams"><span
+                                class="devsite-nav-text"><span>Adopt Kotlin for large teams</span></span></a></li>
+                        <li class="devsite-nav-item"><a class="devsite-nav-title" href="https://developer.android.com/kotlin/interop"><span
+                                class="devsite-nav-text"><span>Kotlin-Java interop guide</span></span></a></li>
+                        <li class="devsite-nav-item"><a class="devsite-nav-title" href="https://developer.android.com/kotlin/style-guide"><span
+                                class="devsite-nav-text"><span>Kotlin style guide</span></span></a></li>
+                    </ul>
+
+
+                </div>
+            </div>
+        </nav>
+    </devsite-book-nav>
+    <div id="gc-wrapper" style="margin-top: 152px;">
+        <div class="devsite-main-content" has-book-nav="" has-toc="">
+            <devsite-toc class="devsite-nav devsite-toc" fixed="" max-height="1084" offset="0" visible="">
+                <ul class="devsite-nav-list" scrollbars="" style="max-height: 1084px; transform: translate3d(0px, 0px, 0px); max-width: 756px;">
+                    <li class="devsite-nav-item devsite-nav-heading devsite-toc-toggle"><a class="devsite-nav-title" href="#top_of_page"><span
+                            class="devsite-nav-text">Contents</span></a></li>
+                    <li class="devsite-nav-item"><a class="devsite-nav-title" href="#variables"><span
+                            class="devsite-nav-text">Variable declaration</span></a>
+                        <ul class="devsite-nav-list">
+                            <li class="devsite-nav-item"><a class="devsite-nav-title gc-analytics-event" data-action="click"
+                                                            data-category="Site-Wide Custom Events" data-label="Right nav" data-value="0.0"
+                                                            href="#inference"><span class="devsite-nav-text">Type inference</span></a></li>
+                            <li class="devsite-nav-item"><a class="devsite-nav-title gc-analytics-event" data-action="click"
+                                                            data-category="Site-Wide Custom Events" data-label="Right nav" data-value="0.1"
+                                                            href="#null-safety"><span class="devsite-nav-text">Null safety</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="devsite-nav-item"><a class="devsite-nav-title" href="#conditionals"><span class="devsite-nav-text">Conditionals</span></a>
+                    </li>
+                    <li class="devsite-nav-item"><a class="devsite-nav-title" href="#functions"><span class="devsite-nav-text">Functions</span></a>
+                        <ul class="devsite-nav-list">
+                            <li class="devsite-nav-item"><a class="devsite-nav-title gc-analytics-event" data-action="click"
+                                                            data-category="Site-Wide Custom Events" data-label="Right nav" data-value="2.0"
+                                                            href="#simplifying"><span
+                                    class="devsite-nav-text">Simplifying function declarations</span></a></li>
+                            <li class="devsite-nav-item"><a class="devsite-nav-title gc-analytics-event" data-action="click"
+                                                            data-category="Site-Wide Custom Events" data-label="Right nav" data-value="2.1"
+                                                            href="#anonymous"><span class="devsite-nav-text">Anonymous functions</span></a></li>
+                            <li class="devsite-nav-item"><a class="devsite-nav-title gc-analytics-event" data-action="click"
+                                                            data-category="Site-Wide Custom Events" data-label="Right nav" data-value="2.2"
+                                                            href="#higher-order"><span class="devsite-nav-text">Higher-order functions</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="devsite-nav-item"><a class="devsite-nav-title" href="#classes"><span class="devsite-nav-text">Classes</span></a>
+                        <ul class="devsite-nav-list">
+                            <li class="devsite-nav-item"><a class="devsite-nav-title gc-analytics-event" data-action="click"
+                                                            data-category="Site-Wide Custom Events" data-label="Right nav" data-value="3.0"
+                                                            href="#properties"><span class="devsite-nav-text">Properties</span></a></li>
+                            <li class="devsite-nav-item"><a class="devsite-nav-title gc-analytics-event" data-action="click"
+                                                            data-category="Site-Wide Custom Events" data-label="Right nav" data-value="3.1"
+                                                            href="#functions"><span
+                                    class="devsite-nav-text">Class functions and encapsulation</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="devsite-nav-item"><a class="devsite-nav-title" href="#interoperability"><span
+                            class="devsite-nav-text">Interoperability</span></a></li>
+                </ul>
+            </devsite-toc>
+            <devsite-content>
+
+
+                <article class="devsite-article">
+                    <article class="devsite-article-inner">
+                        <div class="devsite-article-meta">
+                            <ul class="devsite-breadcrumb-list">
+                                <li class="devsite-breadcrumb-item
+             ">
+                                    <a class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events"
+                                       data-label="Breadcrumbs" data-value="1" href="https://developer.android.com/">
+                                        Android Developers
+
+                                    </a>
+                                </li>
+                                <li class="devsite-breadcrumb-item
+             ">
+                                    <div aria-hidden="true" class="devsite-breadcrumb-guillemet material-icons"></div>
+                                    <a class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events"
+                                       data-label="Breadcrumbs" data-value="2" href="https://developer.android.com/kotlin">
+                                        Kotlin
+
+                                    </a>
+                                </li>
+                                <li class="devsite-breadcrumb-item
+             ">
+                                    <div aria-hidden="true" class="devsite-breadcrumb-guillemet material-icons"></div>
+                                    <a class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events"
+                                       data-label="Breadcrumbs" data-value="3" href="https://developer.android.com/kotlin/learn">
+                                        Guides
+
+                                    </a>
+                                </li>
+                            </ul>
+                            <devsite-page-rating hover-rating-star="0" position="header" selected-rating="0">
+                                <div>
+                                    <div class="devsite-rating-stars">
+                                        <div aria-label="Site content star ratings, rating 1 out of 5"
+                                             class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="1" data-title="Unusable documentation"
+                                             role="button"></div>
+                                        <div aria-label="Site content star ratings, rating 2 out of 5"
+                                             class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="2" data-title="Poor documentation"
+                                             role="button"></div>
+                                        <div aria-label="Site content star ratings, rating 3 out of 5"
+                                             class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="3" data-title="OK documentation"
+                                             role="button"></div>
+                                        <div aria-label="Site content star ratings, rating 4 out of 5"
+                                             class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="4" data-title="Good documentation"
+                                             role="button"></div>
+                                        <div aria-label="Site content star ratings, rating 5 out of 5"
+                                             class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="5" data-title="Excellent documentation"
+                                             role="button"></div>
+                                    </div>
+                                    <div class="devsite-rating-internal"><span class="devsite-rating-stats"></span></div>
+                                </div>
+                            </devsite-page-rating>
+                        </div>
+
+                        <devsite-heading class="devsite-page-title" for="learn-the-kotlin-programming-language" level="h1"
+                                         text="Learn the Kotlin programming language"><h1 class="" id="learn-the-kotlin-programming-language" is-upgraded="">Learn the
+                            Kotlin programming language</h1></devsite-heading>
+
+                        <devsite-toc class="devsite-nav devsite-toc-embedded" devsite-toc-embedded="" expandable="" visible="">
+                            <ul class="devsite-nav-list" scrollbars="">
+                                <li class="devsite-nav-item devsite-nav-heading devsite-toc-toggle"><a class="devsite-nav-title"
+                                                                                                       href="#top_of_page"><span
+                                        class="devsite-nav-text">Contents</span></a>
+                                    <button class="devsite-nav-show-all button-transparent material-icons" data-title="Expand/collapse contents"
+                                            type="button"></button>
+                                </li>
+                                <li class="devsite-nav-item"><a class="devsite-nav-title" href="#variables"><span class="devsite-nav-text">Variable declaration</span></a>
+                                    <ul class="devsite-nav-list">
+                                        <li class="devsite-nav-item"><a class="devsite-nav-title gc-analytics-event" data-action="click"
+                                                                        data-category="Site-Wide Custom Events" data-label="Embedded nav"
+                                                                        data-value="0.0" href="#inference"><span class="devsite-nav-text">Type inference</span></a>
+                                        </li>
+                                        <li class="devsite-nav-item"><a class="devsite-nav-title gc-analytics-event" data-action="click"
+                                                                        data-category="Site-Wide Custom Events" data-label="Embedded nav"
+                                                                        data-value="0.1" href="#null-safety"><span class="devsite-nav-text">Null safety</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="devsite-nav-item"><a class="devsite-nav-title" href="#conditionals"><span class="devsite-nav-text">Conditionals</span></a>
+                                </li>
+                                <li class="devsite-nav-item" hidden=""><a class="devsite-nav-title" href="#functions"><span class="devsite-nav-text">Functions</span></a>
+                                    <ul class="devsite-nav-list">
+                                        <li class="devsite-nav-item" hidden=""><a class="devsite-nav-title gc-analytics-event" data-action="click"
+                                                                                  data-category="Site-Wide Custom Events" data-label="Embedded nav"
+                                                                                  data-value="2.0" href="#simplifying"><span
+                                                class="devsite-nav-text">Simplifying function declarations</span></a></li>
+                                        <li class="devsite-nav-item" hidden=""><a class="devsite-nav-title gc-analytics-event" data-action="click"
+                                                                                  data-category="Site-Wide Custom Events" data-label="Embedded nav"
+                                                                                  data-value="2.1" href="#anonymous"><span
+                                                class="devsite-nav-text">Anonymous functions</span></a></li>
+                                        <li class="devsite-nav-item" hidden=""><a class="devsite-nav-title gc-analytics-event" data-action="click"
+                                                                                  data-category="Site-Wide Custom Events" data-label="Embedded nav"
+                                                                                  data-value="2.2" href="#higher-order"><span
+                                                class="devsite-nav-text">Higher-order functions</span></a></li>
+                                    </ul>
+                                </li>
+                                <li class="devsite-nav-item" hidden=""><a class="devsite-nav-title" href="#classes"><span class="devsite-nav-text">Classes</span></a>
+                                    <ul class="devsite-nav-list">
+                                        <li class="devsite-nav-item" hidden=""><a class="devsite-nav-title gc-analytics-event" data-action="click"
+                                                                                  data-category="Site-Wide Custom Events" data-label="Embedded nav"
+                                                                                  data-value="3.0" href="#properties"><span
+                                                class="devsite-nav-text">Properties</span></a></li>
+                                        <li class="devsite-nav-item" hidden=""><a class="devsite-nav-title gc-analytics-event" data-action="click"
+                                                                                  data-category="Site-Wide Custom Events" data-label="Embedded nav"
+                                                                                  data-value="3.1" href="#functions"><span
+                                                class="devsite-nav-text">Class functions and encapsulation</span></a></li>
+                                    </ul>
+                                </li>
+                                <li class="devsite-nav-item" hidden=""><a class="devsite-nav-title" href="#interoperability"><span
+                                        class="devsite-nav-text">Interoperability</span></a></li>
+                                <li class="devsite-toc-toggle">
+                                    <button aria-hidden="true" class="button-flat devsite-nav-more-items material-icons" data-title="Expand/collapse contents"
+                                            type="button"></button>
+                                </li>
+                            </ul>
+                        </devsite-toc>
+
+                        <div class="devsite-article-body clearfix
+      ">
+
+
+                            <p><a class="external" href="https://kotlinlang.org/">Kotlin</a> is a programming language is
+                                widely used by Android developers everywhere. This topic serves as a Kotlin
+                                crash-course to get you up and running quickly.</p>
+
+                            <devsite-heading back-to-top="" class="" for="variables" level="h2" link="" text="Variable declaration" toc="">
+                                <h2 id="variables" is-upgraded="">Variable declaration
+                                    <button class="devsite-heading-link button-flat material-icons" data-title="Copy link to this section"
+                                            role="button"></button>
+                                    <a class="devsite-back-to-top-link material-icons" data-title="Back to top" href="#top_of_page"></a></h2>
+                            </devsite-heading>
+
+                            <p>Kotlin uses two different keywords to declare variables: <code dir="ltr" translate="no">val</code> and <code
+                                    dir="ltr" translate="no">var</code>.</p>
+
+                            <ul>
+                                <li>Use <code dir="ltr" translate="no">val</code> for a variable whose value never changes. You can't reassign a value
+                                    to a variable that was declared using <code dir="ltr" translate="no">val</code>.
+                                </li>
+                                <li>Use <code dir="ltr" translate="no">var</code> for a variable whose value can change.</li>
+                            </ul>
+
+                            <p>In the example below, <code dir="ltr" translate="no">count</code> is a variable of type <code dir="ltr" translate="no">Int</code>
+                                that is assigned an
+                                initial value of <code dir="ltr" translate="no">10</code>:</p>
+                            <devsite-code>
+                                <pre class="lang-kotlin" dir="ltr" is-upgraded="" translate="no"><code dir="ltr" translate="no"><span
+                                        class="kwd">var</span><span class="pln"> count</span><span class="pun">:</span><span class="pln"> </span><span
+                                        class="typ">Int</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span
+                                        class="lit">10</span><span class="pln"><br></span></code></pre>
+                                <div class="devsite-code-buttons-container">
+                                    <button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events"
+                                            data-label="Click To Copy" data-title="Click to copy" track-name="clickToCopy"
+                                            track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+                                            data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" data-title="Dark code theme"
+                                            track-name="darkCodeToggle" track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+                                            data-category="Site-Wide Custom Events" data-label="Light Code Toggle" data-title="Light code theme"
+                                            track-name="lightCodeToggle" track-type="exampleCode"></button>
+                                </div>
+                            </devsite-code>
+                            <p><code dir="ltr" translate="no">Int</code> is a type that represents an integer, one of the many numerical types that
+                                can be represented in Kotlin. Similar to other languages, you can also use
+                                <code dir="ltr" translate="no">Byte</code>, <code dir="ltr" translate="no">Short</code>, <code dir="ltr"
+                                                                                                                               translate="no">Long</code>,
+                                <code dir="ltr" translate="no">Float</code>, and <code dir="ltr" translate="no">Double</code> depending on your
+                                numerical data.</p>
+
+                            <p>The <code dir="ltr" translate="no">var</code> keyword means that you can reassign values to <code dir="ltr"
+                                                                                                                                 translate="no">count</code>
+                                as needed. For
+                                example, you can change the value of <code dir="ltr" translate="no">count</code> from <code dir="ltr" translate="no">10</code>
+                                to <code dir="ltr" translate="no">15</code>:</p>
+                            <devsite-code>
+                                <pre class="lang-kotlin" dir="ltr" is-upgraded="" translate="no"><code dir="ltr" translate="no"><span
+                                        class="kwd">var</span><span class="pln"> count</span><span class="pun">:</span><span class="pln"> </span><span
+                                        class="typ">Int</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span
+                                        class="lit">10</span><span class="pln"><br>count </span><span class="pun">=</span><span
+                                        class="pln"> </span><span class="lit">15</span><span class="pln"><br></span></code></pre>
+                                <div class="devsite-code-buttons-container">
+                                    <button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events"
+                                            data-label="Click To Copy" data-title="Click to copy" track-name="clickToCopy"
+                                            track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+                                            data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" data-title="Dark code theme"
+                                            track-name="darkCodeToggle" track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+                                            data-category="Site-Wide Custom Events" data-label="Light Code Toggle" data-title="Light code theme"
+                                            track-name="lightCodeToggle" track-type="exampleCode"></button>
+                                </div>
+                            </devsite-code>
+                            <p>Some values are not meant to be changed, though. Consider a <code dir="ltr" translate="no">String</code> called
+                                <code dir="ltr" translate="no">languageName</code>. If you want to ensure that <code dir="ltr" translate="no">languageName</code>
+                                always holds a value
+                                of "Kotlin", then you can declare <code dir="ltr" translate="no">languageName</code> using the <code dir="ltr"
+                                                                                                                                     translate="no">val</code>
+                                keyword:</p>
+                            <devsite-code>
+                                <pre class="lang-kotlin" dir="ltr" is-upgraded="" translate="no"><code dir="ltr" translate="no"><span
+                                        class="kwd">val</span><span class="pln"> languageName</span><span class="pun">:</span><span
+                                        class="pln"> </span><span class="typ">String</span><span class="pln"> </span><span class="pun">=</span><span
+                                        class="pln"> </span><span class="str">"Kotlin"</span><span class="pln"><br></span></code></pre>
+                                <div class="devsite-code-buttons-container">
+                                    <button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events"
+                                            data-label="Click To Copy" data-title="Click to copy" track-name="clickToCopy"
+                                            track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+                                            data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" data-title="Dark code theme"
+                                            track-name="darkCodeToggle" track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+                                            data-category="Site-Wide Custom Events" data-label="Light Code Toggle" data-title="Light code theme"
+                                            track-name="lightCodeToggle" track-type="exampleCode"></button>
+                                </div>
+                            </devsite-code>
+                            <p>These keywords allow you to be explicit about what can be changed. Use them to
+                                your advantage as needed. If a variable reference must be reassignable, then
+                                declare it as a <code dir="ltr" translate="no">var</code>. Otherwise, use <code dir="ltr" translate="no">val</code>.
+                            </p>
+
+                            <devsite-heading class="" for="inference" level="h3" link="" text="Type inference" toc="">
+                                <h3 id="inference" is-upgraded="">Type inference
+                                    <button class="devsite-heading-link button-flat material-icons" data-title="Copy link to this section"
+                                            role="button"></button>
+                                </h3>
+                            </devsite-heading>
+
+                            <p>Continuing the previous example, when you assign an initial value to
+                                <code dir="ltr" translate="no">languageName</code>, the Kotlin compiler can infer the type based off of the type of
+                                the assigned value.</p>
+
+                            <p>Since the value of <code dir="ltr" translate="no">"Kotlin"</code> is of type <code dir="ltr"
+                                                                                                                  translate="no">String</code>, the
+                                compiler infers that
+                                <code dir="ltr" translate="no">languageName</code> is also a <code dir="ltr" translate="no">String</code>. Note that
+                                Kotlin is a <em>statically-typed</em>
+                                language. This means that the type is resolved at compile time and never
+                                changes.</p>
+
+                            <p>In the following example, <code dir="ltr" translate="no">languageName</code> is inferred as a <code dir="ltr"
+                                                                                                                                   translate="no">String</code>,
+                                so you can't
+                                call any functions that aren't part of the <code dir="ltr" translate="no">String</code> class:</p>
+                            <devsite-code>
+                                <pre class="lang-kotlin" dir="ltr" is-upgraded="" translate="no"><code dir="ltr" translate="no"><span
+                                        class="kwd">val</span><span class="pln"> languageName </span><span class="pun">=</span><span
+                                        class="pln"> </span><span class="str">"Kotlin"</span><span class="pln"><br></span><span class="kwd">val</span><span
+                                        class="pln"> upperCaseName </span><span class="pun">=</span><span class="pln"> languageName</span><span
+                                        class="pun">.</span><span class="pln">toUpperCase</span><span class="pun">()</span><span class="pln"><br><br></span><span
+                                        class="com">// Fails to compile</span><span class="pln"><br>languageName</span><span class="pun">.</span><span
+                                        class="pln">inc</span><span class="pun">()</span><span class="pln"><br></span></code></pre>
+                                <div class="devsite-code-buttons-container">
+                                    <button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events"
+                                            data-label="Click To Copy" data-title="Click to copy" track-name="clickToCopy"
+                                            track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+                                            data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" data-title="Dark code theme"
+                                            track-name="darkCodeToggle" track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+                                            data-category="Site-Wide Custom Events" data-label="Light Code Toggle" data-title="Light code theme"
+                                            track-name="lightCodeToggle" track-type="exampleCode"></button>
+                                </div>
+                            </devsite-code>
+                            <p><code dir="ltr" translate="no">toUpperCase()</code> is a function that can only be called on variables of type
+                                <code dir="ltr" translate="no">String</code>. Because the Kotlin compiler has inferred <code dir="ltr" translate="no">languageName</code>
+                                as a <code dir="ltr" translate="no">String</code>,
+                                you can safely call <code dir="ltr" translate="no">toUpperCase()</code>. <code dir="ltr" translate="no">inc()</code>,
+                                however, is an <code dir="ltr" translate="no">Int</code> operator
+                                function, so it can’t be called on a <code dir="ltr" translate="no">String</code>. Kotlin’s approach to type
+                                inference gives you both conciseness and type-safety.</p>
+
+                            <devsite-heading class="" for="null-safety" level="h3" link="" text="Null safety" toc="">
+                                <h3 id="null-safety" is-upgraded="">Null safety
+                                    <button class="devsite-heading-link button-flat material-icons" data-title="Copy link to this section"
+                                            role="button"></button>
+                                </h3>
+                            </devsite-heading>
+
+                            <p>In some languages, a reference type variable can be declared without providing
+                                an initial explicit value. In these cases, the variables usually contain a null
+                                value. Kotlin variables can't hold null values by default. This means that the
+                                following snippet is invalid:</p>
+                            <devsite-code>
+                                <pre class="lang-kotlin" dir="ltr" is-upgraded="" translate="no"><code dir="ltr" translate="no"><span class="com">// Fails to compile</span><span
+                                        class="pln"><br></span><span class="kwd">val</span><span class="pln"> languageName</span><span
+                                        class="pun">:</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> </span><span
+                                        class="pun">=</span><span class="pln"> </span><span class="lit">null</span><span
+                                        class="pln"><br></span></code></pre>
+                                <div class="devsite-code-buttons-container">
+                                    <button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events"
+                                            data-label="Click To Copy" data-title="Click to copy" track-name="clickToCopy"
+                                            track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+                                            data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" data-title="Dark code theme"
+                                            track-name="darkCodeToggle" track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+                                            data-category="Site-Wide Custom Events" data-label="Light Code Toggle" data-title="Light code theme"
+                                            track-name="lightCodeToggle" track-type="exampleCode"></button>
+                                </div>
+                            </devsite-code>
+                            <p>For a variable to hold a null value, it must be of a <em>nullable</em> type. You can
+                                specify a variable as being nullable by suffixing its type with <code dir="ltr" translate="no">?</code>, as shown
+                                in the following example:</p>
+                            <devsite-code>
+                                <pre class="lang-kotlin" dir="ltr" is-upgraded="" translate="no"><code dir="ltr" translate="no"><span
+                                        class="kwd">val</span><span class="pln"> languageName</span><span class="pun">:</span><span
+                                        class="pln"> </span><span class="typ">String</span><span class="pun">?</span><span class="pln"> </span><span
+                                        class="pun">=</span><span class="pln"> </span><span class="lit">null</span><span
+                                        class="pln"><br></span></code></pre>
+                                <div class="devsite-code-buttons-container">
+                                    <button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events"
+                                            data-label="Click To Copy" data-title="Click to copy" track-name="clickToCopy"
+                                            track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+                                            data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" data-title="Dark code theme"
+                                            track-name="darkCodeToggle" track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+                                            data-category="Site-Wide Custom Events" data-label="Light Code Toggle" data-title="Light code theme"
+                                            track-name="lightCodeToggle" track-type="exampleCode"></button>
+                                </div>
+                            </devsite-code>
+                            <p>With a <code dir="ltr" translate="no">String?</code> type, you can assign either a <code dir="ltr" translate="no">String</code>
+                                value or <code dir="ltr" translate="no">null</code> to
+                                <code dir="ltr" translate="no">languageName</code>.</p>
+
+                            <p>You must handle nullable variables carefully or risk a dreaded
+                                <code dir="ltr" translate="no">NullPointerException</code>. In Java, for example, if you attempt to invoke a method
+                                on a null value, your program crashes.</p>
+
+                            <p>Kotlin provides a number of mechanisms for safely working with nullable
+                                variables. For more information, see
+                                <a href="https://developer.android.com/kotlin/common-patterns#nullability">Common Kotlin patterns in Android:
+                                    Nullability</a>.</p>
+
+                            <devsite-heading back-to-top="" class="" for="conditionals" level="h2" link="" text="Conditionals" toc="">
+                                <h2 id="conditionals" is-upgraded="">Conditionals
+                                    <button class="devsite-heading-link button-flat material-icons" data-title="Copy link to this section"
+                                            role="button"></button>
+                                    <a class="devsite-back-to-top-link material-icons" data-title="Back to top" href="#top_of_page"></a></h2>
+                            </devsite-heading>
+
+                            <p>Kotlin features several mechanisms for implementing conditional logic. The most
+                                common of these is an <em>if-else statement</em>. If an expression wrapped in
+                                parentheses next to an <code dir="ltr" translate="no">if</code> keyword evaluates to <code dir="ltr" translate="no">true</code>,
+                                then code within
+                                that branch (i.e. the immediately-following code that is wrapped in curly
+                                braces) is executed. Otherwise, the code within the <code dir="ltr" translate="no">else</code> branch is executed.</p>
+                            <devsite-code>
+                                <pre class="lang-kotlin" dir="ltr" is-upgraded="" translate="no"><code dir="ltr" translate="no"><span
+                                        class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">count </span><span
+                                        class="pun">==</span><span class="pln"> </span><span class="lit">42</span><span class="pun">)</span><span
+                                        class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; println</span><span
+                                        class="pun">(</span><span class="str">"I have the answer."</span><span class="pun">)</span><span
+                                        class="pln"><br></span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span
+                                        class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; println</span><span
+                                        class="pun">(</span><span class="str">"The answer eludes me."</span><span class="pun">)</span><span
+                                        class="pln"><br></span><span class="pun">}</span><span class="pln"><br></span></code></pre>
+                                <div class="devsite-code-buttons-container">
+                                    <button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events"
+                                            data-label="Click To Copy" data-title="Click to copy" track-name="clickToCopy"
+                                            track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+                                            data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" data-title="Dark code theme"
+                                            track-name="darkCodeToggle" track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+                                            data-category="Site-Wide Custom Events" data-label="Light Code Toggle" data-title="Light code theme"
+                                            track-name="lightCodeToggle" track-type="exampleCode"></button>
+                                </div>
+                            </devsite-code>
+                            <p>You can represent multiple conditions using <code dir="ltr" translate="no">else if</code>. This lets you represent
+                                more granular, complex logic within a single conditional statement, as shown in
+                                the following example:</p>
+                            <devsite-code>
+                                <pre class="lang-kotlin" dir="ltr" is-upgraded="" translate="no"><code dir="ltr" translate="no"><span
+                                        class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">count </span><span
+                                        class="pun">==</span><span class="pln"> </span><span class="lit">42</span><span class="pun">)</span><span
+                                        class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; println</span><span
+                                        class="pun">(</span><span class="str">"I have the answer."</span><span class="pun">)</span><span
+                                        class="pln"><br></span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span
+                                        class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span
+                                        class="pln">count </span><span class="pun">&gt;</span><span class="pln"> </span><span
+                                        class="lit">35</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span
+                                        class="pln"><br>&nbsp; &nbsp; println</span><span class="pun">(</span><span
+                                        class="str">"The answer is close."</span><span class="pun">)</span><span class="pln"><br></span><span
+                                        class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span
+                                        class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; println</span><span class="pun">(</span><span
+                                        class="str">"The answer eludes me."</span><span class="pun">)</span><span class="pln"><br></span><span
+                                        class="pun">}</span><span class="pln"><br></span></code></pre>
+                                <div class="devsite-code-buttons-container">
+                                    <button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events"
+                                            data-label="Click To Copy" data-title="Click to copy" track-name="clickToCopy"
+                                            track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+                                            data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" data-title="Dark code theme"
+                                            track-name="darkCodeToggle" track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+                                            data-category="Site-Wide Custom Events" data-label="Light Code Toggle" data-title="Light code theme"
+                                            track-name="lightCodeToggle" track-type="exampleCode"></button>
+                                </div>
+                            </devsite-code>
+                            <p>Conditional statements are useful for representing stateful logic, but you may
+                                find that you repeat yourself when writing them. In the example above, you
+                                simply print a <code dir="ltr" translate="no">String</code> in each branch. To avoid this repetition, Kotlin offers
+                                <em>conditional expressions</em>. The last example can be rewritten as follows:</p>
+                            <devsite-code>
+                                <pre class="lang-kotlin" dir="ltr" is-upgraded="" translate="no"><code dir="ltr" translate="no"><span
+                                        class="kwd">val</span><span class="pln"> answerString</span><span class="pun">:</span><span
+                                        class="pln"> </span><span class="typ">String</span><span class="pln"> </span><span class="pun">=</span><span
+                                        class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span
+                                        class="pln">count </span><span class="pun">==</span><span class="pln"> </span><span class="lit">42</span><span
+                                        class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span
+                                        class="pln"><br>&nbsp; &nbsp; </span><span class="str">"I have the answer."</span><span
+                                        class="pln"><br></span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span
+                                        class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span
+                                        class="pln">count </span><span class="pun">&gt;</span><span class="pln"> </span><span
+                                        class="lit">35</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span
+                                        class="pln"><br>&nbsp; &nbsp; </span><span class="str">"The answer is close."</span><span
+                                        class="pln"><br></span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span
+                                        class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="str">"The answer eludes me."</span><span
+                                        class="pln"><br></span><span class="pun">}</span><span class="pln"><br><br>println</span><span
+                                        class="pun">(</span><span class="pln">answerString</span><span class="pun">)</span><span
+                                        class="pln"><br></span></code></pre>
+                                <div class="devsite-code-buttons-container">
+                                    <button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events"
+                                            data-label="Click To Copy" data-title="Click to copy" track-name="clickToCopy"
+                                            track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+                                            data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" data-title="Dark code theme"
+                                            track-name="darkCodeToggle" track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+                                            data-category="Site-Wide Custom Events" data-label="Light Code Toggle" data-title="Light code theme"
+                                            track-name="lightCodeToggle" track-type="exampleCode"></button>
+                                </div>
+                            </devsite-code>
+                            <p>Implicitly, each conditional branch returns the result of the expression on its
+                                final line, so you don't need to use a <code dir="ltr" translate="no">return</code> keyword. Because the result of
+                                all three branches is of type <code dir="ltr" translate="no">String</code>, the result of the if-else expression is
+                                also of type <code dir="ltr" translate="no">String</code>. In this example, <code dir="ltr" translate="no">answerString</code>
+                                is assigned an initial
+                                value from the result of the if-else expression. Type inference can be used to
+                                omit the explicit type declaration for <code dir="ltr" translate="no">answerString</code>, but it's often a good
+                                idea to include it for clarity.</p>
+                            <aside class="note"><strong>Note:</strong><span> Kotlin does not include a traditional
+<a class="external" href="https://en.wikipedia.org/wiki/%3F:">ternary operator</a>, instead
+favoring the use of conditional expressions.</span></aside>
+                            <p>As the complexity of your conditional statement grows, you might consider
+                                replacing your if-else expression with a <em>when</em> expression, as shown in the
+                                following example:</p>
+                            <devsite-code>
+                                <pre class="lang-kotlin" dir="ltr" is-upgraded="" translate="no"><code dir="ltr" translate="no"><span
+                                        class="kwd">val</span><span class="pln"> answerString </span><span class="pun">=</span><span
+                                        class="pln"> </span><span class="kwd">when</span><span class="pln"> </span><span class="pun">{</span><span
+                                        class="pln"><br>&nbsp; &nbsp; count </span><span class="pun">==</span><span class="pln"> </span><span
+                                        class="lit">42</span><span class="pln"> </span><span class="pun">-&gt;</span><span class="pln"> </span><span
+                                        class="str">"I have the answer."</span><span class="pln"><br>&nbsp; &nbsp; count </span><span
+                                        class="pun">&gt;</span><span class="pln"> </span><span class="lit">35</span><span class="pln"> </span><span
+                                        class="pun">-&gt;</span><span class="pln"> </span><span class="str">"The answer is close."</span><span
+                                        class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">-&gt;</span><span
+                                        class="pln"> </span><span class="str">"The answer eludes me."</span><span class="pln"><br></span><span
+                                        class="pun">}</span><span class="pln"><br><br>println</span><span class="pun">(</span><span class="pln">answerString</span><span
+                                        class="pun">)</span><span class="pln"><br></span></code></pre>
+                                <div class="devsite-code-buttons-container">
+                                    <button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events"
+                                            data-label="Click To Copy" data-title="Click to copy" track-name="clickToCopy"
+                                            track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+                                            data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" data-title="Dark code theme"
+                                            track-name="darkCodeToggle" track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+                                            data-category="Site-Wide Custom Events" data-label="Light Code Toggle" data-title="Light code theme"
+                                            track-name="lightCodeToggle" track-type="exampleCode"></button>
+                                </div>
+                            </devsite-code>
+                            <p>Each branch in a <code dir="ltr" translate="no">when</code> expression is represented by a condition, an arrow
+                                (<code dir="ltr" translate="no">-&gt;</code>), and a result. If the condition on the left-hand side of the arrow
+                                evaluates to true, then the result of the expression on the right-hand side is
+                                returned. Note that execution does not fall through from one branch to the next.
+                                The code in the <code dir="ltr" translate="no">when</code> expression example is functionally-equivalent to that in
+                                the previous example but is arguably easier to read.</p>
+
+                            <p>Kotlin’s conditionals highlight one of its more powerful features,
+                                <em>smart casting</em>. Rather than using the safe-call operator or the not-null
+                                assertion operator to work with nullable values, you can instead check if a
+                                variable contains a reference to a null value using a conditional statement, as
+                                shown in the following example:</p>
+                            <devsite-code>
+                                <pre class="lang-kotlin" dir="ltr" is-upgraded="" translate="no"><code dir="ltr" translate="no"><span
+                                        class="kwd">val</span><span class="pln"> languageName</span><span class="pun">:</span><span
+                                        class="pln"> </span><span class="typ">String</span><span class="pun">?</span><span class="pln"> </span><span
+                                        class="pun">=</span><span class="pln"> </span><span class="lit">null</span><span class="pln"><br></span><span
+                                        class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span
+                                        class="pln">languageName </span><span class="pun">!=</span><span class="pln"> </span><span
+                                        class="lit">null</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span
+                                        class="pln"><br>&nbsp; &nbsp; </span><span
+                                        class="com">// No need to write languageName?.toUpperCase()</span><span class="pln"><br>&nbsp; &nbsp; println</span><span
+                                        class="pun">(</span><span class="pln">languageName</span><span class="pun">.</span><span class="pln">toUpperCase</span><span
+                                        class="pun">())</span><span class="pln"><br></span><span class="pun">}</span><span
+                                        class="pln"><br></span></code></pre>
+                                <div class="devsite-code-buttons-container">
+                                    <button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events"
+                                            data-label="Click To Copy" data-title="Click to copy" track-name="clickToCopy"
+                                            track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+                                            data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" data-title="Dark code theme"
+                                            track-name="darkCodeToggle" track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+                                            data-category="Site-Wide Custom Events" data-label="Light Code Toggle" data-title="Light code theme"
+                                            track-name="lightCodeToggle" track-type="exampleCode"></button>
+                                </div>
+                            </devsite-code>
+                            <p>Within the conditional branch, <code dir="ltr" translate="no">languageName</code> may be treated as non-nullable.
+                                Kotlin is smart enough to recognize that the condition for executing the branch
+                                is that <code dir="ltr" translate="no">languageName</code> does not hold a null value, so you do not have to treat
+                                <code dir="ltr" translate="no">languageName</code> as nullable within that branch. This smart casting works for null
+                                checks,
+                                <a class="external" href="https://kotlinlang.org/docs/reference/typecasts.html#is-and-is-operators">type checks</a>,
+                                or any condition that satisfies a
+                                <a class="external" href="https://kotlinlang.org/docs/reference/whatsnew13.html#contracts">contract</a>.</p>
+
+                            <devsite-heading back-to-top="" class="" for="functions" level="h2" link="" text="Functions" toc="">
+                                <h2 id="functions" is-upgraded="">Functions
+                                    <button class="devsite-heading-link button-flat material-icons" data-title="Copy link to this section"
+                                            role="button"></button>
+                                    <a class="devsite-back-to-top-link material-icons" data-title="Back to top" href="#top_of_page"></a></h2>
+                            </devsite-heading>
+
+                            <p>You can group one or more expressions into a <em>function</em>. Rather than repeating
+                                the same series of expressions each time that you need a result, you can wrap
+                                the expressions in a function and call that function instead.</p>
+
+                            <p>To declare a function, use the <code dir="ltr" translate="no">fun</code> keyword followed by the function name.
+                                Next, define the types of inputs that your function takes, if any, and declare
+                                the type of output that it returns. A function’s body is where you define
+                                expressions that are called when your function is invoked.</p>
+
+                            <p>Building on previous examples, here's a complete Kotlin function:</p>
+                            <devsite-code>
+                                <pre class="lang-kotlin" dir="ltr" is-upgraded="" translate="no"><code dir="ltr" translate="no"><span
+                                        class="kwd">fun</span><span class="pln"> generateAnswerString</span><span class="pun">():</span><span
+                                        class="pln"> </span><span class="typ">String</span><span class="pln"> </span><span class="pun">{</span><span
+                                        class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">val</span><span class="pln"> answerString </span><span
+                                        class="pun">=</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span
+                                        class="pun">(</span><span class="pln">count </span><span class="pun">==</span><span class="pln"> </span><span
+                                        class="lit">42</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span
+                                        class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="str">"I have the answer."</span><span
+                                        class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span
+                                        class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span
+                                        class="str">"The answer eludes me"</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}</span><span
+                                        class="pln"><br><br>&nbsp; &nbsp; </span><span class="kwd">return</span><span
+                                        class="pln"> answerString<br></span><span class="pun">}</span><span class="pln"><br></span></code></pre>
+                                <div class="devsite-code-buttons-container">
+                                    <button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events"
+                                            data-label="Click To Copy" data-title="Click to copy" track-name="clickToCopy"
+                                            track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+                                            data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" data-title="Dark code theme"
+                                            track-name="darkCodeToggle" track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+                                            data-category="Site-Wide Custom Events" data-label="Light Code Toggle" data-title="Light code theme"
+                                            track-name="lightCodeToggle" track-type="exampleCode"></button>
+                                </div>
+                            </devsite-code>
+                            <p>The function in the example above has the name <code dir="ltr" translate="no">generateAnswerString</code>. It
+                                doesn’t take any input. It outputs a result of type <code dir="ltr" translate="no">String</code>. To call a
+                                function, use its name, followed by the invocation operator (<code dir="ltr" translate="no">()</code>). In the
+                                example below, the <code dir="ltr" translate="no">answerString</code> variable is initialized with the result from
+                                <code dir="ltr" translate="no">generateAnswerString()</code>.</p>
+                            <devsite-code>
+                                <pre class="lang-kotlin" dir="ltr" is-upgraded="" translate="no"><code dir="ltr" translate="no"><span
+                                        class="kwd">val</span><span class="pln"> answerString </span><span class="pun">=</span><span class="pln"> generateAnswerString</span><span
+                                        class="pun">()</span><span class="pln"><br></span></code></pre>
+                                <div class="devsite-code-buttons-container">
+                                    <button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events"
+                                            data-label="Click To Copy" data-title="Click to copy" track-name="clickToCopy"
+                                            track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+                                            data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" data-title="Dark code theme"
+                                            track-name="darkCodeToggle" track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+                                            data-category="Site-Wide Custom Events" data-label="Light Code Toggle" data-title="Light code theme"
+                                            track-name="lightCodeToggle" track-type="exampleCode"></button>
+                                </div>
+                            </devsite-code>
+                            <p>Functions can take arguments as input, as shown in the following example:</p>
+                            <devsite-code>
+                                <pre class="lang-kotlin" dir="ltr" is-upgraded="" translate="no"><code dir="ltr" translate="no"><span
+                                        class="kwd">fun</span><span class="pln"> generateAnswerString</span><span class="pun">(</span><span
+                                        class="pln">countThreshold</span><span class="pun">:</span><span class="pln"> </span><span
+                                        class="typ">Int</span><span class="pun">):</span><span class="pln"> </span><span
+                                        class="typ">String</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span
+                                        class="kwd">val</span><span class="pln"> answerString </span><span class="pun">=</span><span
+                                        class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span
+                                        class="pln">count </span><span class="pun">&gt;</span><span class="pln"> countThreshold</span><span
+                                        class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span
+                                        class="str">"I have the answer."</span><span class="pln"><br>&nbsp; &nbsp; </span><span
+                                        class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span
+                                        class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="str">"The answer eludes me."</span><span
+                                        class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br><br>&nbsp; &nbsp; </span><span
+                                        class="kwd">return</span><span class="pln"> answerString<br></span><span class="pun">}</span><span
+                                        class="pln"><br></span></code></pre>
+                                <div class="devsite-code-buttons-container">
+                                    <button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events"
+                                            data-label="Click To Copy" data-title="Click to copy" track-name="clickToCopy"
+                                            track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+                                            data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" data-title="Dark code theme"
+                                            track-name="darkCodeToggle" track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+                                            data-category="Site-Wide Custom Events" data-label="Light Code Toggle" data-title="Light code theme"
+                                            track-name="lightCodeToggle" track-type="exampleCode"></button>
+                                </div>
+                            </devsite-code>
+                            <p>When declaring a function, you can specify any number of arguments and their
+                                types. In the example above, <code dir="ltr" translate="no">generateAnswerString()</code> takes one argument named
+                                <code dir="ltr" translate="no">countThreshold</code> of type <code dir="ltr" translate="no">Int</code>. Within the
+                                function, you can refer to the
+                                argument by using its name.</p>
+
+                            <p>When calling this function, you must include an argument within the function
+                                call’s parentheses:</p>
+                            <devsite-code>
+                                <pre class="lang-kotlin" dir="ltr" is-upgraded="" translate="no"><code dir="ltr" translate="no"><span
+                                        class="kwd">val</span><span class="pln"> answerString </span><span class="pun">=</span><span class="pln"> generateAnswerString</span><span
+                                        class="pun">(</span><span class="lit">42</span><span class="pun">)</span><span class="pln"><br></span></code></pre>
+                                <div class="devsite-code-buttons-container">
+                                    <button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events"
+                                            data-label="Click To Copy" data-title="Click to copy" track-name="clickToCopy"
+                                            track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+                                            data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" data-title="Dark code theme"
+                                            track-name="darkCodeToggle" track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+                                            data-category="Site-Wide Custom Events" data-label="Light Code Toggle" data-title="Light code theme"
+                                            track-name="lightCodeToggle" track-type="exampleCode"></button>
+                                </div>
+                            </devsite-code>
+                            <devsite-heading class="" for="simplifying" level="h3" link="" text="Simplifying function declarations" toc="">
+                                <h3 id="simplifying" is-upgraded="">Simplifying function declarations
+                                    <button class="devsite-heading-link button-flat material-icons" data-title="Copy link to this section"
+                                            role="button"></button>
+                                </h3>
+                            </devsite-heading>
+
+                            <p><code dir="ltr" translate="no">generateAnswerString()</code> is a fairly simple function. The function declares a
+                                variable and then immediately returns. When the result of a single expression is
+                                returned from a function, you can skip declaring a local variable by directly
+                                returning the result of the if-else expression contained in the function, as
+                                shown in the following example:</p>
+                            <devsite-code>
+                                <pre class="lang-kotlin" dir="ltr" is-upgraded="" translate="no"><code dir="ltr" translate="no"><span
+                                        class="kwd">fun</span><span class="pln"> generateAnswerString</span><span class="pun">(</span><span
+                                        class="pln">countThreshold</span><span class="pun">:</span><span class="pln"> </span><span
+                                        class="typ">Int</span><span class="pun">):</span><span class="pln"> </span><span
+                                        class="typ">String</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span
+                                        class="kwd">return</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span
+                                        class="pun">(</span><span class="pln">count </span><span class="pun">&gt;</span><span class="pln"> countThreshold</span><span
+                                        class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span
+                                        class="str">"I have the answer."</span><span class="pln"><br>&nbsp; &nbsp; </span><span
+                                        class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span
+                                        class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="str">"The answer eludes me."</span><span
+                                        class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br></span><span class="pun">}</span><span
+                                        class="pln"><br></span></code></pre>
+                                <div class="devsite-code-buttons-container">
+                                    <button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events"
+                                            data-label="Click To Copy" data-title="Click to copy" track-name="clickToCopy"
+                                            track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+                                            data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" data-title="Dark code theme"
+                                            track-name="darkCodeToggle" track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+                                            data-category="Site-Wide Custom Events" data-label="Light Code Toggle" data-title="Light code theme"
+                                            track-name="lightCodeToggle" track-type="exampleCode"></button>
+                                </div>
+                            </devsite-code>
+                            <p>You can also replace the return keyword with the assignment operator:</p>
+                            <devsite-code>
+                                <pre class="lang-kotlin" dir="ltr" is-upgraded="" translate="no"><code dir="ltr" translate="no"><span
+                                        class="kwd">fun</span><span class="pln"> generateAnswerString</span><span class="pun">(</span><span
+                                        class="pln">countThreshold</span><span class="pun">:</span><span class="pln"> </span><span
+                                        class="typ">Int</span><span class="pun">):</span><span class="pln"> </span><span
+                                        class="typ">String</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span
+                                        class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">count </span><span
+                                        class="pun">&gt;</span><span class="pln"> countThreshold</span><span class="pun">)</span><span
+                                        class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span
+                                        class="str">"I have the answer"</span><span class="pln"><br>&nbsp; &nbsp; </span><span
+                                        class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span
+                                        class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="str">"The answer eludes me"</span><span
+                                        class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br></span></code></pre>
+                                <div class="devsite-code-buttons-container">
+                                    <button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events"
+                                            data-label="Click To Copy" data-title="Click to copy" track-name="clickToCopy"
+                                            track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+                                            data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" data-title="Dark code theme"
+                                            track-name="darkCodeToggle" track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+                                            data-category="Site-Wide Custom Events" data-label="Light Code Toggle" data-title="Light code theme"
+                                            track-name="lightCodeToggle" track-type="exampleCode"></button>
+                                </div>
+                            </devsite-code>
+                            <devsite-heading class="" for="anonymous" level="h3" link="" text="Anonymous functions" toc="">
+                                <h3 id="anonymous" is-upgraded="">Anonymous functions
+                                    <button class="devsite-heading-link button-flat material-icons" data-title="Copy link to this section"
+                                            role="button"></button>
+                                </h3>
+                            </devsite-heading>
+
+                            <p>Not every function needs a name. Some functions are more directly identified by
+                                their inputs and outputs. These functions are called <em>anonymous functions</em>. You
+                                can keep a reference to an anonymous function, using this reference to
+                                call the anonymous function later. You can also pass the reference around your
+                                application, as with other reference types.</p>
+                            <devsite-code>
+                                <pre class="lang-kotlin" dir="ltr" is-upgraded="" translate="no"><code dir="ltr" translate="no"><span
+                                        class="kwd">val</span><span class="pln"> stringLengthFunc</span><span class="pun">:</span><span
+                                        class="pln"> </span><span class="pun">(</span><span class="typ">String</span><span class="pun">)</span><span
+                                        class="pln"> </span><span class="pun">-&gt;</span><span class="pln"> </span><span class="typ">Int</span><span
+                                        class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span
+                                        class="pln"> input </span><span class="pun">-&gt;</span><span class="pln"><br>&nbsp; &nbsp; input</span><span
+                                        class="pun">.</span><span class="pln">length<br></span><span class="pun">}</span><span class="pln"><br></span></code></pre>
+                                <div class="devsite-code-buttons-container">
+                                    <button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events"
+                                            data-label="Click To Copy" data-title="Click to copy" track-name="clickToCopy"
+                                            track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+                                            data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" data-title="Dark code theme"
+                                            track-name="darkCodeToggle" track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+                                            data-category="Site-Wide Custom Events" data-label="Light Code Toggle" data-title="Light code theme"
+                                            track-name="lightCodeToggle" track-type="exampleCode"></button>
+                                </div>
+                            </devsite-code>
+                            <p>Like named functions, anonymous functions can contain any number of expressions.
+                                The returned value of the function is the result of the final expression.</p>
+
+                            <p>In the example above, <code dir="ltr" translate="no">stringLengthFunc</code> contains a reference to an anonymous
+                                function that takes a <code dir="ltr" translate="no">String</code> as input and returns the length of the input
+                                <code dir="ltr" translate="no">String</code> as output of type <code dir="ltr" translate="no">Int</code>. For that
+                                reason, the function's type is
+                                denoted as <code dir="ltr" translate="no">(String) -&gt; Int</code>. This code does not invoke the function, however.
+                                To retrieve the result of the function, you must invoke it with like you would a
+                                named function. You must supply a <code dir="ltr" translate="no">String</code> when calling <code dir="ltr"
+                                                                                                                                  translate="no">stringLengthFunc</code>,
+                                as
+                                shown in the following example:</p>
+                            <devsite-code>
+                                <pre class="lang-kotlin" dir="ltr" is-upgraded="" translate="no"><code dir="ltr" translate="no"><span
+                                        class="kwd">val</span><span class="pln"> stringLengthFunc</span><span class="pun">:</span><span
+                                        class="pln"> </span><span class="pun">(</span><span class="typ">String</span><span class="pun">)</span><span
+                                        class="pln"> </span><span class="pun">-&gt;</span><span class="pln"> </span><span class="typ">Int</span><span
+                                        class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span
+                                        class="pln"> input </span><span class="pun">-&gt;</span><span class="pln"><br>&nbsp; &nbsp; input</span><span
+                                        class="pun">.</span><span class="pln">length<br></span><span class="pun">}</span><span
+                                        class="pln"><br><br></span><span class="kwd">val</span><span class="pln"> stringLength</span><span
+                                        class="pun">:</span><span class="pln"> </span><span class="typ">Int</span><span class="pln"> </span><span
+                                        class="pun">=</span><span class="pln"> stringLengthFunc</span><span class="pun">(</span><span class="str">"Android"</span><span
+                                        class="pun">)</span><span class="pln"><br></span></code></pre>
+                                <div class="devsite-code-buttons-container">
+                                    <button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events"
+                                            data-label="Click To Copy" data-title="Click to copy" track-name="clickToCopy"
+                                            track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+                                            data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" data-title="Dark code theme"
+                                            track-name="darkCodeToggle" track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+                                            data-category="Site-Wide Custom Events" data-label="Light Code Toggle" data-title="Light code theme"
+                                            track-name="lightCodeToggle" track-type="exampleCode"></button>
+                                </div>
+                            </devsite-code>
+                            <devsite-heading class="" for="higher-order" level="h3" link="" text="Higher-order functions" toc="">
+                                <h3 id="higher-order" is-upgraded="">Higher-order functions
+                                    <button class="devsite-heading-link button-flat material-icons" data-title="Copy link to this section"
+                                            role="button"></button>
+                                </h3>
+                            </devsite-heading>
+
+                            <p>A function can take another function as an argument. Functions that use other
+                                functions as arguments are called <em>higher-order functions</em>. This pattern is
+                                useful for communicating between components in the same way that you might use a
+                                callback interface in Java.</p>
+
+                            <p>Here's an example of a higher-order function:</p>
+                            <devsite-code>
+                                <pre class="lang-kotlin" dir="ltr" is-upgraded="" translate="no"><code dir="ltr" translate="no"><span
+                                        class="kwd">fun</span><span class="pln"> stringMapper</span><span class="pun">(</span><span
+                                        class="pln">str</span><span class="pun">:</span><span class="pln"> </span><span class="typ">String</span><span
+                                        class="pun">,</span><span class="pln"> mapper</span><span class="pun">:</span><span class="pln"> </span><span
+                                        class="pun">(</span><span class="typ">String</span><span class="pun">)</span><span class="pln"> </span><span
+                                        class="pun">-&gt;</span><span class="pln"> </span><span class="typ">Int</span><span class="pun">):</span><span
+                                        class="pln"> </span><span class="typ">Int</span><span class="pln"> </span><span class="pun">{</span><span
+                                        class="pln"><br>&nbsp; &nbsp; </span><span class="com">// Invoke function</span><span class="pln"><br>&nbsp; &nbsp; </span><span
+                                        class="kwd">return</span><span class="pln"> mapper</span><span class="pun">(</span><span
+                                        class="pln">str</span><span class="pun">)</span><span class="pln"><br></span><span class="pun">}</span><span
+                                        class="pln"><br></span></code></pre>
+                                <div class="devsite-code-buttons-container">
+                                    <button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events"
+                                            data-label="Click To Copy" data-title="Click to copy" track-name="clickToCopy"
+                                            track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+                                            data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" data-title="Dark code theme"
+                                            track-name="darkCodeToggle" track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+                                            data-category="Site-Wide Custom Events" data-label="Light Code Toggle" data-title="Light code theme"
+                                            track-name="lightCodeToggle" track-type="exampleCode"></button>
+                                </div>
+                            </devsite-code>
+                            <p>The <code dir="ltr" translate="no">stringMapper()</code> function takes a <code dir="ltr" translate="no">String</code>
+                                along with a function that
+                                derives an <code dir="ltr" translate="no">Int</code> value from a <code dir="ltr" translate="no">String</code> that
+                                you pass into it.</p>
+
+                            <p>You can call <code dir="ltr" translate="no">stringMapper()</code> by passing a <code dir="ltr"
+                                                                                                                    translate="no">String</code> and a
+                                function that
+                                satisfies the other input parameter, namely a function that takes a <code dir="ltr" translate="no">String</code> as
+                                input and outputs an <code dir="ltr" translate="no">Int</code>, as shown in the following example:</p>
+                            <devsite-code>
+                                <pre class="lang-kotlin" dir="ltr" is-upgraded="" translate="no"><code dir="ltr" translate="no"><span class="pln">stringMapper</span><span
+                                        class="pun">(</span><span class="str">"Android"</span><span class="pun">,</span><span
+                                        class="pln"> </span><span class="pun">({</span><span class="pln"> input </span><span
+                                        class="pun">-&gt;</span><span class="pln"><br>&nbsp; &nbsp; input</span><span class="pun">.</span><span
+                                        class="pln">length<br></span><span class="pun">})</span><span class="pln"><br></span></code></pre>
+                                <div class="devsite-code-buttons-container">
+                                    <button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events"
+                                            data-label="Click To Copy" data-title="Click to copy" track-name="clickToCopy"
+                                            track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+                                            data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" data-title="Dark code theme"
+                                            track-name="darkCodeToggle" track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+                                            data-category="Site-Wide Custom Events" data-label="Light Code Toggle" data-title="Light code theme"
+                                            track-name="lightCodeToggle" track-type="exampleCode"></button>
+                                </div>
+                            </devsite-code>
+                            <p>If the anonymous function is the <em>last</em> parameter defined on a function, you can
+                                pass it outside of the parentheses used to invoke the function, as shown in the
+                                following example:</p>
+                            <devsite-code>
+                                <pre class="lang-kotlin" dir="ltr" is-upgraded="" translate="no"><code dir="ltr" translate="no"><span class="pln">stringMapper</span><span
+                                        class="pun">(</span><span class="str">"Android"</span><span class="pun">)</span><span
+                                        class="pln"> </span><span class="pun">{</span><span class="pln"> input </span><span
+                                        class="pun">-&gt;</span><span class="pln"><br>&nbsp; &nbsp; input</span><span class="pun">.</span><span
+                                        class="pln">length<br></span><span class="pun">}</span><span class="pln"><br></span></code></pre>
+                                <div class="devsite-code-buttons-container">
+                                    <button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events"
+                                            data-label="Click To Copy" data-title="Click to copy" track-name="clickToCopy"
+                                            track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+                                            data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" data-title="Dark code theme"
+                                            track-name="darkCodeToggle" track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+                                            data-category="Site-Wide Custom Events" data-label="Light Code Toggle" data-title="Light code theme"
+                                            track-name="lightCodeToggle" track-type="exampleCode"></button>
+                                </div>
+                            </devsite-code>
+                            <p>Anonymous functions can be found throughout the Kotlin standard library. For
+                                more information, see
+                                <a class="external" href="https://kotlinlang.org/docs/reference/lambdas.html">Higher-Order Functions and Lambdas</a>.
+                            </p>
+
+                            <devsite-heading back-to-top="" class="" for="classes" level="h2" link="" text="Classes" toc="">
+                                <h2 id="classes" is-upgraded="">Classes
+                                    <button class="devsite-heading-link button-flat material-icons" data-title="Copy link to this section"
+                                            role="button"></button>
+                                    <a class="devsite-back-to-top-link material-icons" data-title="Back to top" href="#top_of_page"></a></h2>
+                            </devsite-heading>
+
+                            <p>All of the types mentioned so far are built into the Kotlin programming
+                                language. If you would like to add your own custom type, you can define a class
+                                using the <code dir="ltr" translate="no">class</code> keyword, as shown in the following example:</p>
+                            <devsite-code>
+                                <pre class="lang-kotlin" dir="ltr" is-upgraded="" translate="no"><code dir="ltr" translate="no"><span class="kwd">class</span><span
+                                        class="pln"> </span><span class="typ">Car</span><span class="pln"><br></span></code></pre>
+                                <div class="devsite-code-buttons-container">
+                                    <button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events"
+                                            data-label="Click To Copy" data-title="Click to copy" track-name="clickToCopy"
+                                            track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+                                            data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" data-title="Dark code theme"
+                                            track-name="darkCodeToggle" track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+                                            data-category="Site-Wide Custom Events" data-label="Light Code Toggle" data-title="Light code theme"
+                                            track-name="lightCodeToggle" track-type="exampleCode"></button>
+                                </div>
+                            </devsite-code>
+                            <devsite-heading class="" for="properties" level="h3" link="" text="Properties" toc="">
+                                <h3 id="properties" is-upgraded="">Properties
+                                    <button class="devsite-heading-link button-flat material-icons" data-title="Copy link to this section"
+                                            role="button"></button>
+                                </h3>
+                            </devsite-heading>
+
+                            <p>Classes represent state using properties. A
+                                <a class="external" href="https://kotlinlang.org/docs/reference/properties.html">property</a> is
+                                a class-level variable that can include a getter, a setter, and a backing field.
+                                Since a car needs wheels to drive, you can add a list of <code dir="ltr" translate="no">Wheel</code> objects as a
+                                property of <code dir="ltr" translate="no">Car</code>, as shown in the following example:</p>
+                            <devsite-code>
+                                <pre class="lang-kotlin" dir="ltr" is-upgraded="" translate="no"><code dir="ltr" translate="no"><span class="kwd">class</span><span
+                                        class="pln"> </span><span class="typ">Car</span><span class="pln"> </span><span class="pun">{</span><span
+                                        class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">val</span><span class="pln"> wheels </span><span
+                                        class="pun">=</span><span class="pln"> listOf</span><span class="pun">&lt;</span><span
+                                        class="typ">Wheel</span><span class="pun">&gt;()</span><span class="pln"><br></span><span class="pun">}</span><span
+                                        class="pln"><br></span></code></pre>
+                                <div class="devsite-code-buttons-container">
+                                    <button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events"
+                                            data-label="Click To Copy" data-title="Click to copy" track-name="clickToCopy"
+                                            track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+                                            data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" data-title="Dark code theme"
+                                            track-name="darkCodeToggle" track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+                                            data-category="Site-Wide Custom Events" data-label="Light Code Toggle" data-title="Light code theme"
+                                            track-name="lightCodeToggle" track-type="exampleCode"></button>
+                                </div>
+                            </devsite-code>
+                            <p>Note that <code dir="ltr" translate="no">wheels</code> is a <code dir="ltr" translate="no">public val</code>, meaning
+                                that <code dir="ltr" translate="no">wheels</code> can be accessed from
+                                outside of the <code dir="ltr" translate="no">Car</code> class, and it can't be reassigned. If you want to obtain an
+                                instance of <code dir="ltr" translate="no">Car</code>, you must first call its constructor. From there, you can
+                                access any of its accessible properties.</p>
+                            <devsite-code>
+                                <pre class="lang-kotlin" dir="ltr" is-upgraded="" translate="no"><code dir="ltr" translate="no"><span
+                                        class="kwd">val</span><span class="pln"> car </span><span class="pun">=</span><span class="pln"> </span><span
+                                        class="typ">Car</span><span class="pun">()</span><span class="pln"> </span><span class="com">// construct a Car</span><span
+                                        class="pln"><br></span><span class="kwd">val</span><span class="pln"> wheels </span><span class="pun">=</span><span
+                                        class="pln"> car</span><span class="pun">.</span><span class="pln">wheels </span><span class="com">// retrieve the wheels value from the Car</span><span
+                                        class="pln"><br></span></code></pre>
+                                <div class="devsite-code-buttons-container">
+                                    <button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events"
+                                            data-label="Click To Copy" data-title="Click to copy" track-name="clickToCopy"
+                                            track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+                                            data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" data-title="Dark code theme"
+                                            track-name="darkCodeToggle" track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+                                            data-category="Site-Wide Custom Events" data-label="Light Code Toggle" data-title="Light code theme"
+                                            track-name="lightCodeToggle" track-type="exampleCode"></button>
+                                </div>
+                            </devsite-code>
+                            <p>If you want to customize your wheels, you can define a custom constructor that
+                                specifies how your class properties are initialized:</p>
+                            <devsite-code>
+                                <pre class="lang-kotlin" dir="ltr" is-upgraded="" translate="no"><code dir="ltr" translate="no"><span class="kwd">class</span><span
+                                        class="pln"> </span><span class="typ">Car</span><span class="pun">(</span><span class="kwd">val</span><span
+                                        class="pln"> wheels</span><span class="pun">:</span><span class="pln"> </span><span
+                                        class="typ">List</span><span class="pun">&lt;</span><span class="typ">Wheel</span><span
+                                        class="pun">&gt;)</span><span class="pln"><br></span></code></pre>
+                                <div class="devsite-code-buttons-container">
+                                    <button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events"
+                                            data-label="Click To Copy" data-title="Click to copy" track-name="clickToCopy"
+                                            track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+                                            data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" data-title="Dark code theme"
+                                            track-name="darkCodeToggle" track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+                                            data-category="Site-Wide Custom Events" data-label="Light Code Toggle" data-title="Light code theme"
+                                            track-name="lightCodeToggle" track-type="exampleCode"></button>
+                                </div>
+                            </devsite-code>
+                            <p>In the example above, the class constructor takes a <code dir="ltr" translate="no">List&lt;Wheel&gt;</code> as a
+                                constructor argument and uses that argument to initialize its <code dir="ltr" translate="no">wheels</code>
+                                property.</p>
+
+                            <devsite-heading class="" for="functions" level="h3" link="" text="Class functions and encapsulation" toc="">
+                                <h3 id="functions" is-upgraded="">Class functions and encapsulation
+                                    <button class="devsite-heading-link button-flat material-icons" data-title="Copy link to this section"
+                                            role="button"></button>
+                                </h3>
+                            </devsite-heading>
+
+                            <p>Classes use functions to model behavior. Functions can modify state, helping you
+                                to expose only the data that you wish to expose. This access control is part of
+                                a larger object-oriented concept known as <em>encapsulation</em>.</p>
+
+                            <p>In the following example, the <code dir="ltr" translate="no">doorLock</code> property is kept private from anything
+                                outside of the <code dir="ltr" translate="no">Car</code> class. To unlock the car, you must call the <code
+                                        dir="ltr" translate="no">unlockDoor()</code>
+                                function passing in a valid key, as shown in the following example:</p>
+                            <devsite-code>
+                                <pre class="lang-kotlin" dir="ltr" is-upgraded="" translate="no"><code dir="ltr" translate="no"><span class="kwd">class</span><span
+                                        class="pln"> </span><span class="typ">Car</span><span class="pun">(</span><span class="kwd">val</span><span
+                                        class="pln"> wheels</span><span class="pun">:</span><span class="pln"> </span><span
+                                        class="typ">List</span><span class="pun">&lt;</span><span class="typ">Wheel</span><span
+                                        class="pun">&gt;)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br><br>&nbsp; &nbsp; </span><span
+                                        class="kwd">private</span><span class="pln"> </span><span class="kwd">val</span><span
+                                        class="pln"> doorLock</span><span class="pun">:</span><span class="pln"> </span><span
+                                        class="typ">DoorLock</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span
+                                        class="pun">...</span><span class="pln"><br><br>&nbsp; &nbsp; </span><span class="kwd">fun</span><span
+                                        class="pln"> unlockDoor</span><span class="pun">(</span><span class="pln">key</span><span class="pun">:</span><span
+                                        class="pln"> </span><span class="typ">Key</span><span class="pun">):</span><span class="pln"> </span><span
+                                        class="typ">Boolean</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span
+                                        class="com">// Return true if key is valid for door lock, false otherwise</span><span class="pln"><br>&nbsp; &nbsp; </span><span
+                                        class="pun">}</span><span class="pln"><br></span><span class="pun">}</span><span
+                                        class="pln"><br></span></code></pre>
+                                <div class="devsite-code-buttons-container">
+                                    <button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events"
+                                            data-label="Click To Copy" data-title="Click to copy" track-name="clickToCopy"
+                                            track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+                                            data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" data-title="Dark code theme"
+                                            track-name="darkCodeToggle" track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+                                            data-category="Site-Wide Custom Events" data-label="Light Code Toggle" data-title="Light code theme"
+                                            track-name="lightCodeToggle" track-type="exampleCode"></button>
+                                </div>
+                            </devsite-code>
+                            <p>If you would like to customize how a property is referenced, you can provide a
+                                custom getter and setter. For example, if you would like to expose a property’s
+                                getter while restricting access to its setter, you can designate that setter as
+                                <code dir="ltr" translate="no">private</code>:</p>
+                            <devsite-code>
+                                <pre class="lang-kotlin" dir="ltr" is-upgraded="" translate="no"><code dir="ltr" translate="no"><span class="kwd">class</span><span
+                                        class="pln"> </span><span class="typ">Car</span><span class="pun">(</span><span class="kwd">val</span><span
+                                        class="pln"> wheels</span><span class="pun">:</span><span class="pln"> </span><span
+                                        class="typ">List</span><span class="pun">&lt;</span><span class="typ">Wheel</span><span
+                                        class="pun">&gt;)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br><br>&nbsp; &nbsp; </span><span
+                                        class="kwd">private</span><span class="pln"> </span><span class="kwd">val</span><span
+                                        class="pln"> doorLock</span><span class="pun">:</span><span class="pln"> </span><span
+                                        class="typ">DoorLock</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span
+                                        class="pun">...</span><span class="pln"><br><br>&nbsp; &nbsp; </span><span class="kwd">val</span><span
+                                        class="pln"> gallonsOfFuelInTank</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Int</span><span
+                                        class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">15</span><span
+                                        class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">private</span><span
+                                        class="pln"> </span><span class="kwd">set</span><span class="pln"><br><br>&nbsp; &nbsp; </span><span
+                                        class="kwd">fun</span><span class="pln"> unlockDoor</span><span class="pun">(</span><span
+                                        class="pln">key</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Key</span><span
+                                        class="pun">):</span><span class="pln"> </span><span class="typ">Boolean</span><span class="pln"> </span><span
+                                        class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">// Return true if key is valid for door lock, false otherwise</span><span
+                                        class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br></span><span class="pun">}</span><span
+                                        class="pln"><br></span></code></pre>
+                                <div class="devsite-code-buttons-container">
+                                    <button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events"
+                                            data-label="Click To Copy" data-title="Click to copy" track-name="clickToCopy"
+                                            track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+                                            data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" data-title="Dark code theme"
+                                            track-name="darkCodeToggle" track-type="exampleCode"></button>
+                                    <button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+                                            data-category="Site-Wide Custom Events" data-label="Light Code Toggle" data-title="Light code theme"
+                                            track-name="lightCodeToggle" track-type="exampleCode"></button>
+                                </div>
+                            </devsite-code>
+                            <p>With a combination of properties and functions, you can create classes that
+                                model all types of objects.</p>
+
+                            <devsite-heading back-to-top="" class="" for="interoperability" level="h2" link="" text="Interoperability" toc="">
+                                <h2 id="interoperability" is-upgraded="">Interoperability
+                                    <button class="devsite-heading-link button-flat material-icons" data-title="Copy link to this section"
+                                            role="button"></button>
+                                    <a class="devsite-back-to-top-link material-icons" data-title="Back to top" href="#top_of_page"></a></h2>
+                            </devsite-heading>
+
+                            <p>One of Kotlin’s most important features is its fluid interoperability with Java.
+                                Because Kotlin code compiles down to JVM bytecode, your Kotlin code can call
+                                directly into Java code and vice-versa. This means that you can leverage
+                                existing Java libraries directly from Kotlin. Furthermore, the majority of
+                                Android APIs are written in Java, and you can call them directly from Kotlin.</p>
+
+                            <p>Kotlin is a flexible, pragmatic language with growing support and momentum. We
+                                encourage you to give it a try if you haven’t yet. For next steps, take a look
+                                at the <a class="external" href="https://kotlinlang.org/">official Kotlin documentation</a>
+                                along with the guide on how to apply
+                                <a href="https://developer.android.com/kotlin/common-patterns">common Kotlin patterns</a> in your Android apps.</p>
+
+                        </div>
+
+
+                        <devsite-page-rating hover-rating-star="0" position="footer" selected-rating="0">
+                            <div>
+                                <div class="devsite-rating-caption">Was this page helpful?</div>
+                                <div class="devsite-rating-stars">
+                                    <div aria-label="Site content star ratings, rating 1 out of 5" class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons"
+                                         data-rating-val="1" data-title="Unusable documentation"
+                                         role="button"></div>
+                                    <div aria-label="Site content star ratings, rating 2 out of 5" class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons"
+                                         data-rating-val="2" data-title="Poor documentation"
+                                         role="button"></div>
+                                    <div aria-label="Site content star ratings, rating 3 out of 5" class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons"
+                                         data-rating-val="3" data-title="OK documentation" role="button"></div>
+                                    <div aria-label="Site content star ratings, rating 4 out of 5" class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons"
+                                         data-rating-val="4" data-title="Good documentation"
+                                         role="button"></div>
+                                    <div aria-label="Site content star ratings, rating 5 out of 5" class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons"
+                                         data-rating-val="5" data-title="Excellent documentation"
+                                         role="button"></div>
+                                </div>
+                                <div class="devsite-rating-internal"><span class="devsite-rating-stats"></span></div>
+                            </div>
+                        </devsite-page-rating>
+
+                    </article>
+                </article>
+
+                <devsite-content-footer class="nocontent">
+                    <p>Content and code samples on this page are subject to the licenses described in the <a
+                            href="https://developer.android.com/license">Content License</a>. Java is a registered trademark of Oracle and/or its
+                        affiliates.</p>
+                </devsite-content-footer>
+
+
+            </devsite-content>
+        </div>
+        <devsite-footer-promos class="devsite-footer">
+            <nav>
+                <ul class="devsite-footer-promos-list">
+                    <li class="devsite-footer-promo">
+                        <a class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events"
+                           data-label="Footer Twitter Promo" href="https://twitter.com/AndroidDev">
+                            <img alt="Twitter"
+                                 class="devsite-footer-promo-icon"
+                                 src="Learn%20the%20Kotlin%20programming%20language%20%C2%A0%20%C2%A0%20Android%20Developers_files/logo-twitter.svg">
+                            Twitter
+                        </a>
+                        <div class="devsite-footer-promo-description">Follow @AndroidDev on Twitter</div>
+                    </li>
+                    <li class="devsite-footer-promo">
+                        <a class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events"
+                           data-label="Footer YouTube Promo" href="https://www.youtube.com/user/androiddevelopers">
+                            <img alt="YouTube"
+                                 class="devsite-footer-promo-icon"
+                                 src="Learn%20the%20Kotlin%20programming%20language%20%C2%A0%20%C2%A0%20Android%20Developers_files/youtube_48dp.png">
+                            YouTube
+                        </a>
+                        <div class="devsite-footer-promo-description">Check out Android Developers on YouTube</div>
+                    </li>
+                </ul>
+            </nav>
+
+        </devsite-footer-promos>
+        <devsite-footer-linkboxes class="devsite-footer">
+            <nav class="devsite-footer-linkboxes nocontent">
+                <ul class="devsite-footer-linkboxes-list">
+                    <li class="devsite-footer-linkbox ">
+                        <h3 class="devsite-footer-linkbox-heading">More Android</h3>
+                        <ul class="devsite-footer-linkbox-list">
+                            <li class="devsite-footer-linkbox-item">
+                                <a class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)" href="https://www.android.com/">
+                                    Android
+                                </a>
+                            </li>
+                            <li class="devsite-footer-linkbox-item">
+                                <a class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)" href="https://www.android.com/enterprise/">
+                                    Enterprise
+                                </a>
+                            </li>
+                            <li class="devsite-footer-linkbox-item">
+                                <a class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)" href="https://www.android.com/security-center/">
+                                    Security
+                                </a>
+                            </li>
+                            <li class="devsite-footer-linkbox-item">
+                                <a class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)" href="https://source.android.com/">
+                                    Source
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="devsite-footer-linkbox ">
+                        <h3 class="devsite-footer-linkbox-heading">Support</h3>
+                        <ul class="devsite-footer-linkbox-list">
+                            <li class="devsite-footer-linkbox-item">
+                                <a class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)" href="https://issuetracker.google.com/issues/new?component=190923&amp;template=841312">
+                                    Report platform bug
+                                </a>
+                            </li>
+                            <li class="devsite-footer-linkbox-item">
+                                <a class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)" href="https://issuetracker.google.com/issues/new?component=192697">
+                                    Report documentation bug
+                                </a>
+                            </li>
+                            <li class="devsite-footer-linkbox-item">
+                                <a class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)" href="https://support.google.com/googleplay/android-developer">
+                                    Google Play support
+                                </a>
+                            </li>
+                            <li class="devsite-footer-linkbox-item">
+                                <a class="devsite-footer-linkbox-link
+                    gc-analytics-event"
+                                   data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)" href="https://google.qualtrics.com/jfe/form/SV_ewWXIoEVLBcyp7f??reserved=1&amp;utm_source=FooterLink&amp;Q_Language=en&amp;utm_medium=own_srch&amp;utm_campaign=developer.android.com&amp;utm_term=0&amp;utm_content=0&amp;productTag=reg&amp;campaignDate=may19&amp;pType=devel&amp;referral_code=gV420370">
+                                    Join research studies
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="devsite-footer-linkbox ">
+                        <h3 class="devsite-footer-linkbox-heading">Documentation</h3>
+                        <ul class="devsite-footer-linkbox-list">
+                            <li class="devsite-footer-linkbox-item">
+                                <a class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)" href="https://developer.android.com/guide">
+                                    Developer guides
+                                </a>
+                            </li>
+                            <li class="devsite-footer-linkbox-item">
+                                <a class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)" href="https://developer.android.com/design">
+                                    Design guides
+                                </a>
+                            </li>
+                            <li class="devsite-footer-linkbox-item">
+                                <a class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)" href="https://developer.android.com/reference">
+                                    API reference
+                                </a>
+                            </li>
+                            <li class="devsite-footer-linkbox-item">
+                                <a class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)" href="https://developer.android.com/samples">
+                                    Samples
+                                </a>
+                            </li>
+                            <li class="devsite-footer-linkbox-item">
+                                <a class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 5)" href="https://developer.android.com/studio/intro">
+                                    Android Studio
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </devsite-footer-linkboxes>
+        <devsite-footer-utility class="devsite-footer">
+
+            <div class="devsite-footer-utility">
+                <nav class="devsite-nav devsite-footer-sites">
+                    <a class="devsite-footer-sites-logo-link gc-analytics-event" data-category="Site-Wide Custom Events"
+                       data-label="Footer Google Developers Link" href="https://developers.google.com/">
+                        <img alt="Google Developers"
+                             class="devsite-footer-sites-logo"
+                             src="Learn%20the%20Kotlin%20programming%20language%20%C2%A0%20%C2%A0%20Android%20Developers_files/lockup-color.png">
+                    </a>
+                    <ul class="devsite-footer-sites-list">
+                        <li class="devsite-footer-sites-item">
+                            <a class="devsite-footer-sites-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Android Link" href="https://developer.android.com/">
+                                Android
+                            </a>
+                        </li>
+                        <li class="devsite-footer-sites-item">
+                            <a class="devsite-footer-sites-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Chrome Link" href="https://developer.chrome.com/home">
+                                Chrome
+                            </a>
+                        </li>
+                        <li class="devsite-footer-sites-item">
+                            <a class="devsite-footer-sites-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Firebase Link" href="https://firebase.google.com/">
+                                Firebase
+                            </a>
+                        </li>
+                        <li class="devsite-footer-sites-item">
+                            <a class="devsite-footer-sites-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Google Cloud Platform Link" href="https://cloud.google.com/">
+                                Google Cloud Platform
+                            </a>
+                        </li>
+                        <li class="devsite-footer-sites-item">
+                            <a class="devsite-footer-sites-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer All products Link" href="https://developers.google.com/products/">
+                                All products
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <nav class="devsite-nav">
+                    <ul class="devsite-footer-utility-list">
+                        <li class="devsite-footer-utility-item
+                 ">
+                            <a class="devsite-footer-utility-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Privacy link"
+                               href="https://policies.google.com/privacy">
+                                Privacy
+                            </a>
+                        </li>
+                        <li class="devsite-footer-utility-item
+                 ">
+                            <a class="devsite-footer-utility-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer License link"
+                               href="https://developer.android.com/license">
+                                License
+                            </a>
+                        </li>
+                        <li class="devsite-footer-utility-item
+                 ">
+                            <a class="devsite-footer-utility-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events"
+                               data-label="Footer Brand guidelines link" href="https://developer.android.com/distribute/marketing-tools/brand-guidelines">
+                                Brand guidelines
+                            </a>
+                        </li>
+                        <li class="devsite-footer-utility-item
+                 devsite-footer-utility-button">
+                            <span class="devsite-footer-utility-description">Get news and tips by email</span>
+                            <a class="devsite-footer-utility-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Subscribe link"
+                               href="https://developer.android.com/updates">
+                                Subscribe
+                            </a>
+                        </li>
+                    </ul>
+
+                    <devsite-language-selector>
+                        <devsite-select class="devsite-language-selector-menu">
+                            <select class="devsite-language-selector-select" name="language" track-name="click" track-type="languageSelector">
+                                <option selected="selected">Language</option>
+                                <option track-metadata-original-language="en" track-metadata-selected-language="id" track-name="changed" track-type="languageSelector"
+                                        value="id">
+                                    Bahasa Indonesia
+                                </option>
+                                <option track-metadata-original-language="en" track-metadata-selected-language="de" track-name="changed" track-type="languageSelector"
+                                        value="de">
+                                    Deutsch
+                                </option>
+                                <option track-metadata-original-language="en" track-metadata-selected-language="en" track-name="changed" track-type="languageSelector"
+                                        value="en">
+                                    English
+                                </option>
+                                <option track-metadata-original-language="en" track-metadata-selected-language="es" track-name="changed" track-type="languageSelector"
+                                        value="es">
+                                    Español
+                                </option>
+                                <option track-metadata-original-language="en" track-metadata-selected-language="es_419" track-name="changed"
+                                        track-type="languageSelector" value="es_419">
+                                    Español – América Latina
+                                </option>
+                                <option track-metadata-original-language="en" track-metadata-selected-language="fr" track-name="changed" track-type="languageSelector"
+                                        value="fr">
+                                    Français
+                                </option>
+                                <option track-metadata-original-language="en" track-metadata-selected-language="pt_br" track-name="changed"
+                                        track-type="languageSelector" value="pt_br">
+                                    Português – Brasil
+                                </option>
+                                <option track-metadata-original-language="en" track-metadata-selected-language="vi" track-name="changed" track-type="languageSelector"
+                                        value="vi">
+                                    Tiếng Việt
+                                </option>
+                                <option track-metadata-original-language="en" track-metadata-selected-language="tr" track-name="changed" track-type="languageSelector"
+                                        value="tr">
+                                    Türkçe
+                                </option>
+                                <option track-metadata-original-language="en" track-metadata-selected-language="ru" track-name="changed" track-type="languageSelector"
+                                        value="ru">
+                                    Русский
+                                </option>
+                                <option track-metadata-original-language="en" track-metadata-selected-language="th" track-name="changed" track-type="languageSelector"
+                                        value="th">
+                                    ภาษาไทย
+                                </option>
+                                <option track-metadata-original-language="en" track-metadata-selected-language="zh_cn" track-name="changed"
+                                        track-type="languageSelector" value="zh_cn">
+                                    中文 – 简体
+                                </option>
+                                <option track-metadata-original-language="en" track-metadata-selected-language="zh_tw" track-name="changed"
+                                        track-type="languageSelector" value="zh_tw">
+                                    中文 – 繁體
+                                </option>
+                                <option track-metadata-original-language="en" track-metadata-selected-language="ja" track-name="changed" track-type="languageSelector"
+                                        value="ja">
+                                    日本語
+                                </option>
+                                <option track-metadata-original-language="en" track-metadata-selected-language="ko" track-name="changed" track-type="languageSelector"
+                                        value="ko">
+                                    한국어
+                                </option>
+                            </select>
+                            <div class="devsite-select">
+                                <button class="devsite-select-toggle">Language</button>
+                                <ul class="devsite-select-list" scrollbars="">
+                                    <li class="devsite-select-item" data-index="0">Language</li>
+                                    <li class="devsite-select-item" data-index="1">Bahasa Indonesia</li>
+                                    <li class="devsite-select-item" data-index="2">Deutsch</li>
+                                    <li class="devsite-select-item" data-index="3">English</li>
+                                    <li class="devsite-select-item" data-index="4">Español</li>
+                                    <li class="devsite-select-item" data-index="5">Español – América Latina</li>
+                                    <li class="devsite-select-item" data-index="6">Français</li>
+                                    <li class="devsite-select-item" data-index="7">Português – Brasil</li>
+                                    <li class="devsite-select-item" data-index="8">Tiếng Việt</li>
+                                    <li class="devsite-select-item" data-index="9">Türkçe</li>
+                                    <li class="devsite-select-item" data-index="10">Русский</li>
+                                    <li class="devsite-select-item" data-index="11">ภาษาไทย</li>
+                                    <li class="devsite-select-item" data-index="12">中文 – 简体</li>
+                                    <li class="devsite-select-item" data-index="13">中文 – 繁體</li>
+                                    <li class="devsite-select-item" data-index="14">日本語</li>
+                                    <li class="devsite-select-item" data-index="15">한국어</li>
+                                </ul>
+                            </div>
+                        </devsite-select>
+                    </devsite-language-selector>
+
+                </nav>
+            </div>
+        </devsite-footer-utility>
+    </div>
+</div>
+<devsite-sitemask></devsite-sitemask>
+<devsite-snackbar type="cookie-notification">
+    <div class="devsite-snackbar-snack" show="" type="cookie-notification">
+        <div class="devsite-snackbar-inner">
+            <div class="devsite-snackbar-message">We serve cookies on this site to analyse traffic, remember your preferences, and optimise your
+                experience.
+            </div>
+            <a class="devsite-snackbar-link button" href="https://policies.google.com/technologies/cookies">More details</a>
+            <button class="devsite-snackbar-action">OK</button>
+        </div>
+    </div>
+</devsite-snackbar>
+<devsite-tooltip></devsite-tooltip>
+<devsite-analytics>
+    <script async="" src="Learn%20the%20Kotlin%20programming%20language%20%C2%A0%20%C2%A0%20Android%20Developers_files/app_loader.js"></script>
+    <script analytics="" type="application/json">[
+        {
+            "metrics": {
+                "ratings_value": "metric1",
+                "ratings_count": "metric2"
+            },
+            "dimensions": {
+                "dimension6": "en",
+                "dimension4": "Android Developers",
+                "dimension5": "en",
+                "dimension3": false,
+                "dimension1": "Signed out"
+            },
+            "gaid": "UA-5831155-1"
+        },
+        {
+            "metrics": {
+                "ratings_value": "metric1",
+                "ratings_count": "metric2"
+            },
+            "dimensions": {
+                "dimension6": "en",
+                "dimension4": "Android Developers",
+                "dimension5": "en",
+                "dimension3": false,
+                "dimension1": "Signed out"
+            },
+            "gaid": "UA-49880327-2"
+        }
+    ]</script>
+    <script gtm="" type="application/json">[
+        "GTM-KMSWPCJ"
+    ]</script>
+</devsite-analytics>
+<script>
+    (function (d, e, v, E, l, o, p, r, s, _, __) {
+        d['GoogleDevelopersObject'] = [!0, l, o, p, r, s];
+        _ = e.createElement(v);
+        _.async = 1;
+        _.src = E;
+        __ = e.getElementsByTagName(v)[0];
+        __.parentNode.insertBefore(_, __);
+    })(window, document, 'script',
+        'https://www.gstatic.com/devrel-devsite/vaf8baf42c0837f5f008e8c7cd622dab17fda7175a36251cef2ba8d3369798ea7/js/app_loader.js',
+        'en',
+        'https://www.gstatic.com/devrel-devsite/vaf8baf42c0837f5f008e8c7cd622dab17fda7175a36251cef2ba8d3369798ea7/android/js/devsite_app.js',
+        'https://www.gstatic.com/devrel-devsite/vaf8baf42c0837f5f008e8c7cd622dab17fda7175a36251cef2ba8d3369798ea7',
+        'https://www.gstatic.com/devrel-devsite/vaf8baf42c0837f5f008e8c7cd622dab17fda7175a36251cef2ba8d3369798ea7/android',
+        !1,
+        ['/_pwa/android/manifest.json',
+            '/_static/images/video-placeholder.svg',
+            'https://www.gstatic.com/devrel-devsite/vaf8baf42c0837f5f008e8c7cd622dab17fda7175a36251cef2ba8d3369798ea7/android/images/favicon.png', 'https://www.gstatic.com/devrel-devsite/vaf8baf42c0837f5f008e8c7cd622dab17fda7175a36251cef2ba8d3369798ea7/android/images/lockup.svg', 'https://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700|Material+Icons'],
+        'https://android-dot-devsite-v2-prod.appspot.com')
+</script>
+</body>
+</html>

@@ -1,0 +1,2024 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <title>Kotlin Programming Language</title>
+    <meta charset="utf-8">
+
+    <!-- Google Tag Manager -->
+    <script async="" src="Kotlin%20Programming%20Language_files/ec.js" type="text/javascript"></script>
+    <script async="" src="Kotlin%20Programming%20Language_files/linkid.js" type="text/javascript"></script>
+    <script async="" src="Kotlin%20Programming%20Language_files/analytics.js" type="text/javascript"></script>
+    <script async="" src="Kotlin%20Programming%20Language_files/gtm.js"></script>
+    <script>(function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5P98');</script>
+    <!-- End Google Tag Manager -->
+
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <link href="https://kotlinlang.org/assets/images/favicon.ico" rel="Shortcut Icon" type="image/x-icon">
+    <link href="https://kotlinlang.org/assets/images/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="https://kotlinlang.org/assets/images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+    <link href="https://kotlinlang.org/assets/images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+    <link href="https://kotlinlang.org/assets/images/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
+    <link href="Kotlin%20Programming%20Language_files/styles.css" rel="stylesheet">
+
+
+    <!-- Social Media tag Starts -->
+    <!-- Place this data between the <head> tags of your website -->
+    <!-- Open Graph data -->
+    <meta content="" property="og:title">
+    <meta content="website" property="og:type">
+    <meta content="https://kotlinlang.org/" property="og:url">
+    <meta content="https://kotlinlang.org/assets/images/open-graph/kotlin_250x250.png" property="og:image">
+    <meta content="" property="og:description">
+    <meta content="Kotlin" property="og:site_name">
+
+    <!-- Twitter Card data -->
+    <meta content="summary_large_image" name="twitter:card">
+    <meta content="@kotlin" name="twitter:site">
+    <meta content="" name="twitter:title">
+    <meta content="" name="twitter:description">
+    <meta content="https://kotlinlang.org/assets/images/twitter-card/kotlin_800x320.png" name="twitter:image:src">
+    <!-- Social Media tag Ends -->
+    <link href="Kotlin%20Programming%20Language_files/index.css" rel="stylesheet">
+    <style type="text/css">.k2js-iframe {
+        display: none;
+        padding-top: 2px
+    }
+
+    iframe {
+        border: none;
+        background: #fff;
+        width: 100%;
+        z-index: 10
+    }</style>
+    <style type="text/css">.CodeMirror {
+        font-family: monospace;
+        height: 300px;
+        color: #000;
+        direction: ltr
+    }
+
+    .CodeMirror-lines {
+        padding: 4px 0
+    }
+
+    .CodeMirror pre {
+        padding: 0 4px
+    }
+
+    .CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler {
+        background-color: #fff
+    }
+
+    .CodeMirror-gutters {
+        border-right: 1px solid #ddd;
+        background-color: #f7f7f7;
+        white-space: nowrap
+    }
+
+    .CodeMirror-linenumber {
+        padding: 0 3px 0 5px;
+        min-width: 20px;
+        text-align: right;
+        color: #999;
+        white-space: nowrap
+    }
+
+    .CodeMirror-guttermarker {
+        color: #000
+    }
+
+    .CodeMirror-guttermarker-subtle {
+        color: #999
+    }
+
+    .CodeMirror-cursor {
+        border-left: 1px solid #000;
+        border-right: none;
+        width: 0
+    }
+
+    .CodeMirror div.CodeMirror-secondarycursor {
+        border-left: 1px solid silver
+    }
+
+    .cm-fat-cursor .CodeMirror-cursor {
+        width: auto;
+        border: 0 !important;
+        background: #7e7
+    }
+
+    .cm-fat-cursor div.CodeMirror-cursors {
+        z-index: 1
+    }
+
+    .cm-fat-cursor-mark {
+        background-color: rgba(20, 255, 20, .5)
+    }
+
+    .cm-animate-fat-cursor, .cm-fat-cursor-mark {
+        -webkit-animation: blink 1.06s steps(1) infinite;
+        -moz-animation: blink 1.06s steps(1) infinite;
+        animation: blink 1.06s steps(1) infinite
+    }
+
+    .cm-animate-fat-cursor {
+        width: auto;
+        border: 0;
+        background-color: #7e7
+    }
+
+    @-moz-keyframes blink {
+        50% {
+            background-color: transparent
+        }
+    }
+
+    @-webkit-keyframes blink {
+        50% {
+            background-color: transparent
+        }
+    }
+
+    @keyframes blink {
+        50% {
+            background-color: transparent
+        }
+    }
+
+    .cm-tab {
+        display: inline-block;
+        text-decoration: inherit
+    }
+
+    .CodeMirror-rulers {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -50px;
+        bottom: -20px;
+        overflow: hidden
+    }
+
+    .CodeMirror-ruler {
+        border-left: 1px solid #ccc;
+        top: 0;
+        bottom: 0;
+        position: absolute
+    }
+
+    .cm-s-default .cm-header {
+        color: blue
+    }
+
+    .cm-s-default .cm-quote {
+        color: #090
+    }
+
+    .cm-negative {
+        color: #d44
+    }
+
+    .cm-positive {
+        color: #292
+    }
+
+    .cm-header, .cm-strong {
+        font-weight: 700
+    }
+
+    .cm-em {
+        font-style: italic
+    }
+
+    .cm-link {
+        text-decoration: underline
+    }
+
+    .cm-strikethrough {
+        text-decoration: line-through
+    }
+
+    .cm-s-default .cm-keyword {
+        color: #708
+    }
+
+    .cm-s-default .cm-atom {
+        color: #219
+    }
+
+    .cm-s-default .cm-number {
+        color: #164
+    }
+
+    .cm-s-default .cm-def {
+        color: #00f
+    }
+
+    .cm-s-default .cm-variable-2 {
+        color: #05a
+    }
+
+    .cm-s-default .cm-type, .cm-s-default .cm-variable-3 {
+        color: #085
+    }
+
+    .cm-s-default .cm-comment {
+        color: #a50
+    }
+
+    .cm-s-default .cm-string {
+        color: #a11
+    }
+
+    .cm-s-default .cm-string-2 {
+        color: #f50
+    }
+
+    .cm-s-default .cm-meta, .cm-s-default .cm-qualifier {
+        color: #555
+    }
+
+    .cm-s-default .cm-builtin {
+        color: #30a
+    }
+
+    .cm-s-default .cm-bracket {
+        color: #997
+    }
+
+    .cm-s-default .cm-tag {
+        color: #170
+    }
+
+    .cm-s-default .cm-attribute {
+        color: #00c
+    }
+
+    .cm-s-default .cm-hr {
+        color: #999
+    }
+
+    .cm-s-default .cm-link {
+        color: #00c
+    }
+
+    .cm-invalidchar, .cm-s-default .cm-error {
+        color: red
+    }
+
+    .CodeMirror-composing {
+        border-bottom: 2px solid
+    }
+
+    div.CodeMirror span.CodeMirror-matchingbracket {
+        color: #0b0
+    }
+
+    div.CodeMirror span.CodeMirror-nonmatchingbracket {
+        color: #a22
+    }
+
+    .CodeMirror-matchingtag {
+        background: rgba(255, 150, 0, .3)
+    }
+
+    .CodeMirror-activeline-background {
+        background: #e8f2ff
+    }
+
+    .CodeMirror {
+        position: relative;
+        overflow: hidden;
+        background: #fff
+    }
+
+    .CodeMirror-scroll {
+        overflow: scroll !important;
+        margin-bottom: -30px;
+        margin-right: -30px;
+        padding-bottom: 30px;
+        height: 100%;
+        outline: none;
+        position: relative
+    }
+
+    .CodeMirror-sizer {
+        position: relative;
+        border-right: 30px solid transparent
+    }
+
+    .CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar {
+        position: absolute;
+        z-index: 6;
+        display: none
+    }
+
+    .CodeMirror-vscrollbar {
+        right: 0;
+        top: 0;
+        overflow-x: hidden;
+        overflow-y: scroll
+    }
+
+    .CodeMirror-hscrollbar {
+        bottom: 0;
+        left: 0;
+        overflow-y: hidden;
+        overflow-x: scroll
+    }
+
+    .CodeMirror-scrollbar-filler {
+        right: 0;
+        bottom: 0
+    }
+
+    .CodeMirror-gutter-filler {
+        left: 0;
+        bottom: 0
+    }
+
+    .CodeMirror-gutters {
+        position: absolute;
+        left: 0;
+        top: 0;
+        min-height: 100%;
+        z-index: 3
+    }
+
+    .CodeMirror-gutter {
+        white-space: normal;
+        height: 100%;
+        display: inline-block;
+        vertical-align: top;
+        margin-bottom: -30px
+    }
+
+    .CodeMirror-gutter-wrapper {
+        position: absolute;
+        z-index: 4;
+        background: none !important;
+        border: none !important
+    }
+
+    .CodeMirror-gutter-background {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 4
+    }
+
+    .CodeMirror-gutter-elt {
+        position: absolute;
+        cursor: default;
+        z-index: 4
+    }
+
+    .CodeMirror-gutter-wrapper ::selection {
+        background-color: transparent
+    }
+
+    .CodeMirror-gutter-wrapper ::-moz-selection {
+        background-color: transparent
+    }
+
+    .CodeMirror-lines {
+        cursor: text;
+        min-height: 1px
+    }
+
+    .CodeMirror pre {
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+        border-radius: 0;
+        border-width: 0;
+        background: transparent;
+        font-family: inherit;
+        font-size: inherit;
+        margin: 0;
+        white-space: pre;
+        word-wrap: normal;
+        line-height: inherit;
+        color: inherit;
+        z-index: 2;
+        position: relative;
+        overflow: visible;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-font-variant-ligatures: contextual;
+        font-variant-ligatures: contextual
+    }
+
+    .CodeMirror-wrap pre {
+        word-wrap: break-word;
+        white-space: pre-wrap;
+        word-break: normal
+    }
+
+    .CodeMirror-linebackground {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 0
+    }
+
+    .CodeMirror-linewidget {
+        position: relative;
+        z-index: 2;
+        padding: .1px
+    }
+
+    .CodeMirror-rtl pre {
+        direction: rtl
+    }
+
+    .CodeMirror-code {
+        outline: none
+    }
+
+    .CodeMirror-gutter, .CodeMirror-gutters, .CodeMirror-linenumber, .CodeMirror-scroll, .CodeMirror-sizer {
+        -moz-box-sizing: content-box;
+        box-sizing: content-box
+    }
+
+    .CodeMirror-measure {
+        position: absolute;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        visibility: hidden
+    }
+
+    .CodeMirror-cursor {
+        position: absolute;
+        pointer-events: none
+    }
+
+    .CodeMirror-measure pre {
+        position: static
+    }
+
+    div.CodeMirror-cursors {
+        visibility: hidden;
+        position: relative;
+        z-index: 3
+    }
+
+    .CodeMirror-focused div.CodeMirror-cursors, div.CodeMirror-dragcursors {
+        visibility: visible
+    }
+
+    .CodeMirror-selected {
+        background: #d9d9d9
+    }
+
+    .CodeMirror-focused .CodeMirror-selected {
+        background: #d7d4f0
+    }
+
+    .CodeMirror-crosshair {
+        cursor: crosshair
+    }
+
+    .CodeMirror-line::selection, .CodeMirror-line > span::selection, .CodeMirror-line > span > span::selection {
+        background: #d7d4f0
+    }
+
+    .CodeMirror-line::-moz-selection, .CodeMirror-line > span::-moz-selection, .CodeMirror-line > span > span::-moz-selection {
+        background: #d7d4f0
+    }
+
+    .cm-searching {
+        background-color: #ffa;
+        background-color: rgba(255, 255, 0, .4)
+    }
+
+    .cm-force-border {
+        padding-right: .1px
+    }
+
+    @media print {
+        .CodeMirror div.CodeMirror-cursors {
+            visibility: hidden
+        }
+    }
+
+    .cm-tab-wrap-hack:after {
+        content: ""
+    }
+
+    span.CodeMirror-selectedtext {
+        background: none
+    }</style>
+    <style type="text/css">.cm-s-idea span.cm-meta {
+        color: olive
+    }
+
+    .cm-s-idea span.cm-number {
+        color: #00f
+    }
+
+    .cm-s-idea span.cm-keyword {
+        line-height: 1em;
+        font-weight: 700;
+        color: navy
+    }
+
+    .cm-s-idea span.cm-atom {
+        font-weight: 700;
+        color: navy
+    }
+
+    .cm-s-idea span.cm-def, .cm-s-idea span.cm-operator, .cm-s-idea span.cm-property, .cm-s-idea span.cm-type, .cm-s-idea span.cm-variable, .cm-s-idea span.cm-variable-2, .cm-s-idea span.cm-variable-3 {
+        color: #000
+    }
+
+    .cm-s-idea span.cm-comment {
+        color: gray
+    }
+
+    .cm-s-idea span.cm-string, .cm-s-idea span.cm-string-2 {
+        color: green
+    }
+
+    .cm-s-idea span.cm-qualifier {
+        color: #555
+    }
+
+    .cm-s-idea span.cm-error {
+        color: red
+    }
+
+    .cm-s-idea span.cm-attribute {
+        color: #00f
+    }
+
+    .cm-s-idea span.cm-tag {
+        color: navy
+    }
+
+    .cm-s-idea span.cm-link {
+        color: #00f
+    }
+
+    .cm-s-idea .CodeMirror-activeline-background {
+        background: #fffae3
+    }
+
+    .cm-s-idea span.cm-builtin {
+        color: #30a
+    }
+
+    .cm-s-idea span.cm-bracket {
+        color: #cc7
+    }
+
+    .cm-s-idea {
+        font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif
+    }
+
+    .cm-s-idea .CodeMirror-matchingbracket {
+        outline: 1px solid grey;
+        color: #000 !important
+    }
+
+    .CodeMirror-hints.idea {
+        font-family: Menlo, Monaco, Consolas, Courier New, monospace;
+        color: #616569;
+        background-color: #ebf3fd !important
+    }
+
+    .CodeMirror-hints.idea .CodeMirror-hint-active {
+        background-color: #a2b8c9 !important;
+        color: #5c6065 !important
+    }</style>
+    <style type="text/css">.cm-s-darcula span.cm-meta {
+        color: #bbb529
+    }
+
+    .cm-s-darcula span.cm-number {
+        color: #6897bb
+    }
+
+    .cm-s-darcula span.cm-keyword {
+        line-height: 1em;
+        font-weight: 700;
+        color: #cc7832
+    }
+
+    .cm-s-darcula span.cm-def {
+        color: #ffc66d
+    }
+
+    .cm-s-darcula span.cm-operator, .cm-s-darcula span.cm-property, .cm-s-darcula span.cm-type, .cm-s-darcula span.cm-variable, .cm-s-darcula span.cm-variable-2, .cm-s-darcula span.cm-variable-3 {
+        color: #a9b7c6
+    }
+
+    .cm-s-darcula span.cm-string, .cm-s-darcula span.cm-string-2 {
+        color: #6a8759
+    }
+
+    .cm-s-darcula span.cm-comment {
+        color: gray
+    }
+
+    .cm-s-darcula span.cm-link {
+        color: #287bde
+    }
+
+    .cm-s-darcula span.cm-atom {
+        font-weight: 700;
+        color: #cc7832
+    }
+
+    .cm-s-darcula span.cm-error {
+        color: #bc3f3c
+    }
+
+    .cm-s-darcula span.cm-tag {
+        color: #cc7832
+    }
+
+    .cm-s-darcula span.cm-attribute, .cm-s-darcula span.cm-qualifier {
+        color: #6a8759
+    }
+
+    .cm-s-darcula span.cm-bracket {
+        color: #a9b7c6
+    }
+
+    .cm-s-darcula.CodeMirror {
+        background: #2b2b2b;
+        color: #a9b7c6
+    }
+
+    .cm-s-darcula .CodeMirror-cursor {
+        border-left: 1px solid #ddd
+    }
+
+    .cm-s-darcula .CodeMirror-activeline-background {
+        background: #3a3a3a
+    }
+
+    .cm-s-darcula div.CodeMirror-selected {
+        background: #085a9c
+    }
+
+    .cm-s-darcula .CodeMirror-gutters {
+        background: #484848;
+        border-right: 1px solid grey;
+        color: #606366
+    }
+
+    .cm-s-darcula span.cm-builtin {
+        color: #a9b7c6
+    }
+
+    .cm-s-darcula {
+        font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif
+    }
+
+    .cm-s-darcula .CodeMirror-matchingbracket {
+        background-color: #3b514d;
+        color: #ff0 !important
+    }
+
+    .CodeMirror-hints.darcula {
+        font-family: Menlo, Monaco, Consolas, Courier New, monospace;
+        color: #9c9e9e;
+        background-color: #3b3e3f !important
+    }
+
+    .CodeMirror-hints.darcula .CodeMirror-hint-active {
+        background-color: #494d4e !important;
+        color: #9c9e9e !important
+    }</style>
+    <style type="text/css">.CodeMirror-simplescroll-horizontal div, .CodeMirror-simplescroll-vertical div {
+        position: absolute;
+        background: #ccc;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        border: 1px solid #bbb;
+        border-radius: 2px
+    }
+
+    .CodeMirror-simplescroll-horizontal, .CodeMirror-simplescroll-vertical {
+        position: absolute;
+        z-index: 6;
+        background: #eee
+    }
+
+    .CodeMirror-simplescroll-horizontal {
+        bottom: 0;
+        left: 0;
+        height: 8px
+    }
+
+    .CodeMirror-simplescroll-horizontal div {
+        bottom: 0;
+        height: 100%
+    }
+
+    .CodeMirror-simplescroll-vertical {
+        right: 0;
+        top: 0;
+        width: 8px
+    }
+
+    .CodeMirror-simplescroll-vertical div {
+        right: 0;
+        width: 100%
+    }
+
+    .CodeMirror-overlayscroll .CodeMirror-gutter-filler, .CodeMirror-overlayscroll .CodeMirror-scrollbar-filler {
+        display: none
+    }
+
+    .CodeMirror-overlayscroll-horizontal div, .CodeMirror-overlayscroll-vertical div {
+        position: absolute;
+        background: #bcd;
+        border-radius: 3px
+    }
+
+    .CodeMirror-overlayscroll-horizontal, .CodeMirror-overlayscroll-vertical {
+        position: absolute;
+        z-index: 6
+    }
+
+    .CodeMirror-overlayscroll-horizontal {
+        bottom: 0;
+        left: 0;
+        height: 6px
+    }
+
+    .CodeMirror-overlayscroll-horizontal div {
+        bottom: 0;
+        height: 100%
+    }
+
+    .CodeMirror-overlayscroll-vertical {
+        right: 0;
+        top: 0;
+        width: 6px
+    }
+
+    .CodeMirror-overlayscroll-vertical div {
+        right: 0;
+        width: 100%
+    }</style>
+    <style type="text/css">.executable-fragment-wrapper {
+        margin-bottom: 20px;
+        position: relative
+    }
+
+    .executable-fragment {
+        border: 1px solid #eaeaec
+    }
+
+    .hidden-dependency {
+        display: none
+    }
+
+    .executable-fragment.darcula {
+        background-color: #313336
+    }
+
+    .CodeMirror {
+        height: auto
+    }
+
+    .CodeMirror pre {
+        line-height: 16.8px;
+        margin-bottom: 0 !important
+    }
+
+    .CodeMirror .CodeMirror-overlayscroll-horizontal div, .CodeMirror .CodeMirror-overlayscroll-vertical div {
+        display: none
+    }
+
+    .CodeMirror:hover .CodeMirror-overlayscroll-horizontal div, .CodeMirror:hover .CodeMirror-overlayscroll-vertical div {
+        display: block;
+        background: #afb1b3
+    }
+
+    .CodeMirror-lines {
+        padding: 0;
+        margin: 12px 0
+    }
+
+    .CodeMirror-gutter {
+        height: auto
+    }
+
+    .CodeMirror {
+        line-height: 1.4;
+        font-family: menlo, consolas, monospace;
+        font-size: 12px
+    }
+
+    .CodeMirror-linenumber {
+        min-width: 0;
+        text-align: center
+    }
+
+    .CodeMirror-linebackground.unmodifiable-line {
+        background-color: #eaeaec
+    }
+
+    .CodeMirror-linebackground.unmodifiable-line-dark {
+        background-color: #3c3f43
+    }
+
+    .markPlaceholder {
+        border-top: 1px solid #167dff;
+        border-bottom: 1px solid #167dff
+    }
+
+    .markPlaceholder-start {
+        border-left: 1px solid #167dff
+    }
+
+    .markPlaceholder-end {
+        border-right: 1px solid #167dff
+    }
+
+    .run-button {
+        position: absolute;
+        z-index: 10;
+        right: 5px;
+        top: 5px;
+        height: 20px;
+        width: 16px;
+        cursor: pointer;
+        background: url("data:image/svg+xml,%3C?xml version='1.0' encoding='utf-8'?%3E %3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 16.996 20.999' enable-background='new 0 0 16.996 20.999' xml:space='preserve'%3E %3Cpolygon fill='%2338B058' points='16.996,10.499 0,20.999 0,0 '/%3E %3C/svg%3E");
+        background-size: cover;
+        background-repeat: no-repeat
+    }
+
+    .run-button._disabled {
+        cursor: default;
+        opacity: .5
+    }
+
+    .loader {
+        position: relative;
+        width: 15px;
+        height: 15px;
+        margin: 0 auto;
+        border-radius: 50%;
+        text-indent: -9999em;
+        color: #161616;
+        font-size: 8px;
+        opacity: .7;
+        animation: loader 1s infinite ease-in-out;
+        animation-delay: .16s
+    }
+
+    .loader.darcula {
+        opacity: 1;
+        color: #696969
+    }
+
+    .loader:before {
+        left: -3.5em;
+        animation-delay: 0s;
+        animation: loader 1s infinite ease-in-out
+    }
+
+    .loader:after, .loader:before {
+        position: absolute;
+        width: 15px;
+        border-radius: 50%;
+        height: 15px;
+        content: ""
+    }
+
+    .loader:after {
+        left: 3.5em;
+        animation-delay: .32s;
+        animation: loader 1s infinite ease-in-out
+    }
+
+    @keyframes loader {
+        to {
+            box-shadow: 0 2.5em 0 -1.3em
+        }
+        80% {
+            box-shadow: 0 2.5em 0 -1.3em
+        }
+        0% {
+            box-shadow: 0 2.5em 0 -1.3em
+        }
+        40% {
+            box-shadow: 0 2.5em 0 0
+        }
+    }
+
+    .cm__ERROR {
+        color: #ec5424 !important
+    }
+
+    .errors-and-warnings-gutter {
+        width: 16px
+    }
+
+    .ERRORgutter {
+        background: url("https://try.kotlinlang.org/static/images/icons_all_sprite.svg") no-repeat -150px -500px
+    }
+
+    .ERRORgutter, .WARNINGgutter {
+        height: 13px;
+        width: 13px;
+        margin-top: 2px;
+        margin-left: 2px
+    }
+
+    .WARNINGgutter {
+        background: url("https://try.kotlinlang.org/static/images/icons_all_sprite.svg") no-repeat -150px -600px
+    }
+
+    .cm__red_wavy_line {
+        background: url(http://try.kotlinlang.org/static/images/wavyline-red.gif) repeat-x 100% 100% !important;
+        padding-bottom: 2px
+    }
+
+    .cm__green_wavy_line {
+        background: url(http://try.kotlinlang.org/static/images/wavyline-green.gif) repeat-x 100% 100% !important;
+        padding-bottom: 2px
+    }
+
+    .output-wrapper {
+        border-top: 1px solid #eaeaec;
+        min-height: 60px;
+        font-size: 14px;
+        background-color: #fff
+    }
+
+    .output-wrapper.darcula {
+        background-color: #313336;
+        border-top: 1px solid grey;
+        color: #afb1b3
+    }
+
+    .code-output {
+        font-family: Liberation Mono, Consolas, Menlo, Courier, monospace;
+        overflow: auto;
+        padding-left: 10px;
+        padding-top: 15px
+    }
+
+    .standard-output.darcula {
+        color: #afb1b3
+    }
+
+    .error-output {
+        white-space: pre-wrap;
+        color: #ec5424;
+        min-height: 1.4em;
+        margin: 0;
+        vertical-align: top
+    }
+
+    .error-output.darcula {
+        color: #ec5424
+    }
+
+    .standard-output {
+        color: #000;
+        margin: 0
+    }
+
+    .standard-output, .test-passed {
+        white-space: pre;
+        min-height: 1.4em;
+        vertical-align: top
+    }
+
+    .test-passed {
+        color: #4dbb5f
+    }
+
+    .console-close {
+        position: absolute;
+        right: 1px;
+        margin-top: 1px;
+        width: 16px;
+        height: 16px;
+        background: #afb1b3 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E %3Ctitle%3Eicons_all_sprite%3C/title%3E %3Cg id='Layer_4' data-name='Layer 4'%3E %3Cpolygon points='13.5 12.125 9.375 8 13.5 3.875 12.125 2.5 8 6.625 3.875 2.5 2.5 3.875 6.625 8 2.5 12.125 3.875 13.5 8 9.375 12.125 13.5 13.5 12.125' fill='%23ffffff' opacity='0.9'/%3E %3C/g%3E %3C/svg%3E")
+    }
+
+    .console-close.darcula {
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E %3Ctitle%3Eicons_all_sprite%3C/title%3E %3Cg id='Layer_4' data-name='Layer 4'%3E %3Cpolygon points='13.5 12.125 9.375 8 13.5 3.875 12.125 2.5 8 6.625 3.875 2.5 2.5 3.875 6.625 8 2.5 12.125 3.875 13.5 8 9.375 12.125 13.5 13.5 12.125' fill='%23ffffff' opacity='0.9'/%3E %3C/g%3E %3C/svg%3E")
+    }
+
+    .console-close:hover {
+        background-color: dimgray
+    }
+
+    .console-close.darcula:hover {
+        background-color: #ec5424
+    }
+
+    .test-error, .test-fail {
+        color: #ec5424;
+        min-height: 1.4em;
+        vertical-align: top
+    }
+
+    .console-block {
+        display: flex
+    }
+
+    .console-icon {
+        margin-top: 2px;
+        padding-right: 20px;
+        width: 15px;
+        height: 15px
+    }
+
+    .console-icon.attention {
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E %3Ctitle%3Eicons_all_sprite%3C/title%3E %3Cg id='Layer_4' data-name='Layer 4'%3E %3Cg%3E %3Ccircle cx='8' cy='8' r='6' fill='%23e05219' opacity='0.9' style='isolation: isolate'/%3E %3Cpath d='M8.99609,4.98828V6.48193a.4905.4905,0,0,1-.00976.09619L8.28174,9H7.71045L7.00586,6.57812A.44233.44233,0,0,1,7,6.521V5c0-.26465,0-.99023.47559-.99023h1.041C9,4.00977,8.99609,4.72363,8.99609,4.98828Zm-.10547,5.9329L8.42627,10.31a.47056.47056,0,0,0-.37354-.18943H7.94092a.47078.47078,0,0,0-.374.18943l-.46435.61117A.52557.52557,0,0,0,7,11.22882v.28184A.49088.49088,0,0,0,7.47607,12h1.041a.49312.49312,0,0,0,.479-.50638l.00049-.25447A.52333.52333,0,0,0,8.89062,10.92118Z' fill='%23fff'/%3E %3C/g%3E %3C/g%3E %3C/svg%3E") no-repeat
+    }
+
+    .console-icon.passed {
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E %3Ctitle%3Eicons_all_sprite%3C/title%3E %3Cg id='Layer_4' data-name='Layer 4'%3E %3Ccircle cx='8' cy='8' r='7' fill='%234ca01f' opacity='0.9' style='isolation: isolate'/%3E %3Cpolygon points='12.808 6.205 11.5 5.025 7.486 9.625 4.346 6.077 3.125 7.182 7.5 12 12.808 6.205' fill='%23fff'/%3E %3C/g%3E %3C/svg%3E") no-repeat
+    }
+
+    .console-icon.fail {
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E %3Ctitle%3Eicons_all_sprite%3C/title%3E %3Cg id='Layer_4' data-name='Layer 4'%3E %3Cg style='isolation: isolate'%3E %3Ccircle cx='7.5' cy='7.5' r='6.5' fill='%23e05219'/%3E %3C/g%3E %3Cpolygon points='10.328 9.621 8.207 7.5 10.328 5.379 9.621 4.672 7.5 6.793 5.379 4.672 4.672 5.379 6.793 7.5 4.672 9.621 5.379 10.328 7.5 8.207 9.621 10.328 10.328 9.621' fill='%23fff'/%3E %3C/g%3E %3C/svg%3E") no-repeat
+    }
+
+    .console-icon.error {
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E %3Ctitle%3Eicons_all_sprite%3C/title%3E %3Cg id='Layer_4' data-name='Layer 4'%3E %3Cg style='isolation: isolate'%3E %3Ccircle cx='7.5' cy='7.5' r='6.5' fill='%23e05219'/%3E %3C/g%3E %3Cpolygon points='10.328 9.621 8.207 7.5 10.328 5.379 9.621 4.672 7.5 6.793 5.379 4.672 4.672 5.379 6.793 7.5 4.672 9.621 5.379 10.328 7.5 8.207 9.621 10.328 10.328 9.621' fill='%23fff'/%3E %3C/g%3E %3C/svg%3E") no-repeat
+    }
+
+    .test-time {
+        float: right;
+        font-size: 10px;
+        color: #afb1b3;
+        margin-right: 20px;
+        margin-top: -14px
+    }
+
+    .stacktrace-element {
+        margin-left: 20px
+    }
+
+    .stacktrace-element .stacktrace-link {
+        color: #167dff;
+        cursor: pointer
+    }
+
+    .stacktrace-element .stacktrace-link:hover {
+        text-decoration: underline
+    }
+
+    .CodeMirror-foldgutter {
+        position: absolute;
+        width: 100%
+    }
+
+    .CodeMirror-foldgutter-folded {
+        width: 100%;
+        background: #fff
+    }
+
+    .fold-button {
+        position: absolute;
+        height: 19px;
+        width: 31px;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        cursor: pointer;
+        background: transparent url("data:image/svg+xml,%3C!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E %3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 31 19' enable-background='new 0 0 31 19' xml:space='preserve'%3E %3Cg%3E %3Cpath fill='%23FFFFFF' d='M21.5,19h-12C4.253,19,0,14.747,0,9.5v0C0,4.253,4.253,0,9.5,0h12C26.747,0,31,4.253,31,9.5v0 C31,14.747,26.747,19,21.5,19z' /%3E %3Cpath class='data-fill' fill='%23d4d4d4' d='M21.5,1C26.187,1,30,4.813,30,9.5c0,4.687-3.813,8.5-8.5,8.5h-12C4.813,18,1,14.187,1,9.5 C1,4.813,4.813,1,9.5,1H21.5 M21.5,0h-12C4.253,0,0,4.253,0,9.5v0C0,14.747,4.253,19,9.5,19h12c5.247,0,9.5-4.253,9.5-9.5v0 C31,4.253,26.747,0,21.5,0L21.5,0z' /%3E %3C/g%3E %3Cg%3E %3Cg%3E %3Crect x='10' y='9' fill='%23FFFFFF' width='11' height='1' /%3E %3Cpolygon class='data-fill' fill='%23d4d4d4' points='21,9 10,9 10,10 21,10 21,9 ' /%3E %3C/g%3E %3Cg%3E %3Crect x='10' y='9' transform='matrix(-1.836970e-16 1 -1 -1.836970e-16 25 -6)' fill='%23FFFFFF' width='11' height='1' /%3E %3Cpolygon class='data-fill' fill='%23d4d4d4' points='16,4 15,4 15,15 16,15 16,4 ' /%3E %3C/g%3E %3C/g%3E %3C/svg%3E") no-repeat
+    }
+
+    .fold-button._hover {
+        background-image: url("data:image/svg+xml,%3C!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E %3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 31 19' enable-background='new 0 0 31 19' xml:space='preserve'%3E %3Cg%3E %3Cpath fill='%23FFFFFF' d='M21.5,19h-12C4.253,19,0,14.747,0,9.5v0C0,4.253,4.253,0,9.5,0h12C26.747,0,31,4.253,31,9.5v0 C31,14.747,26.747,19,21.5,19z' /%3E %3Cpath class='data-fill' fill='%23f68322' d='M21.5,1C26.187,1,30,4.813,30,9.5c0,4.687-3.813,8.5-8.5,8.5h-12C4.813,18,1,14.187,1,9.5 C1,4.813,4.813,1,9.5,1H21.5 M21.5,0h-12C4.253,0,0,4.253,0,9.5v0C0,14.747,4.253,19,9.5,19h12c5.247,0,9.5-4.253,9.5-9.5v0 C31,4.253,26.747,0,21.5,0L21.5,0z' /%3E %3C/g%3E %3Cg%3E %3Cg%3E %3Crect x='10' y='9' fill='%23FFFFFF' width='11' height='1' /%3E %3Cpolygon class='data-fill' fill='%23f68322' points='21,9 10,9 10,10 21,10 21,9 ' /%3E %3C/g%3E %3Cg%3E %3Crect x='10' y='9' transform='matrix(-1.836970e-16 1 -1 -1.836970e-16 25 -6)' fill='%23FFFFFF' width='11' height='1' /%3E %3Cpolygon class='data-fill' fill='%23f68322' points='16,4 15,4 15,15 16,15 16,4 ' /%3E %3C/g%3E %3C/g%3E %3C/svg%3E")
+    }
+
+    .fold-button.darcula {
+        background: url("data:image/svg+xml,%3C?xml version='1.0' encoding='utf-8'?%3E %3C!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E %3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 31 19' enable-background='new 0 0 31 19' xml:space='preserve'%3E %3Cg%3E %3Cpath fill='%232B2B2B' d='M21.5,19h-12C4.253,19,0,14.747,0,9.5v0C0,4.253,4.253,0,9.5,0h12C26.747,0,31,4.253,31,9.5v0 C31,14.747,26.747,19,21.5,19z'/%3E %3Cpath class='data-fill' fill='%23ffffff' d='M21.5,1C26.187,1,30,4.813,30,9.5c0,4.687-3.813,8.5-8.5,8.5h-12C4.813,18,1,14.187,1,9.5 C1,4.813,4.813,1,9.5,1H21.5 M21.5,0h-12C4.253,0,0,4.253,0,9.5v0C0,14.747,4.253,19,9.5,19h12c5.247,0,9.5-4.253,9.5-9.5v0 C31,4.253,26.747,0,21.5,0L21.5,0z'/%3E %3C/g%3E %3Cg%3E %3Cg%3E %3Crect x='10' y='9' fill='%23EAEAEC' width='11' height='1'/%3E %3Cpolygon class='data-fill' fill='%23EAEAEC' points='21,9 10,9 10,10 21,10 21,9 '/%3E %3C/g%3E %3Cg%3E %3Crect x='10' y='9' transform='matrix(-1.836970e-16 1 -1 -1.836970e-16 25 -6)' fill='%23EAEAEC' width='11' height='1'/%3E %3Cpolygon class='data-fill' fill='%23EAEAEC' points='16,4 15,4 15,15 16,15 16,4 '/%3E %3C/g%3E %3C/g%3E %3C/svg%3E") no-repeat
+    }
+
+    .fold-button.darcula._hover {
+        background-image: url("data:image/svg+xml,%3C!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E %3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 31 19' enable-background='new 0 0 31 19' xml:space='preserve'%3E %3Cg%3E %3Cpath fill='%232B2B2B' d='M21.5,19h-12C4.253,19,0,14.747,0,9.5v0C0,4.253,4.253,0,9.5,0h12C26.747,0,31,4.253,31,9.5v0 C31,14.747,26.747,19,21.5,19z' /%3E %3Cpath class='data-fill' fill='%23f68322' d='M21.5,1C26.187,1,30,4.813,30,9.5c0,4.687-3.813,8.5-8.5,8.5h-12C4.813,18,1,14.187,1,9.5 C1,4.813,4.813,1,9.5,1H21.5 M21.5,0h-12C4.253,0,0,4.253,0,9.5v0C0,14.747,4.253,19,9.5,19h12c5.247,0,9.5-4.253,9.5-9.5v0 C31,4.253,26.747,0,21.5,0L21.5,0z' /%3E %3C/g%3E %3Cg%3E %3Cg%3E %3Crect x='10' y='9' fill='%23EAEAEC' width='11' height='1' /%3E %3Cpolygon class='data-fill' fill='%23f68322' points='21,9 10,9 10,10 21,10 21,9 ' /%3E %3C/g%3E %3Cg%3E %3Crect x='10' y='9' transform='matrix(-1.836970e-16 1 -1 -1.836970e-16 25 -6)' fill='%23EAEAEC' width='11' height='1' /%3E %3Cpolygon class='data-fill' fill='%23f68322' points='16,4 15,4 15,15 16,15 16,4 ' /%3E %3C/g%3E %3C/g%3E %3C/svg%3E")
+    }
+
+    ._unfolded .fold-button {
+        background-image: url("data:image/svg+xml,%3C!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E %3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 31 19' enable-background='new 0 0 31 19' xml:space='preserve'%3E %3Cg%3E %3Cpath fill='%23FFFFFF' d='M21.5,19h-12C4.253,19,0,14.747,0,9.5v0C0,4.253,4.253,0,9.5,0h12C26.747,0,31,4.253,31,9.5v0 C31,14.747,26.747,19,21.5,19z' /%3E %3Cpath class='data-fill' fill='%23d4d4d4' d='M21.5,1C26.187,1,30,4.813,30,9.5c0,4.687-3.813,8.5-8.5,8.5h-12C4.813,18,1,14.187,1,9.5 C1,4.813,4.813,1,9.5,1H21.5 M21.5,0h-12C4.253,0,0,4.253,0,9.5v0C0,14.747,4.253,19,9.5,19h12c5.247,0,9.5-4.253,9.5-9.5v0 C31,4.253,26.747,0,21.5,0L21.5,0z' /%3E %3C/g%3E %3Cg%3E %3Cg%3E %3Crect x='10' y='9' transform='matrix(0.7071 0.7071 -0.7071 0.7071 11.2574 -8.1777)' fill='%23FFFFFF' width='11' height='1' /%3E %3Cpolygon class='data-fill' fill='%23d4d4d4' points='11.964,5.257 11.257,5.964 19.036,13.743 19.743,13.036 11.964,5.257 ' /%3E %3C/g%3E %3Cg%3E %3Crect x='10' y='9' transform='matrix(-0.7071 0.7071 -0.7071 -0.7071 33.1777 5.2574)' fill='%23FFFFFF' width='11' height='1' /%3E %3Cpolygon class='data-fill' fill='%23d4d4d4' points='19.036,5.257 11.257,13.036 11.964,13.743 19.743,5.964 19.036,5.257 ' /%3E %3C/g%3E %3C/g%3E %3C/svg%3E")
+    }
+
+    ._unfolded .fold-button._hover {
+        background-image: url("data:image/svg+xml,%3C!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E %3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 31 19' enable-background='new 0 0 31 19' xml:space='preserve'%3E %3Cg%3E %3Cpath fill='%23FFFFFF' d='M21.5,19h-12C4.253,19,0,14.747,0,9.5v0C0,4.253,4.253,0,9.5,0h12C26.747,0,31,4.253,31,9.5v0 C31,14.747,26.747,19,21.5,19z' /%3E %3Cpath class='data-fill' fill='%23f68322' d='M21.5,1C26.187,1,30,4.813,30,9.5c0,4.687-3.813,8.5-8.5,8.5h-12C4.813,18,1,14.187,1,9.5 C1,4.813,4.813,1,9.5,1H21.5 M21.5,0h-12C4.253,0,0,4.253,0,9.5v0C0,14.747,4.253,19,9.5,19h12c5.247,0,9.5-4.253,9.5-9.5v0 C31,4.253,26.747,0,21.5,0L21.5,0z' /%3E %3C/g%3E %3Cg%3E %3Cg%3E %3Crect x='10' y='9' transform='matrix(0.7071 0.7071 -0.7071 0.7071 11.2574 -8.1777)' fill='%23FFFFFF' width='11' height='1' /%3E %3Cpolygon class='data-fill' fill='%23f68322' points='11.964,5.257 11.257,5.964 19.036,13.743 19.743,13.036 11.964,5.257 ' /%3E %3C/g%3E %3Cg%3E %3Crect x='10' y='9' transform='matrix(-0.7071 0.7071 -0.7071 -0.7071 33.1777 5.2574)' fill='%23FFFFFF' width='11' height='1' /%3E %3Cpolygon class='data-fill' fill='%23f68322' points='19.036,5.257 11.257,13.036 11.964,13.743 19.743,5.964 19.036,5.257 ' /%3E %3C/g%3E %3C/g%3E %3C/svg%3E")
+    }
+
+    ._unfolded .fold-button.darcula {
+        background: url("data:image/svg+xml,%3C?xml version='1.0' encoding='utf-8'?%3E %3C!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E %3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 31 19' enable-background='new 0 0 31 19' xml:space='preserve'%3E %3Cg%3E %3Cpath fill='%232B2B2B' d='M21.5,19h-12C4.253,19,0,14.747,0,9.5v0C0,4.253,4.253,0,9.5,0h12C26.747,0,31,4.253,31,9.5v0 C31,14.747,26.747,19,21.5,19z'/%3E %3Cpath class='data-fill' fill='%23EAEAEC' d='M21.5,1C26.187,1,30,4.813,30,9.5c0,4.687-3.813,8.5-8.5,8.5h-12C4.813,18,1,14.187,1,9.5 C1,4.813,4.813,1,9.5,1H21.5 M21.5,0h-12C4.253,0,0,4.253,0,9.5v0C0,14.747,4.253,19,9.5,19h12c5.247,0,9.5-4.253,9.5-9.5v0 C31,4.253,26.747,0,21.5,0L21.5,0z'/%3E %3C/g%3E %3Cg%3E %3Cg%3E %3Crect x='10' y='9' transform='matrix(0.7071 0.7071 -0.7071 0.7071 11.2574 -8.1777)' fill='%23FFFFFF' width='11' height='1'/%3E %3Cpolygon class='data-fill' fill='%23EAEAEC' points='11.964,5.257 11.257,5.964 19.036,13.743 19.743,13.036 11.964,5.257 '/%3E %3C/g%3E %3Cg%3E %3Crect x='10' y='9' transform='matrix(-0.7071 0.7071 -0.7071 -0.7071 33.1777 5.2574)' fill='%23FFFFFF' width='11' height='1'/%3E %3Cpolygon class='data-fill' fill='%23EAEAEC' points='19.036,5.257 11.257,13.036 11.964,13.743 19.743,5.964 19.036,5.257 '/%3E %3C/g%3E %3C/g%3E %3C/svg%3E") no-repeat
+    }
+
+    ._unfolded .fold-button.darcula._hover {
+        background-image: url("data:image/svg+xml,%3C!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E %3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 31 19' enable-background='new 0 0 31 19' xml:space='preserve'%3E %3Cg%3E %3Cpath fill='%232B2B2B' d='M21.5,19h-12C4.253,19,0,14.747,0,9.5v0C0,4.253,4.253,0,9.5,0h12C26.747,0,31,4.253,31,9.5v0 C31,14.747,26.747,19,21.5,19z' /%3E %3Cpath class='data-fill' fill='%23f68322' d='M21.5,1C26.187,1,30,4.813,30,9.5c0,4.687-3.813,8.5-8.5,8.5h-12C4.813,18,1,14.187,1,9.5 C1,4.813,4.813,1,9.5,1H21.5 M21.5,0h-12C4.253,0,0,4.253,0,9.5v0C0,14.747,4.253,19,9.5,19h12c5.247,0,9.5-4.253,9.5-9.5v0 C31,4.253,26.747,0,21.5,0L21.5,0z' /%3E %3C/g%3E %3Cg%3E %3Cg%3E %3Crect x='10' y='9' transform='matrix(0.7071 0.7071 -0.7071 0.7071 11.2574 -8.1777)' fill='%23FFFFFF' width='11' height='1' /%3E %3Cpolygon class='data-fill' fill='%23f68322' points='11.964,5.257 11.257,5.964 19.036,13.743 19.743,13.036 11.964,5.257 ' /%3E %3C/g%3E %3Cg%3E %3Crect x='10' y='9' transform='matrix(-0.7071 0.7071 -0.7071 -0.7071 33.1777 5.2574)' fill='%23FFFFFF' width='11' height='1' /%3E %3Cpolygon class='data-fill' fill='%23f68322' points='19.036,5.257 11.257,13.036 11.964,13.743 19.743,5.964 19.036,5.257 ' /%3E %3C/g%3E %3C/g%3E %3C/svg%3E")
+    }
+
+    .code-area {
+        position: relative
+    }
+
+    .compiler-info {
+        position: absolute;
+        right: 0;
+        font-size: 10px;
+        color: #afb1b3
+    }
+
+    .compiler-info span {
+        margin-left: 15px
+    }
+
+    .CodeMirror-hints {
+        padding-left: 0 !important;
+        border: 1px solid #afb1b3;
+        border-radius: 4px;
+        list-style: none;
+        position: absolute;
+        background-color: #f7f7f7;
+        overflow-y: hidden;
+        z-index: 10;
+        max-height: 20em;
+        box-shadow: 2px 3px 5px rgba(0, 0, 0, .2)
+    }
+
+    .CodeMirror-hint {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        padding-right: 5px;
+        padding-left: 5px
+    }
+
+    li.CodeMirror-hint-active {
+        background-color: #d8d8d8;
+        color: #000
+    }
+
+    .CodeMirror-hint .name {
+        margin-right: 20px
+    }
+
+    .CodeMirror-hint .tail {
+        margin-left: auto;
+        margin-right: 5px
+    }
+
+    .CodeMirror-hint .icon {
+        height: 16px;
+        width: 16px;
+        margin-right: 5px
+    }
+
+    .icon {
+        background: url("https://try.kotlinlang.org/static/images/icons_all_sprite.svg")
+    }
+
+    .icon.class {
+        background: url("https://try.kotlinlang.org/static/images/completion_class.svg")
+    }
+
+    .icon.package {
+        background: url("https://try.kotlinlang.org/static/images/completion_package.svg")
+    }
+
+    .icon.method {
+        background: url("https://try.kotlinlang.org/static/images/completion_method.svg")
+    }
+
+    .icon.genericValue {
+        background: url("https://try.kotlinlang.org/static/images/completion_generic.svg")
+    }
+
+    .icon.property {
+        background: url("https://try.kotlinlang.org/static/images/completion_property.svg")
+    }</style>
+</head>
+<body class="page_index">
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe height="0"
+            src="https://www.googletagmanager.com/ns.html?id=GTM-5P98" style="display:none;visibility:hidden" width="0"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="global-layout">
+    <div class="global-header-panel banner-nav" style="display: block;">
+        <div class="g-layout">
+            <div class="global-nav banner-container">
+                <a class="banner-text" href="http://everywhere.kotlinlang.org/" target="_blank">
+                    <div class="banner-item title">
+                        Kotlin/Everywhere Events
+                    </div>
+                    <div class="banner-item underline">
+                        Join in
+                    </div>
+                </a>
+                <div class="close-head-banner"></div>
+            </div>
+        </div>
+    </div>
+    <header class="global-header">
+        <div class="global-header-panel">
+            <div class="g-layout">
+                <a class="global-header-logo" href="https://kotlinlang.org/">Kotlin</a>
+                <nav class="global-nav">
+                    <div class="nav-links">
+                        <a class="nav-item" href="https://kotlinlang.org/docs/reference/">
+                            Learn
+                        </a>
+                        <a class="nav-item" href="https://kotlinlang.org/community/">
+                            Community
+                        </a>
+                        <a class="nav-item" href="https://play.kotlinlang.org/">
+                            Try Online
+                        </a>
+                    </div>
+
+                    <div class="extra-nav social-links">
+                        <a class="link link-github" href="https://github.com/JetBrains/kotlin" target="_blank" title="Source Code on GitHub">
+                            <i class="link-icon icon-github"></i>
+                        </a>
+
+                        <a class="link link-twitter" href="https://twitter.com/kotlin" target="_blank" title="Kotlin on Twitter">
+                            <i class="link-icon icon-twitter"></i>
+                        </a>
+
+                        <a class="link link-forum" href="https://discuss.kotlinlang.org/" title="Kotlin Forum">
+                            <i class="link-icon icon-forum"></i>
+                        </a>
+                    </div>
+                    <div class="search-button">
+                        <div class="icon"></div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="banner-main">
+            <div class="g-layout">
+                <div class="kotlin-info">
+                    <div class="info-row-1"><a class="kotlin-info-button" href="https://kotlinconf.com/"></a></div>
+                    <div class="info-row-2"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="g-layout">
+            <h2 class="banner-header">Kotlin 1.3 <a class="kotlin-whats" href="https://kotlinlang.org/docs/reference/whatsnew13.html">Released</a>
+            </h2>
+            <div class="kotlin-slides">
+                <div class="slides-container">
+                    <div class="slide-item slide-1">
+                        <a href="https://kotlinlang.org/docs/reference/native-overview.html">Kotlin/Native
+                            <div class="slide-footer">reached beta</div>
+                        </a>
+                    </div>
+                    <div class="slide-item slide-2">
+                        <a href="https://kotlinlang.org/docs/reference/coroutines-overview.html">Coroutines
+                            <div class="slide-footer">are now stable</div>
+                        </a>
+                    </div>
+                    <div class="slide-item slide-3">
+
+                        <a href="https://kotlinlang.org/docs/reference/multiplatform.html">Multiplatform
+                            <div class="slide-footer">code reuse</div>
+                        </a>
+                    </div>
+                    <div class="slide-item slide-4">
+                        <a href="https://kotlinlang.org/docs/reference/">Learning Kits
+                            <div class="slide-footer">start easily</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+    <section class="kotlin-overview-section _works-on">
+        <h2 class="section-header">Programming language for</h2>
+        <div class="works-on-list"><a class="works-on-item" href="https://kotlinlang.org/docs/reference/server-overview.html">
+            <div class="works-on-icon _jvm"></div>
+            <div class="works-on-text">
+                JVM<br>&nbsp;
+            </div>
+        </a>
+            <a class="works-on-item" href="https://kotlinlang.org/docs/reference/android-overview.html">
+                <div class="works-on-icon _android"></div>
+                <div class="works-on-text">
+                    Android<br>&nbsp;
+                </div>
+            </a>
+            <a class="works-on-item" href="https://kotlinlang.org/docs/reference/js-overview.html">
+                <div class="works-on-icon _browser"></div>
+                <div class="works-on-text">
+                    Browser<br>&nbsp;
+                </div>
+            </a>
+            <a class="works-on-item" href="https://kotlinlang.org/docs/reference/native-overview.html">
+                <div class="works-on-icon _native"></div>
+                <div class="works-on-text">
+                    Native<br>&nbsp;
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="kotlin-overview-section _features">
+        <h2 class="section-header">Why Kotlin?</h2>
+        <div class="section-content">
+            <ul class="kotlin-features-list">
+                <li class="kotlin-feature _concise js-popup-open-button" data-popup-id="kotlin-feature_concise">
+                    <div class="feature-image">
+                        <div class="feature-icon _concise"></div>
+                    </div>
+                    <h3 class="feature-title">Concise</h3>
+                    <p class="feature-description">Drastically reduce the amount of boilerplate code.</p>
+                    <span class="feature-example-link">See example</span>
+                </li>
+                <li class="kotlin-feature _safe js-popup-open-button" data-popup-id="kotlin-feature_safe">
+                    <div class="feature-image">
+                        <div class="feature-icon _safe"></div>
+                    </div>
+                    <h3 class="feature-title">Safe</h3>
+                    <p class="feature-description">Avoid entire classes of errors such as null pointer exceptions.</p>
+                    <span class="feature-example-link">See example</span>
+                </li>
+                <li class="kotlin-feature _interoperable js-popup-open-button" data-popup-id="kotlin-feature_interoperable">
+                    <div class="feature-image">
+                        <div class="feature-icon _interoperable"></div>
+                    </div>
+                    <h3 class="feature-title">Interoperable</h3>
+                    <p class="feature-description">Leverage existing libraries for the JVM, Android, and the browser.</p>
+                    <span class="feature-example-link">See example</span>
+                </li>
+                <li class="kotlin-feature _tool-friendly js-popup-open-button" data-popup-id="kotlin-feature_tool-friendly">
+                    <div class="feature-image">
+                        <div class="feature-icon _tool-friendly"></div>
+                    </div>
+                    <h3 class="feature-title">Tool-friendly</h3>
+                    <p class="feature-description">Choose any Java IDE or build from the command line.</p>
+                    <span class="feature-example-link">See example</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="overview-popup overview-popup_concise _hidden js-popup" id="kotlin-feature_concise">
+            <div class="popup-content">
+                <h3 id="concise">Concise</h3>
+                <p>Create a POJO with getters, setters, <code>equals()</code>, <code>hashCode()</code>, <code>toString()</code> and
+                    <code>copy()</code> in a single line:</p>
+                <pre><code class="code _highlighted" data-lang="text/x-kotlin">data class Customer(val name: String, val email: String, val company: String)
+</code></pre>
+                <p>Or filter a list using a lambda expression:</p>
+                <pre><code class="code _highlighted" data-lang="text/x-kotlin">val positiveNumbers = list.filter { it &gt; 0 }
+</code></pre>
+                <p>Want a singleton? Create an object:</p>
+                <pre><code class="code _highlighted" data-lang="text/x-kotlin">object ThisIsASingleton {
+    val companyName: String = "JetBrains"
+}
+</code></pre>
+
+            </div>
+
+            <div class="popup-close-button js-popup-close-button" data-popup-id="kotlin-feature_concise"></div>
+        </div>
+        <div class="overview-popup-overlay"></div>
+        <div class="overview-popup overview-popup_safe _hidden js-popup" id="kotlin-feature_safe">
+            <div class="popup-content">
+                <h3 id="safe">Safe</h3>
+                <p>Get rid of those pesky NullPointerExceptions, you know, The Billion Dollar Mistake</p>
+                <pre><code class="code _highlighted" data-lang="text/x-kotlin">var output: String
+output = null   // Compilation error
+</code></pre>
+                <p>Kotlin protects you from mistakenly operating on nullable types</p>
+                <pre><code class="code _highlighted" data-lang="text/x-kotlin">val name: String? = null    // Nullable type
+println(name.length())      // Compilation error
+</code></pre>
+                <p>And if you check a type is right, the compiler will auto-cast it for you</p>
+                <pre><code class="code _highlighted" data-lang="text/x-kotlin">fun calculateTotal(obj: Any) {
+    if (obj is Invoice)
+        obj.calculateTotal()
+}
+</code></pre>
+
+            </div>
+
+            <div class="popup-close-button js-popup-close-button" data-popup-id="kotlin-feature_safe"></div>
+        </div>
+        <div class="overview-popup-overlay"></div>
+        <div class="overview-popup overview-popup_interoperable _hidden js-popup" id="kotlin-feature_interoperable">
+            <div class="popup-content">
+
+                <h3 id="interoperable">Interoperable</h3>
+                <p>Use any existing library on the JVM, as there’s 100% compatibility, including SAM support.</p>
+                <pre><code class="code _highlighted" data-lang="text/x-kotlin">import io.reactivex.Flowable
+import io.reactivex.schedulers.Schedulers
+
+Flowable
+    .fromCallable {
+        Thread.sleep(1000) //  imitate expensive computation
+        "Done"
+    }
+    .subscribeOn(Schedulers.io())
+    .observeOn(Schedulers.single())
+    .subscribe(::println, Throwable::printStackTrace)
+</code></pre>
+                <p>Target either the JVM or JavaScript. Write code in Kotlin and decide where you want to deploy to</p>
+                <pre><code class="code _highlighted" data-lang="text/x-kotlin">import kotlin.browser.window
+
+fun onLoad() {
+    window.document.body!!.innerHTML += "&lt;br/&gt;Hello, Kotlin!"
+}
+</code></pre>
+
+            </div>
+
+            <div class="popup-close-button js-popup-close-button" data-popup-id="kotlin-feature_interoperable"></div>
+        </div>
+        <div class="overview-popup-overlay"></div>
+        <div class="overview-popup overview-popup_tool-friendly _hidden js-popup" id="kotlin-feature_tool-friendly">
+            <div class="popup-content">
+                <h3 id="tooling">Tooling</h3>
+                <p>A language needs tooling and at JetBrains, it's what we do best!</p>
+                <p class="image-block"><img alt="Tooling" src="Kotlin%20Programming%20Language_files/tooling1.png"
+                                            srcset="/assets/images/index/features/tooling/tooling1%402x.png 2x"></p>
+                <p class="image-block"><img alt="Tooling" src="Kotlin%20Programming%20Language_files/tooling2.png"
+                                            srcset="/assets/images/index/features/tooling/tooling2%402x.png 2x"></p>
+
+            </div>
+
+            <div class="popup-close-button js-popup-close-button" data-popup-id="kotlin-feature_tool-friendly"></div>
+        </div>
+        <div class="overview-popup-overlay"></div>
+
+    </section>
+
+    <h2 class="overview-header">Try Kotlin</h2>
+    <section class="kotlin-overview-section _code-examples">
+        <div class="kotlin-overview-code-example-tabs">
+            <div class="g-layout overview-group">
+                <div class="tab is_active js-tab" data-tab-id="kotlin-code-example-simplest">
+                    <div class="text">Simplest version</div>
+                </div>
+                <div class="tab js-tab" data-tab-id="kotlin-code-example-object-oriented">
+                    <div class="tab-text">An Object-oriented Hello</div>
+                </div>
+                <div class="tab js-tab" data-tab-id="kotlin-code-example-coroutine">
+                    <div class="tab-text">Coroutines</div>
+                </div>
+                <a class="tab overview-examples" href="https://play.kotlinlang.org/byExample/overview">
+                    <div class="tab-text">More examples</div>
+                    <span class="more-examples-icon"></span>
+                </a>
+
+            </div>
+            <div class="kotlin-overview-code-example" id="kotlin-code-example-simplest">
+                <div auto-indent="true" class="sample" data-kotlin-playground-initialized="true" data-min-compiler-version="1.3" style="display: none;"
+                     theme="darcula">
+                    package hello
+
+                    fun main() {
+                    println("Hello World")
+                    }
+                </div>
+                <div>
+                    <div class="executable-fragment-wrapper">
+                        <div class="executable-fragment darcula">
+                            <div class="run-button "></div><!--if-->
+                            <div class="code-area _folded"><!--if--><textarea style="display: none;"></textarea>
+                                <div class="CodeMirror cm-s-darcula CodeMirror-overlayscroll">
+                                    <div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 12px; left: 20px;"><textarea
+                                            autocapitalize="off"
+                                            autocorrect="off" spellcheck="false" style="position: absolute; bottom: -1em; padding: 0px; width: 1px; height: 1em; outline: currentcolor none medium;" tabindex="0" wrap="off"></textarea></div>
+                                    <div class="CodeMirror-overlayscroll-horizontal" cm-not-content="true" style="display: none;">
+                                        <div></div>
+                                    </div>
+                                    <div class="CodeMirror-overlayscroll-vertical" cm-not-content="true" style="display: none;">
+                                        <div></div>
+                                    </div>
+                                    <div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div>
+                                    <div class="CodeMirror-gutter-filler" cm-not-content="true"></div>
+                                    <div class="CodeMirror-scroll" draggable="true" tabindex="-1">
+                                        <div class="CodeMirror-sizer"
+                                             style="margin-left: 16px; margin-bottom: -16px; border-right-width: 14px; min-height: 175px; min-width: 371px; padding-right: 0px; padding-bottom: 0px;">
+                                            <div style="position: relative; top: 0px;">
+                                                <div class="CodeMirror-lines" role="presentation">
+                                                    <div role="presentation" style="position: relative; outline: currentcolor none medium;">
+                                                        <div class="CodeMirror-measure"><span><span>​</span>x</span></div>
+                                                        <div class="CodeMirror-measure"></div>
+                                                        <div style="position: relative; z-index: 1;"></div>
+                                                        <div class="CodeMirror-cursors">
+                                                            <div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 35px;">&nbsp;</div>
+                                                        </div>
+                                                        <div class="CodeMirror-code" role="presentation" style="">
+                                                            <pre class=" CodeMirror-line " role="presentation"><span role="presentation"><span
+                                                                    class="cm-keyword">package</span> <span
+                                                                    class="cm-variable">hello</span></span></pre>
+                                                            <pre class=" CodeMirror-line " role="presentation"><span role="presentation"><span
+                                                                    cm-text="">​</span></span></pre>
+                                                            <pre class=" CodeMirror-line " role="presentation"><span role="presentation"><span
+                                                                    class="cm-keyword">fun</span> <span class="cm-def">main</span>() {</span></pre>
+                                                            <pre class=" CodeMirror-line " role="presentation"><span role="presentation">    <span
+                                                                    class="cm-variable">println</span>(<span
+                                                                    class="cm-string">"Hello World"</span>)</span></pre>
+                                                            <pre class=" CodeMirror-line " role="presentation"><span
+                                                                    role="presentation">}</span></pre>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="position: absolute; height: 14px; width: 1px; border-bottom: 0px solid transparent; top: 175px;"></div>
+                                        <div class="CodeMirror-gutters" style="height: 189px; left: 0px;">
+                                            <div class="CodeMirror-gutter errors-and-warnings-gutter"></div>
+                                            <div class="CodeMirror-gutter CodeMirror-foldgutter"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!--if-->
+                            <div class="js-code-output-canvas-placeholder"></div>
+                        </div>
+                        <div class="compiler-info"><span>Target platform: JVM</span><span>Running on kotlin v. 1.3.41</span></div><!--if--></div>
+                </div>
+
+            </div>
+
+            <!-- code example -->
+            <div class="kotlin-overview-code-example is_hidden" id="kotlin-code-example-object-oriented">
+                <div args="Kotlin" auto-indent="true" class="sample" data-kotlin-playground-initialized="true" data-min-compiler-version="1.3" style="display: none;"
+                     theme="darcula">
+                    class Greeter(val name: String) {
+                    fun greet() {
+                    println("Hello, $name")
+                    }
+                    }
+
+                    fun main(args: Array&lt;String&gt;) {
+                    Greeter(args[0]).greet()
+                    }
+                </div>
+                <div>
+                    <div class="executable-fragment-wrapper">
+                        <div class="executable-fragment darcula">
+                            <div class="run-button "></div><!--if-->
+                            <div class="code-area _folded"><!--if--><textarea style="display: none;"></textarea>
+                                <div class="CodeMirror cm-s-darcula CodeMirror-overlayscroll">
+                                    <div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 12px; left: 20px;"><textarea
+                                            autocapitalize="off"
+                                            autocorrect="off" spellcheck="false" style="position: absolute; bottom: -1em; padding: 0px; width: 1px; height: 1em; outline: currentcolor none medium;" tabindex="0" wrap="off"></textarea></div>
+                                    <div class="CodeMirror-overlayscroll-horizontal" cm-not-content="true" style="display: none;">
+                                        <div></div>
+                                    </div>
+                                    <div class="CodeMirror-overlayscroll-vertical" cm-not-content="true" style="display: none;">
+                                        <div></div>
+                                    </div>
+                                    <div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div>
+                                    <div class="CodeMirror-gutter-filler" cm-not-content="true"></div>
+                                    <div class="CodeMirror-scroll" draggable="true" tabindex="-1">
+                                        <div class="CodeMirror-sizer"
+                                             style="margin-left: 16px; margin-bottom: -16px; border-right-width: 14px; min-height: 315px; min-width: 469px; padding-right: 0px; padding-bottom: 0px;">
+                                            <div style="position: relative; top: 0px;">
+                                                <div class="CodeMirror-lines" role="presentation">
+                                                    <div role="presentation" style="position: relative; outline: currentcolor none medium;">
+                                                        <div class="CodeMirror-measure"></div>
+                                                        <div class="CodeMirror-measure"></div>
+                                                        <div style="position: relative; z-index: 1;"></div>
+                                                        <div class="CodeMirror-cursors">
+                                                            <div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 35px;">&nbsp;</div>
+                                                        </div>
+                                                        <div class="CodeMirror-code" role="presentation" style="">
+                                                            <pre class=" CodeMirror-line " role="presentation"><span role="presentation"><span
+                                                                    class="cm-keyword">class</span> <span class="cm-def">Greeter</span>(<span
+                                                                    class="cm-keyword">val</span> <span class="cm-def">name</span>: <span
+                                                                    class="cm-type">String</span>) {</span></pre>
+                                                            <pre class=" CodeMirror-line " role="presentation"><span role="presentation">    <span
+                                                                    class="cm-keyword">fun</span> <span class="cm-def">greet</span>() {</span></pre>
+                                                            <pre class=" CodeMirror-line " role="presentation"><span role="presentation">        <span
+                                                                    class="cm-variable">println</span>(<span class="cm-string">"Hello, $name"</span>)</span></pre>
+                                                            <pre class=" CodeMirror-line " role="presentation"><span role="presentation">    }</span></pre>
+                                                            <pre class=" CodeMirror-line " role="presentation"><span
+                                                                    role="presentation">}</span></pre>
+                                                            <pre class=" CodeMirror-line " role="presentation"><span role="presentation"><span
+                                                                    cm-text="">​</span></span></pre>
+                                                            <pre class=" CodeMirror-line " role="presentation"><span role="presentation"><span
+                                                                    class="cm-keyword">fun</span> <span class="cm-def">main</span>(<span
+                                                                    class="cm-variable">args</span>: <span class="cm-variable">Array</span><span
+                                                                    class="cm-operator">&lt;</span><span class="cm-type">String</span><span
+                                                                    class="cm-operator">&gt;</span>) {</span></pre>
+                                                            <pre class=" CodeMirror-line " role="presentation"><span role="presentation">    <span
+                                                                    class="cm-variable">Greeter</span>(<span class="cm-variable">args</span>[<span
+                                                                    class="cm-number">0</span>]).<span class="cm-variable">greet</span>()</span></pre>
+                                                            <pre class=" CodeMirror-line " role="presentation"><span
+                                                                    role="presentation">}</span></pre>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="position: absolute; height: 14px; width: 1px; border-bottom: 0px solid transparent; top: 315px;"></div>
+                                        <div class="CodeMirror-gutters" style="height: 329px; left: 0px;">
+                                            <div class="CodeMirror-gutter errors-and-warnings-gutter"></div>
+                                            <div class="CodeMirror-gutter CodeMirror-foldgutter"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!--if-->
+                            <div class="js-code-output-canvas-placeholder"></div>
+                        </div>
+                        <div class="compiler-info"><span>Target platform: JVM</span><span>Running on kotlin v. 1.3.41</span></div><!--if--></div>
+                </div>
+            </div>
+            <!-- code example -->
+            <div class="kotlin-overview-code-example is_hidden" id="kotlin-code-example-coroutine">
+                <div auto-indent="true" class="sample" data-kotlin-playground-initialized="true" data-min-compiler-version="1.3" folded-button="false" style="display: none;"
+                     theme="darcula">
+                    import kotlinx.coroutines.*
+                    //sampleStart
+                    suspend fun main() = coroutineScope {
+                    for (i in 0 until 10) {
+                    launch {
+                    delay(1000L - i * 10)
+                    print("❤️$i ")
+                    }
+                    }
+                    }
+                    //sampleEnd
+                </div>
+                <div>
+                    <div class="executable-fragment-wrapper">
+                        <div class="executable-fragment darcula">
+                            <div class="run-button "></div><!--if-->
+                            <div class="code-area _folded"><!--if--><textarea style="display: none;"></textarea>
+                                <div class="CodeMirror cm-s-darcula CodeMirror-overlayscroll">
+                                    <div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 12px; left: 20px;"><textarea
+                                            autocapitalize="off"
+                                            autocorrect="off" spellcheck="false" style="position: absolute; bottom: -1em; padding: 0px; width: 1px; height: 1em; outline: currentcolor none medium;" tabindex="0" wrap="off"></textarea></div>
+                                    <div class="CodeMirror-overlayscroll-horizontal" cm-not-content="true" style="display: none;">
+                                        <div></div>
+                                    </div>
+                                    <div class="CodeMirror-overlayscroll-vertical" cm-not-content="true" style="display: none;">
+                                        <div></div>
+                                    </div>
+                                    <div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div>
+                                    <div class="CodeMirror-gutter-filler" cm-not-content="true"></div>
+                                    <div class="CodeMirror-scroll" draggable="true" tabindex="-1">
+                                        <div class="CodeMirror-sizer"
+                                             style="margin-left: 16px; margin-bottom: -16px; border-right-width: 14px; min-height: 315px; min-width: 525px; padding-right: 0px; padding-bottom: 0px;">
+                                            <div style="position: relative; top: 0px;">
+                                                <div class="CodeMirror-lines" role="presentation">
+                                                    <div role="presentation" style="position: relative; outline: currentcolor none medium;">
+                                                        <div class="CodeMirror-measure"></div>
+                                                        <div class="CodeMirror-measure"></div>
+                                                        <div style="position: relative; z-index: 1;"></div>
+                                                        <div class="CodeMirror-cursors">
+                                                            <div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 35px;">&nbsp;</div>
+                                                        </div>
+                                                        <div class="CodeMirror-code" role="presentation" style="">
+                                                            <pre class=" CodeMirror-line " role="presentation"><span role="presentation"><span
+                                                                    class="cm-keyword">suspend</span> <span class="cm-keyword">fun</span> <span
+                                                                    class="cm-def">main</span>() <span class="cm-operator">=</span> <span
+                                                                    class="cm-variable">coroutineScope</span> {</span></pre>
+                                                            <pre class=" CodeMirror-line " role="presentation"><span role="presentation">    <span
+                                                                    class="cm-keyword">for</span> (<span class="cm-variable">i</span> <span
+                                                                    class="cm-keyword">in</span> <span class="cm-number">0</span> <span
+                                                                    class="cm-variable">until</span> <span class="cm-number">10</span>) {</span></pre>
+                                                            <pre class=" CodeMirror-line " role="presentation"><span role="presentation">        <span
+                                                                    class="cm-variable">launch</span> {</span></pre>
+                                                            <pre class=" CodeMirror-line " role="presentation"><span
+                                                                    role="presentation">            <span class="cm-variable">delay</span>(<span
+                                                                    class="cm-number">1000L</span> <span class="cm-operator">-</span> <span
+                                                                    class="cm-variable">i</span> <span class="cm-operator">*</span> <span
+                                                                    class="cm-number">10</span>)</span></pre>
+                                                            <pre class=" CodeMirror-line " role="presentation"><span
+                                                                    role="presentation">            <span class="cm-variable">print</span>(<span
+                                                                    class="cm-string">"❤️$i "</span>)</span></pre>
+                                                            <pre class=" CodeMirror-line " role="presentation"><span
+                                                                    role="presentation">        }</span></pre>
+                                                            <pre class=" CodeMirror-line " role="presentation"><span role="presentation">    }</span></pre>
+                                                            <pre class=" CodeMirror-line " role="presentation"><span
+                                                                    role="presentation">}</span></pre>
+                                                            <pre class=" CodeMirror-line " role="presentation"><span role="presentation"><span
+                                                                    cm-text="">​</span></span></pre>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="position: absolute; height: 14px; width: 1px; border-bottom: 0px solid transparent; top: 315px;"></div>
+                                        <div class="CodeMirror-gutters" style="height: 329px; left: 0px;">
+                                            <div class="CodeMirror-gutter errors-and-warnings-gutter"></div>
+                                            <div class="CodeMirror-gutter CodeMirror-foldgutter"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!--if-->
+                            <div class="js-code-output-canvas-placeholder"></div>
+                        </div>
+                        <div class="compiler-info"><span>Target platform: JVM</span><span>Running on kotlin v. 1.3.41</span></div><!--if--></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="section-description">
+        Explore Kotlin code samples<br>and solve problems
+        directly in the browser<br>
+        <a class="try-button" href="https://play.kotlinlang.org/" target="_blank">Try online</a>
+    </div>
+    <section class="kotlin-overview-section _get-kotlin" id="get-kotlin">
+        <div class="section-content">
+            <div class="get-kotlin-options-list">
+                <div class="option-item _intellij-idea">
+                    <div class="option-image">
+                        <div class="jetbrains-logo _logo-intellij-idea _size-2"></div>
+                    </div>
+                    <div class="option-title-pre-text">Use</div>
+                    <h3 class="option-title">IntelliJ IDEA</h3>
+
+                    <p class="option-description">
+                        Bundled with Community Edition or IntelliJ IDEA Ultimate
+                    </p>
+
+                    <div class="option-link-wrap">
+                        <a class="option-link" href="https://kotlinlang.org/docs/tutorials/getting-started.html">
+                            Instructions
+                        </a>
+                    </div>
+                </div>
+
+                <div class="option-item">
+                    <div class="option-image _android-studio"></div>
+                    <div class="option-title-pre-text">Use</div>
+                    <h3 class="option-title">Android Studio</h3>
+
+                    <p class="option-description">
+                        Bundled with <a href="https://developer.android.com/studio/" target="_blank">Studio 3.0</a>, plugin available for earlier
+                        versions
+                    </p>
+
+
+                    <div class="option-link-wrap">
+                        <a class="option-link" href="https://kotlinlang.org/docs/tutorials/kotlin-android.html">
+                            Instructions
+                        </a>
+                    </div>
+                </div>
+
+                <div class="option-item">
+                    <div class="option-image _eclipse"></div>
+                    <div class="option-title-pre-text">Use</div>
+                    <h3 class="option-title">Eclipse</h3>
+
+                    <p class="option-description">
+                        Install the plugin from the Eclipse Marketplace
+                    </p>
+
+                    <div class="option-link-wrap">
+                        <a class="option-link" href="https://kotlinlang.org/docs/tutorials/getting-started-eclipse.html">
+                            Instructions
+                        </a>
+                    </div>
+                </div>
+
+                <div class="option-item _standalone-compiler">
+                    <div class="option-image _standalone-compiler"></div>
+                    <div class="option-title-pre-text">Standalone</div>
+                    <h3 class="option-title">Compiler</h3>
+
+                    <p class="option-description">
+                        Use any editor and build from the command line
+                    </p>
+
+                    <div class="option-link-wrap">
+                        <a class="option-link" href="https://kotlinlang.org/docs/tutorials/command-line.html">Download Compiler</a>
+                    </div>
+                </div>
+            </div>
+            <p class="kotlin-version">Latest version: 1.3.41</p>
+        </div>
+    </section>
+
+    <section class="kotlin-overview-section _testimonials">
+        <h2 class="section-header">Kotlin Usage Highlights</h2>
+
+        <div class="testimonials-layout">
+            <div class="testimonials">
+                <div class="testimonial">
+                    <h3 class="testimonial-header">Pinterest</h3>
+                    <div class="testimonial-text">Pinterest has successfully <a href="https://www.youtube.com/watch?v=mDpnc45WwlI">introduced
+                        Kotlin</a> into their application, used by 150M people every month.
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <h3 class="testimonial-header">Gradle</h3>
+                    <div class="testimonial-text">Gradle is <a href="https://blog.gradle.org/kotlin-meets-gradle">introducing Kotlin</a> as a language
+                        for writing build scripts.
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <h3 class="testimonial-header">Evernote</h3>
+                    <div class="testimonial-text">Evernote recently <a href="https://blog.evernote.com/tech/2017/01/26/android-state-library/">integrated
+                        Kotlin</a> into their Android client
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <h3 class="testimonial-header">Uber</h3>
+                    <div class="testimonial-text">Uber team <a
+                            href="https://www.reddit.com/r/androiddev/comments/5sihp0/2017_whos_using_kotlin/ddfmkf7/">uses Kotlin</a> for building
+                        internal tools
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <h3 class="testimonial-header">Corda</h3>
+                    <div class="testimonial-text">is an open-source distributed ledger platform, supported by major banks, and <a
+                            href="https://www.corda.net/2017/01/10/kotlin/">built entirely in Kotlin</a>.
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <h3 class="testimonial-header">Coursera</h3>
+                    <div class="testimonial-text">Coursera Android app is <a
+                            href="https://building.coursera.org/blog/2016/03/16/becoming-bilingual-coursera/">partially written</a> in Kotlin
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <h3 class="testimonial-header">Pivotal</h3>
+                    <div class="testimonial-text">Spring makes <a
+                            href="https://spring.io/blog/2017/01/04/introducing-kotlin-support-in-spring-framework-5-0">use of Kotlin's language
+                        features</a> to offer more concise APIs
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <h3 class="testimonial-header">Atlassian</h3>
+                    <div class="testimonial-text">All new code in the <a href="https://twitter.com/danlew42/status/809065097339564032">Trello
+                        Android</a> app is in Kotlin.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="kotlin-overview-section _community">
+        <h2 class="section-header">Stay in touch</h2>
+        <div class="section-content">
+            <ul class="links-list">
+                <li class="links-list-item">
+                    <a class="link" href="http://blog.jetbrains.com/kotlin" target="_blank">
+                        <span class="link-icon _blog"></span>
+                        <span class="link-text">Blog</span>
+                    </a>
+                </li>
+
+                <li class="links-list-item">
+                    <a class="link" href="https://kotlinlang.org/community.html">
+                        <span class="link-icon _forum"></span>
+                        <span class="link-text">Community</span>
+                    </a>
+                </li>
+
+                <li class="links-list-item">
+                    <a class="link" href="https://twitter.com/kotlin" target="_blank">
+                        <span class="link-icon _twitter"></span>
+                        <span class="link-text">Twitter</span>
+                    </a>
+                </li>
+
+                <li class="links-list-item">
+                    <a class="link" href="https://youtrack.jetbrains.com/issues/KT" target="_blank">
+                    <span class="link-icon _issue-tracker">
+                        <div class="jetbrains-logo _logo-youtrack _size-2"></div>
+                    </span>
+                        <span class="link-text">Issue Tracker</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+</div>
+
+<footer class="global-footer" role="contentinfo">
+
+    <div class="global-footer-terms">
+        <div class="g-layout">
+
+            <div class="global-footer-container">
+                <div class="global-footer-row">
+                    <div class="terms-copyright">
+                        Licensed under the <a href="https://github.com/JetBrains/kotlin-web-site/blob/master/LICENSE">Apache
+                        2
+                        license</a>
+                    </div>
+
+                    <div class="terms-foundation">
+                        Kotlin Trademark is protected under the <a href="https://kotlinlang.org/foundation/kotlin-foundation.html">Kotlin
+                        Foundation</a>
+                    </div>
+                    <a class="terms-kit" href="https://kotlinlang.org/assets/kotlin-media-kit.pdf">Press kit</a>
+                </div>
+                <div class="global-footer-row">
+                    <div class="terms-sponsor">
+                        Sponsored and developed by <a class="sponsor sponsor_jetbrains" href="http://jetbrains.com/" target="_blank">JetBrains</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</footer>
+<div class="search-popup _hidden" tabindex="1000">
+    <div class="search-popup__content">
+        <div class="search-popup__controls">
+            <div class="search-popup__input"></div>
+            <div class="search-popup__close">
+                <div class="search-popup__close-icon-wrapper">
+                    <div class="search-popup__close-icon"></div>
+                </div>
+                <div class="search-popup__close-text">esc</div>
+            </div>
+        </div>
+        <div class="search-popup__results"></div>
+    </div>
+</div>
+<script src="Kotlin%20Programming%20Language_files/index.js"></script>
+
+<script id="" type="text/javascript">function checkCookieEnabled() {
+    if (navigator.cookieEnabled) return !0;
+    document.cookie = "cookietest\x3d1";
+    var b = -1 !== document.cookie.indexOf("cookietest\x3d");
+    document.cookie = "cookietest\x3d1; expires\x3dThu, 01-Jan-1970 00:00:01 GMT";
+    return b
+}
+
+(function () {
+    var b = "jb_cookies_consent_closed";
+    if (checkCookieEnabled() && -1 === document.cookie.indexOf(b) && -1 === document.cookie.indexOf("adConsent")) {
+        var a = document.createElement("link");
+        a.setAttribute("rel", "stylesheet");
+        a.setAttribute("href", "https://resources.jetbrains.com/storage/ui/cookies-banner.css");
+        document.body.appendChild(a);
+        a = document.createElement("script");
+        a.setAttribute("src", "https://resources.jetbrains.com/storage/ui/cookies-banner.js");
+        document.body.appendChild(a);
+        var c = {
+            cookieNameToSetOnClose: b,
+            closeSign: !0, position: "right", offset: 10
+        };
+        a.onload = function () {
+            new window.JetBrainsCookieGDPRBanner(document.body, c)
+        }
+    }
+})();</script>
+<link href="Kotlin%20Programming%20Language_files/cookies-banner.css" rel="stylesheet">
+<script src="Kotlin%20Programming%20Language_files/cookies-banner.js"></script>
+<div class="jetbrains-cookies-banner jetbrains-cookies-banner--position-right" style="right: 10px;">
+    <div class="jetbrains-cookies-banner__body">
+        <div class="jetbrains-cookies-banner__paragraph">Cookies and IP addresses allow us to deliver
+            and improve our web content and to provide you with a personalized experience.
+            Our website uses cookies and collects your IP address for these purposes.
+        </div><!--if--><!--if-->
+        <div class="jetbrains-cookies-banner__paragraph">
+            <div class="jetbrains-cookies-banner__pre">
+                <div class="jetbrains-cookies-banner__pre-inner"> JetBrains may use cookies and my IP address to<br> collect individual statistics and
+                    to provide me with<br> personalized offers and ads subject to the <a class="jetbrains-cookies-banner__link"
+                                                                                         href="https://www.jetbrains.com/company/privacy.html">Privacy<br>
+                        Policy</a> and the <a class="jetbrains-cookies-banner__link" href="https://www.jetbrains.com/company/useterms.html">Terms of
+                        Use</a>. JetBrains
+                    may use<br><a class="jetbrains-cookies-banner__link" href="https://www.jetbrains.com/company/privacy.html">third-party
+                        services</a> for this purpose. I can revoke<br> my consent at any time by visiting the <a
+                            class="jetbrains-cookies-banner__link" href="https://www.jetbrains.com/opt-out/">Opt-Out page</a>.<br><br><!--if-->
+                    <div class="jetbrains-cookies-banner__buttons "><a class="jetbrains-cookies-banner__choice-link" data-choice="yes">[<b>Y</b>]es, I
+                        agree</a><a class="jetbrains-cookies-banner__choice-link" data-choice="no">[<b>N</b>]o, thanks</a></div>
+                </div>
+            </div>
+        </div><!--if-->
+        <div class="jquery-console-inner"><textarea autocapitalize="off" autocomplete="off" autocorrect="off" class="jquery-console-typer"
+                                                    spellcheck="false" style="position: absolute; top: 0px; left: -9999px;"></textarea>
+            <div class="jquery-console-prompt-box"><span class="jquery-console-prompt-label">~&nbsp;root# </span><span
+                    class="jquery-console-prompt"><span class="jquery-console-cursor">&nbsp;</span></span></div>
+        </div>
+    </div>
+    <div class="jetbrains-cookies-banner__close-button">[X]</div><!--if--></div>
+</body>
+</html>

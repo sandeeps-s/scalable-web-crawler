@@ -1,0 +1,2099 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+
+    <meta charset="utf-8">
+    <!--
+        This website is powered by TYPO3 - inspiring people to share!
+        TYPO3 is a free open source Content Management Framework initially created by Kasper Skaarhoj and licensed under GNU/GPL.
+        TYPO3 is copyright 1998-2019 of Kasper Skaarhoj. Extensions are copyright of their respective owners.
+        Information and contribution at https://typo3.org/
+    -->
+
+    <!-- base href="https://www.informatik-aktuell.de/" -->
+    <link href="https://www.informatik-aktuell.de/fileadmin/templates/wr/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+    <meta content="TYPO3 CMS" name="generator">
+    <meta content="index,follow" name="robots">
+    <meta content="www.informatik-aktuell.de" name="generator">
+
+
+    <link href="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/merged-5be82b7e75beba60efc90c5c5c510862-ac8694ba3c0cb625d0d9.css" media="all"
+          rel="stylesheet"
+          type="text/css">
+    <link href="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/merged-89468a9116e8e2388094de4caff0acd1-d8caee0d83e664572014.css" media="screen"
+          rel="stylesheet"
+          type="text/css">
+
+
+    <script async="" src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/analytics.js"
+            type="text/javascript"></script>
+    <script async="" src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/gtm.js"></script>
+    <script src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/merged-ceb38dbc030343c945799c3652119bda-b4e904e35b50ff206e0.gzip"
+            type="text/javascript"></script>
+
+    <script src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/merged-93afe0832c6e6678fad57dc31bd3f3b6-b56d949d19be578bda3.gzip"
+            type="text/javascript"></script>
+
+
+    <meta content="width=device-width,initial-scale=1.0" name="viewport">
+    <meta content="Informatik Aktuell" name="apple-mobile-web-app-title">
+    <link href="https://www.informatik-aktuell.de/fileadmin/templates/wr/images/favicon.ico" rel="shortcut icon">
+
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $('#socialshareprivacy').socialSharePrivacy({
+                'services': {
+                    'facebook': {
+                        'sharer': {
+                            'status': "on",
+                            'dummy_img': "/fileadmin/templates/wr/scripts/socialshareprivacy/images/dummy_facebook_share_de.png",
+                            'img': "/fileadmin/templates/wr/scripts/socialshareprivacy/images/facebook_share_de.png"
+                        }
+                    },
+                    'twitter': {
+                        'status': "on",
+                        'dummy_img': "/fileadmin/templates/wr/scripts/socialshareprivacy/images/dummy_twitter.png"
+                    },
+                    'gplus': {
+                        'status': "on",
+                        'dummy_img': "/fileadmin/templates/wr/scripts/socialshareprivacy/images/dummy_gplus.png"
+                    }
+
+                },
+                "info_link": "/datenschutz.html#c20840",
+                "css_path": "/fileadmin/templates/wr/scripts/socialshareprivacy/socialshareprivacy.css",
+                "lang_path": "/fileadmin/templates/wr/scripts/socialshareprivacy/lang/",
+                "language": "de"
+            });
+
+        });
+    </script>
+    <link href="https://www.informatik-aktuell.de/entwicklung/programmiersprachen/ist-kotlin-das-bessere-java-eine-einfuehrung.html" rel="canonical">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#toggle-nav').click(function (event) {
+                $('#navigation-mobile').toggle();
+                $(this).toggleClass('toggle-nav');
+            });
+        });
+    </script>
+    <title>Ist Kotlin das bessere Java? Eine Einführung. | Informatik Aktuell</title>
+    <meta content="Kotlin besticht durch perfekte Interoperabilität mit Java, gutes Tooling und natürlich moderne Features. An der Programmiersprache führt kaum ein Weg vorbei."
+          name="description">
+    <meta content="website" property="og:type">
+    <meta content="Ist Kotlin das bessere Java? Eine Einführung." property="og:title">
+    <meta content="Kotlin besticht durch perfekte Interoperabilität mit Java, gutes Tooling und natürlich moderne Features. An der Programmiersprache führt kaum ein Weg vorbei."
+          property="og:description">
+    <meta content="https://www.informatik-aktuell.de/entwicklung/programmiersprachen/ist-kotlin-das-bessere-java-eine-einfuehrung.html"
+          property="og:url">
+    <meta content="Informatik Aktuell" property="og:site_name">
+    <meta content="https://www.informatik-aktuell.de/fileadmin/templates/wr/pics/Stockbilder/Fotolia/720_Fotolia_Kotlin_127311261_mimacz.jpg"
+          property="og:image">
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-TGFKQC2');</script>
+    <!-- End Google Tag Manager -->
+    <link href="https://www.informatik-aktuell.de/rss/news/rss.xml" rel="alternate" title="Aktuelle Nachrichten" type="application/rss+xml">
+
+    <link href="https://www.informatik-aktuell.de/rss/projektmanagement/rss.xml" rel="alternate" title="IT-Management" type="application/rss+xml">
+
+    <link href="https://www.informatik-aktuell.de/rss/softwareentwicklung/rss.xml" rel="alternate" title="Softwareentwicklung"
+          type="application/rss+xml">
+
+    <link href="https://www.informatik-aktuell.de/rss/betrieb/rss.xml" rel="alternate" title="Betrieb" type="application/rss+xml">
+
+
+    <script src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/jquery.js"
+            type="text/javascript"></script>
+    <!-- Warning: jquery not found in page.includeJSlibs, nor includeJS or includeJSFooterlibs -->
+    <link href="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/tx-tc-9210-system-tisqus-9872670fa5066e2c81acb25a958de951.css"
+          rel="stylesheet" type="text/css">
+    <link href="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/functional.css" rel="stylesheet"
+          type="text/css">
+
+    <script src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/tx-tc-de.js"
+            type="text/javascript"></script>
+    <!-- ALL jQuery Tools. No jQuery library -->
+
+    <script type="text/javascript">
+        var tcistouch = 0;
+        var screenmd = 480;
+        var pageid = 3513;
+        var pagelanId = 0;
+        var storagePid = 822;
+        var loginRequiredIdLoginForm = "";
+        var loginRequiredRefreshCIDs = "";
+        var loginRequiredRefreshRecs = "";
+        var ajaxdna = "f0396b993a6775af3365a3033f76a13al6l9l0g6g9gdeg6g9g0";
+        var global_loggedon = 0;
+        var emolike = 1;
+        var colourcodeemo = [];
+        colourcodeemo[0] = "#2e9fff";
+        colourcodeemo[1] = "#2e9fff";
+        colourcodeemo[7] = "#bb0000";
+        colourcodeemo[2] = "#dc1f46";
+        colourcodeemo[3] = "#e96d5a";
+        colourcodeemo[4] = "#e12d8d";
+        colourcodeemo[5] = "#57c3eb";
+        colourcodeemo[6] = "#de2723";
+        var tclogincard = "";
+        var tcpasswordcard = "";
+
+
+    </script>
+    <script type="text/javascript">
+        var errCommentRequiredLength = 10;
+        var errSearchRequiredLength = 4;
+        var maxCommentLength = 4000;
+        var selectedTheme = "tisqus";
+        var boxmodelTextareaAreaTotalHeight = 44;
+        var plsUseRSA = 1;
+        var boxmodelTextareaHeight = 20;
+        var boxmodelLabelWidth = 134;
+        var dolabel = 1;
+        var boxmodelSpacing = 10;
+        var boxmodelLineHeight = 25;
+        var confpvsheight = 70;
+        var confcommentsPerPage = 5;
+        var tcdateformat = 0;
+        var confuserpicsize = 18;
+        var confuseUserImage = 0;
+        var showlesstooltips = 0;
+        var emojinotooltips = 0;
+        var middotchar = '';
+        var confreplyModeInline = 1;
+        var confreplyModeInlineOpenForm = 0;
+        var textnameCommentSeparator = "LQ==";
+        var confuseNameCommentSeparator = 1;
+
+    </script>
+    <script src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/tx-tc-9210.js"
+            type="text/javascript"></script>
+
+
+    <script src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/flowplayer.js"
+            type="text/javascript"></script>
+
+
+    <link href="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/socialshareprivacy.css" rel="stylesheet"
+          type="text/css">
+</head>
+<body id="type-c">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe height="0"
+            src="https://www.googletagmanager.com/ns.html?id=GTM-TGFKQC2" style="display:none;visibility:hidden" width="0"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div id="wrap">
+    <div id="topnavi"><a href="https://www.informatik-aktuell.de/ueber-uns.html">Über uns</a> |&nbsp;<a
+            href="https://www.informatik-aktuell.de/media.html">Media</a> |&nbsp;<a href="https://www.informatik-aktuell.de/kontakt.html">Kontakt</a>
+        |&nbsp;<a href="https://www.informatik-aktuell.de/impressum.html">Impressum</a></div>
+
+    <div id="header">
+        <a href="https://www.informatik-aktuell.de/">
+            <span id="logo"></span>
+        </a>
+        <div class="headerAd">
+            <a href="https://www.ittage.informatik-aktuell.de/" target="_blank"><img
+                    alt=""
+                    height="113" src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/ITT2019-Programm-online-480-113.jpg" width="480"></a>
+        </div>
+
+        <div class="service-navi">
+
+            <a id="c13373"></a>
+            <div class="frame-space-before-small"></div>
+            <div class="ce-image ce-right ce-above">
+                <div class="ce-gallery" data-ce-columns="3" data-ce-images="3">
+                    <div class="ce-row">
+                        <div class="ce-column">
+                            <figure class="image"><a href="https://www.facebook.com/informatikaktuell" target="_blank"
+                                                     title="Informatik Aktuell auf Facebook"><img alt="Informatik Aktuell auf Facebook" class="image-embed-item"
+                                                                          height="32"
+                                                                          src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/32-facebook-flat.png"
+                                                                          title="Informatik Aktuell auf Facebook" width="32"></a></figure>
+                        </div>
+                        <div class="ce-column">
+                            <figure class="image"><a href="https://twitter.com/InformatikAktue" target="_blank"
+                                                     title="Informatik Aktuell auf Twitter"><img alt="Informatik Aktuell auf Twitter" class="image-embed-item"
+                                                                          height="32"
+                                                                          src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/32-twitter-flat.png"
+                                                                          title="Informatik Aktuell auf Twitter" width="32"></a></figure>
+                        </div>
+                        <div class="ce-column">
+                            <figure class="image"><a href="https://www.informatik-aktuell.de/rss-feeds.html"
+                                                     title="Informatik Aktuell RSS-Newsfeed"><img alt="Informatik Aktuell RSS-Newsfeed"
+                                                                                                  class="image-embed-item"
+                                                                                                  height="32"
+                                                                                                  src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/32-rss-flat.png"
+                                                                                                  title="Informatik Aktuell RSS-Newsfeed" width="32"></a></figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <a id="c13374"></a>
+            <div class="frame-space-before-small"></div>
+            <div class="ce-image ce-right ce-above">
+                <div class="ce-gallery" data-ce-columns="1" data-ce-images="1">
+                    <div class="ce-row">
+                        <div class="ce-column">
+                            <figure class="image"><a href="https://www.informatik-aktuell.de/newsletter-anmeldung.html"
+                                                     title="Newsletteranmeldung"><img alt="Newsletteranmeldung" class="image-embed-item"
+                                                                                      height="35"
+                                                                                      src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/csm_283-newsletterbutton_7ab398f2d5.png"
+                                                                                      title="Newsletteranmeldung" width="180"></a></figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div id="nav-central">
+            <ul id="navigation">
+                <li><a href="https://www.informatik-aktuell.de/entwicklung.html">Entwicklung</a>
+                    <ul>
+                        <li><a href="https://www.informatik-aktuell.de/entwicklung/methoden.html">Methoden</a></li>
+                        <li><a href="https://www.informatik-aktuell.de/entwicklung/programmiersprachen.html">Programmiersprachen</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://www.informatik-aktuell.de/betrieb.html">Betrieb</a>
+                    <ul>
+                        <li><a href="https://www.informatik-aktuell.de/betrieb/datenbanken.html">Datenbanken</a></li>
+                        <li><a href="https://www.informatik-aktuell.de/betrieb/server.html">Server</a></li>
+                        <li><a href="https://www.informatik-aktuell.de/betrieb/sicherheit.html">IT-Security</a></li>
+                        <li><a href="https://www.informatik-aktuell.de/betrieb/speicher.html">Speicher</a></li>
+                        <li><a href="https://www.informatik-aktuell.de/betrieb/netzwerke.html">Netzwerke</a></li>
+                        <li><a href="https://www.informatik-aktuell.de/betrieb/virtualisierung.html">Virtualisierung</a></li>
+                        <li><a href="https://www.informatik-aktuell.de/betrieb/verfuegbarkeit.html">Verfügbarkeit</a></li>
+                        <li class="first"><a href="https://www.informatik-aktuell.de/betrieb/kuenstliche-intelligenz.html">Künstliche Intelligenz</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="https://www.informatik-aktuell.de/management-und-recht.html">Management</a>
+                    <ul>
+                        <li><a href="https://www.informatik-aktuell.de/management-und-recht/projektmanagement.html">Projektmanagement</a></li>
+                        <li><a href="https://www.informatik-aktuell.de/management-und-recht/digitalisierung.html">Digitalisierung</a></li>
+                        <li><a href="https://www.informatik-aktuell.de/management-und-recht/it-recht.html">IT-Recht</a></li>
+                        <li class="first"><a href="https://www.informatik-aktuell.de/management-und-recht/it-selbstaendige.html">IT-Selbständige</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="https://www.informatik-aktuell.de/aktuelle-meldungen.html">News</a></li>
+                <li><a href="https://www.informatik-aktuell.de/service/konferenzkalender.html">Termine</a></li>
+                <li class="first"><a href="https://www.informatik-aktuell.de/it-jobs.html">IT-Jobs</a></li>
+            </ul>
+
+            <div id="searchb">
+                <form action="suchergebnis.html?id=10" id="form_kesearch_searchfield" method="get" name="form_kesearch_searchfield">
+                    <input name="id" type="hidden" value="10">
+                    <input name="tx_kesearch_pi1[filter][1]" type="hidden" value="0">
+                    <input class="textfeld" id="ke_search_searchfield_sword" name="tx_kesearch_pi1[sword]" placeholder="Suchbegriff" type="text">
+                    <input alt="suchen" class="button_t submit" id="ke_search_searchfield_submit" title="suchen" type="submit">
+                </form>
+
+            </div>
+
+            <div id="subnavi">
+                <ul>
+                    <li><a href="https://www.informatik-aktuell.de/entwicklung/methoden/container.html">Container</a></li>
+                    <li><a href="https://www.informatik-aktuell.de/entwicklung/methoden/microservices.html">Microservices</a></li>
+                    <li><a href="https://www.informatik-aktuell.de/betrieb/netzwerke/internet-of-things.html">IoT</a></li>
+                    <li><a href="https://www.informatik-aktuell.de/betrieb/virtualisierung/cloud.html">Cloud</a></li>
+                    <li><a href="https://www.informatik-aktuell.de/entwicklung/methoden/devops.html">DevOps</a></li>
+                    <li><a href="https://www.informatik-aktuell.de/management-und-recht/projektmanagement/agile-softwareentwicklung.html">Agile</a>
+                    </li>
+                    <li><a href="https://www.informatik-aktuell.de/management-und-recht/digitalisierung.html">Digitalisierung</a></li>
+                    <li><a href="https://www.informatik-aktuell.de/entwicklung/programmiersprachen/java.html">Java</a></li>
+                    <li><a href="https://www.informatik-aktuell.de/betrieb/datenbanken.html">Datenbanken</a></li>
+                    <li><a href="https://www.informatik-aktuell.de/betrieb/sicherheit.html">IT-Security</a></li>
+                    <li><a href="https://www.informatik-aktuell.de/betrieb/kuenstliche-intelligenz.html">Künstliche Intelligenz</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="MenuOben-mobile">
+            <a id="toggle-nav">☰</a><br>
+            <ul id="navigation-mobile">
+                <li><a href="https://www.informatik-aktuell.de/entwicklung.html">Entwicklung</a></li>
+                <li><a href="https://www.informatik-aktuell.de/betrieb.html">Betrieb</a></li>
+                <li><a href="https://www.informatik-aktuell.de/management-und-recht.html">Management</a></li>
+                <li><a href="https://www.informatik-aktuell.de/aktuelle-meldungen.html">News</a></li>
+                <li><a href="https://www.informatik-aktuell.de/it-jobs.html">IT-Jobs</a></li>
+                <li class="first"><a href="https://www.informatik-aktuell.de/newsletter-anmeldung.html">Newsletter</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div id="content-wrap">
+        <div id="sidebar">
+            <div class="featurebox">
+                <a id="c23892"></a>
+                <header>
+                    <div class="h1-nonSEO">Autor</div>
+                </header>
+                <div class="tx-pwteaser-pi1"><!--
+   
+        
+
+
+     -->
+                    <div class="col odd"><a href="https://www.informatik-aktuell.de/autoren-cv/lovis-moeller.html"><img
+                            alt=""
+                            height="200" src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/200-Lovis-Moeller.jpg" width="200"></a>
+                        <h3><a href="https://www.informatik-aktuell.de/autoren-cv/lovis-moeller.html">Lovis Möller</a><br></h3><span>Lovis
+ Möller ist ein Kotlin early Adopter und Gründer der Kotlin User Group 
+Hamburg. Immer auf der Suche nach neuen Möglichkeiten,...<a href="https://www.informatik-aktuell.de/autoren-cv/lovis-moeller.html"> &gt;&gt;&nbsp;Weiterlesen</a></span>
+                    </div><!--
+   
+
+
+
+
+
+      
+    -->
+                    <div class="clearer zero"></div>
+                </div>
+
+            </div>
+            <div class="featurebox">
+                <a id="c15475"></a>
+                <div class="frame banner frame-type-image frame-layout-0   " id="c15473">
+                    <div class="ce-image ce-left ce-above">
+                        <div class="ce-gallery" data-ce-columns="1" data-ce-images="1">
+                            <div class="ce-row">
+                                <div class="ce-column">
+                                    <figure class="image"><a href="https://www.ittage.informatik-aktuell.de/" target="_blank"
+                                                             title="IT-Tage 2019"><img alt=""
+                                                                                  class="image-embed-item"
+                                                                                  height="250" src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/ITT2019-Medium-Rectangle.png" width="300"></a></figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="featurebox">
+                <div class="frame default frame-type-shortcut frame-layout-0   " id="c7268"><a id="c7243"></a>
+                    <header>
+                        <div class="h1-nonSEO">Newsletter</div>
+                    </header>
+                    <div class="ce-textpic ce-left ce-below">
+                        <div class="ce-bodytext"><p><strong>Unser Newsletter informiert Sie regelmäßig und kostenlos über Neuigkeiten, Artikel und
+                            Veranstaltungen zu aktuellen IT-Themen. </strong></p></div>
+                        <div class="ce-gallery" data-ce-columns="1" data-ce-images="1">
+                            <div class="ce-row">
+                                <div class="ce-column">
+                                    <figure class="image"><a href="https://www.informatik-aktuell.de/newsletter-anmeldung.html"
+                                                             title="Newsletter Abonnieren"><img alt="Newsletter Abonnieren" class="image-embed-item"
+                                                                                                height="50"
+                                                                                                src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/csm_283-newsletterbutton_bbb5abfcb8.png"
+                                                                                                title="Newsletter Abonnieren" width="261"></a></figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="featurebox">
+                <div class="frame default frame-type-list frame-layout-0   " id="c8679">
+                    <header>
+                        <div class="h1-nonSEO">Nachrichten</div>
+                    </header>
+                    <div class="tx-pwteaser-pi1"><!--
+  
+        
+
+
+        -->
+                        <div class="col odd"><span class="lastUpdated-news">17.08.2019</span>
+                            <h3><a href="https://www.informatik-aktuell.de/aktuelle-meldungen/2019/august/margaret-hamilton.html">Margaret
+                                Hamilton</a></h3><span class="abstract-news">Die
+ Frau hinter Apollo 11 und der Mondlandung: Margaret Hamilton 
+programmierte für die NASA die Apollo-Software des Bordcomputers. 
+Ihre...</span><span class="morelink-news"><a href="https://www.informatik-aktuell.de/aktuelle-meldungen/2019/august/margaret-hamilton.html"> &gt;&gt;&nbsp;Weiterlesen</a></span>
+                        </div>
+                        <div class="col even"><span class="lastUpdated-news">12.08.2019</span>
+                            <h3>
+                                <a href="https://www.informatik-aktuell.de/aktuelle-meldungen/2019/august/apache-kafka-streaming-events-und-schulung-zu-apache-kafka-in-frankfurt-und-zuerich.html">Apache
+                                    Kafka: Streaming Events und Schulung zu Apache Kafka in Frankfurt und Zürich</a></h3><span class="abstract-news">Im Anschluss an das Confluent Streaming Event findet eine eintägige Schulung "The Fundamentals for Apache Kafka" statt. </span><span
+                                    class="morelink-news"><a
+                                    href="https://www.informatik-aktuell.de/aktuelle-meldungen/2019/august/apache-kafka-streaming-events-und-schulung-zu-apache-kafka-in-frankfurt-und-zuerich.html"> &gt;&gt;&nbsp;Weiterlesen</a></span>
+                        </div>
+                        <div class="col odd"><span class="lastUpdated-news">05.08.2019</span>
+                            <h3>
+                                <a href="https://www.informatik-aktuell.de/aktuelle-meldungen/2019/august/it-for-girls-junge-frauen-in-die-it-branche-bringen.html">IT-for-girls:
+                                    Junge Frauen in die IT-Branche bringen</a></h3><span class="abstract-news">2017
+ schrieben sich rund 8800 Studentinnen für das Fach Informatik an einer 
+Hochschule ein. Fast zwei Prozent weniger als im Vorjahr. </span><span class="morelink-news"><a
+                                    href="https://www.informatik-aktuell.de/aktuelle-meldungen/2019/august/it-for-girls-junge-frauen-in-die-it-branche-bringen.html"> &gt;&gt;&nbsp;Weiterlesen</a></span>
+                        </div><!--
+   
+
+
+
+
+
+      
+    -->
+                        <div class="clearer zero"></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="featurebox">
+                <div class="frame default frame-type-shortcut frame-layout-0   " id="c3342">
+                    <div class="frame banner frame-type-image frame-layout-0   " id="c3341">
+                        <div class="ce-image ce-left ce-above">
+                            <div class="ce-gallery" data-ce-columns="1" data-ce-images="1">
+                                <div class="ce-row">
+                                    <div class="ce-column">
+                                        <figure class="image"><a
+                                                href="https://www.facebook.com/informatikaktuell?utm_source=Onpage&amp;utm_medium=Display&amp;utm_content=Facebook&amp;utm_campaign=Facebook-Like"
+                                                target="_blank" title="Facebook"><img alt="Facebook" class="image-embed-item" height="150"
+                                                                                      src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/300-250-fn-like-display.png"
+                                                                                      title="Facebook" width="300"></a></figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="featurebox">
+                <a id="c24231"></a>
+                <div class="frame banner frame-type-image frame-layout-0   " id="c24229">
+                    <div class="ce-image ce-left ce-above">
+                        <div class="ce-gallery" data-ce-columns="1" data-ce-images="1">
+                            <div class="ce-row">
+                                <div class="ce-column">
+                                    <figure class="image"><a href="https://www.informatik-aktuell.de/it-jobs.html"><img alt=""
+                                                                                                                        class="image-embed-item"
+                                                                                                                        height="150" src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/300x150-JobsButton.png"
+                                                                                                                        width="300"></a></figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="content">
+            <div id="breadcrumb">
+                <span class="rootline">&nbsp;»&nbsp;<a href="https://www.informatik-aktuell.de/entwicklung.html">Entwicklung</a>&nbsp;»&nbsp;<a
+                        href="https://www.informatik-aktuell.de/entwicklung/programmiersprachen.html">Programmiersprachen</a></span>
+            </div>
+            <span id="author">  
+                Lovis Möller
+            </span>
+            <span id="last_updated">27. Februar 2018</span>
+
+            <a id="c23890"></a>
+            <header><h1>Ist Kotlin das bessere Java? Eine Einführung.</h1></header>
+            <div class="ce-textpic ce-left ce-intext">
+                <div class="ce-gallery" data-ce-columns="1" data-ce-images="1">
+                    <div class="ce-row">
+                        <div class="ce-column">
+                            <figure class="image"><img alt="Kotlin bringt viele elegante und nützliche Sprachfeatures mit. © mimacz / Fotolia.com"
+                                                       class="image-embed-item"
+                                                       height="196"
+                                                       src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/csm_720_Fotolia_Kotlin_127311261_mimacz_b1a7a0b25d.jpg"
+                                                       title="Kotlin bringt viele elegante und nützliche Sprachfeatures mit. © mimacz / Fotolia.com" width="350">
+                                <figcaption class="image-caption">
+                                    © mimacz / Fotolia.com
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="ce-bodytext"><p><strong>Wer
+                    sich mit JVM-Sprachen beschäftigt, der kommt um Kotlin eigentlich nicht
+                    mehr herum. Bei der Androidentwicklung schon defacto-Standard, wird die
+                    von JetBrains entwickelte Sprache nun auch mehr und mehr in anderen
+                    Bereichen eingesetzt. Ein Hauptgrund ist sicher die fast perfekte
+                    Interoperabilität mit Java, aber auch das gute Tooling und natürlich die
+                    modernen Features der Sprache selbst lassen die Kotlin-Fangemeinde
+                    immer weiter wachsen. In diesem Artikel sollen die größten
+                    Verbesserungen gegenüber Java einmal näher untersucht werden.</strong></p>
+                    <p>In
+                        der Softwareentwicklung geht es in erster Linie darum, die Probleme des
+                        Kunden auf möglichst schnelle aber gleichzeitig sichere Art und Weise
+                        zu lösen. Programmiersprachen sind dabei nur Werkzeuge und die beste
+                        Lösung ist sowieso die, die gar keinen Code benötigt.</p>
+                    <p>Als Java vor
+                        über 20 Jahren auf den Markt kam, haben die Entwickler der Sprache
+                        genau dieses Versprechen gegeben und auch weitgehend eingehalten. Wie
+                        James Gosling damals schrieb: "<em>Java is a blue collar language. It’s not PhD thesis material but a language for a
+                            job. </em><a
+                                href="https://www.informatik-aktuell.de/entwicklung/programmiersprachen/ist-kotlin-das-bessere-java-eine-einfuehrung.html#c23889">[1]</a>"
+                        Aber die Anforderungen und Vorlieben der Entwicklercommunity ändern
+                        sich. Während z.B. Checked Exceptions, primitive Typen oder <em>null </em>vor
+                        20 Jahren noch als gute Ideen galten, sieht man das heutzutage anders.
+                        Auch die Menge an Code, die man mit Java schreiben muss, wirkt
+                        mittlerweile nicht mehr zeitgemäß (Mit Java7 (Diamond Operator) und
+                        Java8 (Lambdas) hat sich das schon gebessert, für Java10 ist auch
+                        Type-Inference für lokale variablen geplant). Genau hier kommt Kotlin
+                        ins Spiel.</p></div>
+            </div>
+
+
+            <a id="c23893"></a>
+            <header><h2>Kotlin: Null als Teil des Typsystems</h2></header>
+            <p>Kotlin
+                macht vieles besser als Java. Zunächst kann man grob sagen, dass eine
+                Klasse in Kotlin aus ca. 20-30 Prozent weniger Codezeilen besteht, ohne
+                dabei schlechter lesbar zu sein. So sind z. B. explizite
+                Typdeklarationen und Semikolons optional, Lambdas – und funktionale
+                Konzepte im Allgemeinen – fügen sich besser ins Gesamtbild ein. Getter
+                und Setter werden vom Compiler generiert. Weiter bringt Kotlin viele
+                Dinge von Haus aus mit, die man sich bisher mit Libraries wie Lombok als
+                externe Dependency ins Projekt holen musste. So werden z. B. für
+                Klassen, die mit <em>data </em>markiert sind, dazu auch noch brauchbare <em>toString()</em>-, <em>equals()</em>-, <em>hashCode()</em>-
+                und <em>copy()</em>-Methoden generiert.</p>
+            <p>Außerdem gehören mit Kotlin <em>NullPointerExceptions </em>weitgehend der Vergangenheit an. In Kotlin ist <em>null </em>nämlich
+                Teil des Typsystems. Parameter, Properties oder Rückgabewerte sind
+                entweder nullable, oder nicht. Wenn sie es nicht sind, verhindert der
+                Compiler, dass <em>null </em>hineingegeben, gesetzt oder zurückgegeben wird. Diese optionalen Typen sind mit einem <em>?</em>
+                gekennzeichnet.</p>
+            <pre>var text: String = “Hallo, Kotlin!” // dieser Text kann niemals auf “null” gesetzt werden
+var nullableText: String? = null // dieser schon
+
+//paramter ist nullable, aber return value nicht -&gt; null kann nicht zurückgegeben werden
+fun addDoubles(left: Double, right: Double?) : Int {
+  if(right == null) {
+    return left.toInt()
+ } else {
+   return left.toInt() + right.toInt()
+ }
+}</pre>
+            <p>Nullchecks lassen sich häufig auch komplett vermeiden, indem man den aus Groovy bekannten Safe-Call-Operator <em>?.</em>
+                verwendet. Wenn das Objekt, dessen Methode aufgerufen wird, nullable
+                ist, erzwingt es der Compiler sogar, diesen Operator anstatt des
+                regulären Access-Operator <em>.</em> zu benutzen.</p>
+            <pre>var nullableText: String? = null
+var reversedText: String? = nullableText?.reversed()</pre>
+            <p>Wenn der text in diesem Beispiel tatsächlich <em>null </em>ist, wird der gesamte Ausdruck als <em>null </em> ausgewertet und der <em>reversedText </em>ist
+                ebenfalls <em>null</em>. Den Typ der Variable ohne<em> ?</em> zu definieren wäre daher an dieser Stelle gar nicht möglich gewesen.</p>
+            <p>Dieser Operator lässt sich auch mehrfach hintereinander verwenden:</p>
+            <pre>val name = person?.name?.toUpperCase()</pre>
+            <p>Neben
+                dem Safe-Call-Operator existiert auch noch der Elvis-Operator, mit dem
+                schnelle Null-Oder-Default-Abfragen gemacht werden können:</p>
+            <pre>val name = person.name ?: “Unknown”</pre>
+            <p>Ist <em>person.name = null</em>, so wird der Variablen <em>name </em>der Wert <em>Unknown </em>zugewiesen.</p>
+            <p>Anders als bei den JSR-305 Annotationen (<em>@Nullable</em>,<em> @NonNull</em>), ist es in Kotlin überhaupt nicht möglich <em>null</em>
+                zu verwenden, wenn dies nicht explizit angegeben ist. Ein Typ, der den Wert <em>null</em> annehmen kann, ist ein anderer Typ als das
+                nicht-nullable Gegenstück. Wenn ein <em>String </em>als Parameter erwartet wird, kann kein <em>String? </em> hineingegeben werden.
+                Wenn allerdings ein <em>String? </em> erwartet wird, ist es trotzdem möglich, einen <em>String </em> zu verwenden. Daher ist es
+                angenehmer, mit Kotlins <em>?</em> zu arbeiten, als beispielsweise mit einem <em>Optional</em>. Es ist nicht notwendig, Werte extra in
+                ein <em>Optional </em>zu wrappen, um sie an die API anzupassen.</p>
+            <p>Der Safe-Call-Operator <em>?.</em> ist besonders in Kombination mit der <em>let</em>-Funktion aus der Standard-Library nützlich, da
+                diese so als Alternative zum klassischen <em>null</em>-Check verwendet werden kann:</p>
+            <pre>nullableText?.let ({
+ // Dieser Block wird nur ausgeführt, wenn `nullableText` nicht `null` ist
+})</pre>
+            <p>Die geschweiften Klammern in der Parameterliste bedeuten, dass an dieser Stelle ein Lambda steht.<em> ( ()-&gt; {...}</em>&nbsp;in Java<em>)</em>.
+                Wenn der letzte Parameter eine Funktion ist, können – und sollten – die
+                typischen runden Klammern des Funktionsaufrufs weggelassen werden:</p>
+            <pre>nullableText?.let {
+...
+}</pre>
+            <p>Die <em>let</em>-Funktion nimmt als einzigen Parameter eine Funktion. Sie ist also eine Higher-Order-Function mit einem Parameter vom
+                Typ <em>(T) -&gt; R</em>. Funktionen sind in Kotlin eigenständige Typen, SAM-Interfaces wie in Java werden nicht benötigt. Der
+                Parameter <em>R</em> ist in diesem Fall der <em>nullableText</em> selbst und liefert als Ergebnis <em>Unit </em>zurück, was in etwa
+                <em>void&nbsp; </em>in Java entspricht. Eventuelle Parameter eines Funktionstyp werden einfach innerhalb der Klammern vor dem Pfeil
+                <em>-&gt;</em> geschrieben. So ist z. B. <em>(String) -&gt; Int</em> eine Funktion, die einen <em>String</em> akzeptiert und ein <em>Int </em>zurückliefert.
+            </p>
+
+
+            <a id="c25287"></a><a id="c17580"></a>
+            <div class="ce-image ce-center ce-above">
+                <div class="ce-gallery" data-ce-columns="1" data-ce-images="1">
+                    <div class="ce-outer">
+                        <div class="ce-inner">
+                            <div class="ce-row">
+                                <div class="ce-column">
+                                    <figure class="image"><a href="https://www.ittage.informatik-aktuell.de/programm/themen/java/"
+                                                             target="_blank" title="IT-Tage - Java"><img alt="IT-Tage - Java"
+                                                                                                         class="image-embed-item" height="80"
+                                                                                                         src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/IT-Tage_Themen_Banner_Java.png"
+                                                                                                         title="IT-Tage - Java" width="720"></a></figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="frame-space-after-medium"></div>
+
+
+            <a id="c23894"></a>
+            <header><h2>Smart-Casts in Kotlin: Intelligenter Casten</h2></header>
+            <p>Betrachtet man die Beispielfunktion <em>addDoubles()</em> weiter oben, fällt auf, dass bei <em>right.toInt()</em>
+                der Safe-Call-Operator gar nicht genutzt wird, obwohl der Parameter
+                nullable ist. Der Compiler beschwert sich in diesem Fall aber trotzdem
+                nicht.<br> Das liegt an einem weiteren Feature von Kotlin, den
+                sogenannten Smart-Casts: Der Compiler weiß durch den vorausgehenden
+                Nullcheck, dass <em>right </em>nachfolgend nicht mehr null sein kann und castet ihn implizit von <em>String?</em> zu <em>String</em>.
+                Sehr praktisch, dass das nicht nur mit <em>null</em>, sondern mit allen Arten von Casts funktioniert!</p>
+            <pre>override fun equals(other: Any?): Boolean {
+  if (this === other) return true
+
+  //is = das Kotlin Äquivalent zu instanceof
+  if (other !is Message) return false
+
+  // in java müsste ich explizit casten:
+  // return this.id == ((Message)other).id`
+  return this.id == other.id
+ }</pre>
+            <p>In dieser Implementierung der <em>equals()</em>-Methode einer <em>Message</em>-Klasse, wird <em>other </em>nach dem <em>is</em>-Check
+                automatisch als <em>Message </em>behandelt. Um auf die ID zuzugreifen ist daher, anders als in Java, kein expliziter Cast notwendig.&nbsp;
+            </p>
+
+
+            <a id="c23895"></a>
+            <header><h2>Immutability für den Alltag</h2></header>
+            <p>Neben <em>null</em>-Sicherheit
+                und Smart-Casts sorgt ein weiteres Feature für mehr Sicherheit im
+                Programmieralltag: Kotlins Sprachdesign fördert und erleichtert
+                Immutability. Das einfachste Beispiel ist die Erzeugung von
+                nicht-veränderbaren Variablen mit <em>val </em>statt <em>var</em>. Obwohl <em>final </em>auch
+                bei Java großzügig verwendet werden sollte, ist dies durch das
+                zusätzliche Keyword zu viel Arbeit und demnach oft nicht der Fall.</p>
+            <p>Das
+                wichtigere Beispiel für Immutability in Kotlin ist aber das Design der
+                Collections-API. Anders als z. B. bei Scala werden mit Kotlin keine
+                eigenen Collection-Klassen mitgeliefert. Die Java-Collections
+                funktionieren einfach wie gewohnt weiter und werden durch eine Menge
+                zusätzlicher Operationen ergänzt. Allerdings sehen die Interfaces und
+                damit auch die Hierarchie der Collections etwas anders aus. Wenn ich
+                versuche, zu einer Liste vom Typ <em>List&lt;String&gt;</em> ein neues Element hinzuzufügen wird das nicht funktionieren:</p>
+            <pre>val words: List&lt;String&gt; = …
+words.add(“Immutable”) // compile error</pre>
+            <p>Die Interfaces <em>List</em>, <em>Map </em>und <em>Set </em>verfügen
+                nämlich über keine Methoden, die das darunterliegende Objekt verändern
+                können. Kotlin unterscheidet zwischen veränderbaren und read-only
+                Collections (Technisch gesehen ist ein Map zwar gar keine Collection,
+                fällt aber in eine ähnliche Kategorie von Datenstrukturen).</p>
+            <p>Um eine Collection mit Daten zu füllen, brauche ich eine Variable vom Typ <em>MutableCollection</em>, also z. B. eine
+                <em>MutableList</em>.</p>
+            <pre>val words: MutableList&lt;String&gt; = mutableListOf(...)
+words.add(“mutable”) // works</pre>
+
+
+            <a id="c23896"></a>
+            <div class="ce-textpic ce-right ce-intext">
+                <div class="ce-gallery" data-ce-columns="1" data-ce-images="1">
+                    <div class="ce-row">
+                        <div class="ce-column">
+                            <figure class="image"><a
+                                    class="jn_lighterbox"
+                                    href="https://www.informatik-aktuell.de/fileadmin/_processed_/6/0/csm_kotlin_abb1_lovis_moeller_c3376e158d.png" rel="lightbox[3513]"><img alt="Abb. 1: Hierarchie. © Lovis Möller"
+                                                                                    class="image-embed-item"
+                                                                                    height="202"
+                                                                                    src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/csm_kotlin_abb1_lovis_moeller_ce6d1b9ba0.png"
+                                                                                    title="Abb. 1: Hierarchie. © Lovis Möller" width="350"></a>
+                                <figcaption class="image-caption">
+                                    Abb. 1: Hierarchie. © Lovis Möller
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="ce-bodytext"><p>Allerdings
+                    ist es selten notwendig, mit mutable-Collections zu arbeiten und diese
+                    direkt zu manipulieren, da alle Collections mit einem ganzen Satz an
+                    praktischen Funktionen erweitert worden sind. Das sind unter anderem die
+                    klassischen Listenoperationen, <em>filter</em>, <em>map</em>, <em>reduce </em>und <em>fold</em>. Aber auch speziellere wie <em>filterIsInstance</em>,
+                    <em>groupBy</em>, <em>sumBy </em>oder <em>takeWhile</em>.</p>
+                    <p>Eine einfache Aufgabe könnte es sein, den kürzesten <em>String </em>in einer Liste herauszubekommen. In Java würde man das
+                        ungefähr so machen:</p>
+                    <pre>String shortest = items.stream()
+.min(Comparator.comparing(item -&gt; item.length()))
+.get();</pre>
+                    <p>Während in Kotlin ein einfaches</p>
+                    <pre>val shortest = items.minBy { it.length }</pre>
+                    <p>ausreichend ist.</p>
+                    <p>Noch
+                        eindrucksvoller wird diese – an vielen Stellen kürzere – Schreibweise,
+                        wenn das Problem etwas komplizierter wird. Möchte man z. B. die Namen
+                        aller Mitarbeiter einer bestimmten Gehaltsgruppe ermitteln, sähe der
+                        Aufruf in Java etwa so aus:</p>
+                    <pre>List&lt;String&gt; namesOfLevel1Employees = allEmployees.stream()
+                 .filter(p -&gt; p.getSalaryGroup() == SalaryGroup.L1)
+                 .map(p -&gt; p.getName())
+                 .collect(Collectors.toList());</pre>
+                    <p>Und Kotlin:</p>
+                    <pre>val namesOfLevel1Employees = allEmployees
+                          .filter { it.salaryGroup == SalaryGroup.L1 }
+                          .map { it.name }</pre>
+                    <p>Dadurch, dass weder
+                        Streams noch Collectors nötig sind, spart man sich eine Menge
+                        Schreibarbeit, ohne dabei an Ausdruckskraft zu verlieren.</p>
+                    <p>Bei all
+                        diesen Operationen wird immer eine neue Collection zurückgegeben. Da
+                        also die ursprüngliche Collection nicht selbst verändert wird,
+                        funktionieren die Operationen auch auf den read-only-Collections <em>List</em>, <em>Set </em>oder <em>Map</em>.
+                        Auf diese Art erleichtert Kotlin also den Umgang und die Verwendung von
+                        unveränderlichen Datenstrukturen. In der Praxis benötigt man eher
+                        selten eine veränderbare Collection. Die vielen vordefinierten Extension
+                        Functions für Collections helfen hier enorm. Außerdem kann ich im
+                        Interface meines Objekts immer <em>List</em>, <em>Set </em>oder <em>Map </em>als Rückgabewert angeben, obwohl intern eine
+                        veränderbare Collection verwendet wird.</p></div>
+            </div>
+
+
+            <a id="c23897"></a>
+            <header><h2>Extension Functions für Collections</h2></header>
+            <p>Wenn
+                Kotlin intern dieselben Collections wie Java benutzt, dann stellt sich
+                die Frage, wie es sein kann, dass diese so viel mehr Methoden anbieten
+                als Java Collections. Die Antwort auf diese Frage lautet: Extension
+                Functions.</p>
+            <p>Mit Extension Functions können Klassen um
+                Funktionalität erweitert werden, ohne dass dabei auf Vererbung
+                zurückgegriffen werden muss. Das ist vor allem dann nützlich, wenn man
+                nicht selbst der Autor dieser Klassen ist. Die oben beschriebene <em>filter</em>-Funktion könnte dann z. B. so implementiert werden:
+            </p>
+            <pre>fun &lt;T&gt; List&lt;T&gt;.filter(predicate: (T) -&gt; Boolean): List&lt;T&gt; {
+ val destination = mutableListOf&lt;T&gt;()
+  for (element in this) {
+    if (predicate(element)) destination.add(element)
+  }
+  return destination
+}</pre>
+            <p>Da die Standard-Library diese Funktion für alle Collections
+                bereits mitliefert, ist das wie gesagt nicht nötig. Am Beispiel kann man
+                aber gut erkennen, wie Extension Functions definiert werden. Sie sehen
+                aus wie normale Funktionsdefinitionen, nur, dass der Typ, der erweitert
+                werden soll (in diesem Fall <em>List&lt;T&gt;</em>) zusammen mit einem Punkt dem Funktionsnamen vorangestellt wird.</p>
+            <p>Innerhalb der Funktion kann via <em>this </em>auf den so genannten Receiver zugegriffen werden. Der Receiver ist das Objekt, auf dem
+                die Funktion später aufgerufen wird (<em>List&lt;T&gt;</em>).
+                Ein großer Vorteil solcher Extensions ist, dass damit schlecht lesbare,
+                statische Funktionen und ganze Utility-Klassen vermieden werden können.</p>
+            <p>Die am häufigsten verwendete Utility-Funktion ist wohl <em>Collections.sort()</em>. Auch diese wurde für Kotlin in eine Extension
+                überführt. Anstatt also <em>Collections.sort(myList, myComparator);</em>
+                aufrufen zu müssen, kann ich in einer viel natürlicheren Art und Weise
+                mit dem Objekt arbeiten. Sortierung ist nun eine Operation auf der Liste
+                selbst: <em>myList.sortBy(myComparator)</em>. So verbessern Extension Functions auch den Lesefluss, was besonders bei komplexeren
+                Konstrukten deutlich wird:</p>
+            <pre>Text text = TextUtils.italic(TextUtils.capitalize("Hallo, " + TextUtils.underline(person.name)));</pre>
+            <p>Diese
+                Verkettung von statischen Funktionen muss von innen nach außen gelesen
+                werden, um sie vollständig zu verstehen (so viele Klammern!). Das
+                Gegenstück mit Extension Functions hingegen wird in derselben
+                Reihenfolge angewendet, in der es auch geschrieben wurde (Mit <em>${property}</em> lassen sich <em>+</em>-Ketten wie <em>string1 + ","
+                    + string3</em> vermeiden – diese Technik nennt sich String-Interpolation):</p>
+            <pre>val text: Text = "Hallo, ${person.name.underline()}".capitalize().italic()</pre>
+            <p>Noch besser lesbar wird das Ganze, wenn man die Details wegabstrahiert und einen für die Domain passenden Namen wählt.<br> So wird aus
+                dem Beispiel von oben, dem Filtern aller Mitarbeiter einer gewissen Gehaltsstufe, eine Extension Function für
+                <em>List&lt;Employee&gt;</em>:</p>
+            <pre>fun List&lt;Employee&gt;.collectLevel1EmployeeNames(): List&lt;String&gt; {
+  return this .filter { it.salaryGroup == SalaryGroup.L1 }
+                   .map { it.name }
+}</pre>
+            <p>Diese Funktion kann dann einfach im Code verwendet werden:</p>
+            <pre>val names = allEmployees.collectLevel1EmployeeNames()</pre>
+            <p>Extension
+                Functions wirken auf den ersten Blick vielleicht ein bisschen wie
+                schwarze Magie. Wie um alles in der Welt können denn Klassen (und
+                Interfaces!) erweitert werden, ohne Vererbung einzusetzen? Wird
+                vielleicht intern eine Art Wrapper erzeugt, der dann delegiert?
+                Tatsächlich gibt es nichts magisches an Extensions, es handelt sich
+                lediglich um einen einfachen Compilertrick: Der Bytecode für eine
+                Extension entspricht dem Bytecode, der bei einer statischen
+                Utility-Funktion erzeugt wird. Das heißt, dass das Employee-Beispiel in
+                etwa dem folgendem Java-Code entspricht:</p>
+            <pre>public static List&lt;String&gt; collectLevel1EmployeeNames(List&lt;Employee&gt; receiver) {
+   return receiver.filter(....).map(....)
+}</pre>
+            <p>Extension Functions werden also zu statischen Utility-Funktionen compiliert, die einen zusätzlichen Parameter <em>receiver</em>
+                besitzen. Dieser Receiver ist immer das Objekt auf dem ich die Extension aufgerufen habe.</p>
+
+
+            <a id="c23898"></a>
+            <header><h2>Extension Functions sind überall</h2></header>
+            <p>Natürlich
+                sind Extensions nicht nur auf Collections beschränkt. Für jede Klasse
+                und jedes Interface können solche Funktionen geschrieben werden. Die
+                Standard-Library liefert z. B. das <em>let</em>, welches ich am Anfang des Artikels bereits beschrieben habe. Die <em>let</em>-Funktion
+                erlaubt es, den Scope einer Variablen zu verändern. Wie oben erwähnt,
+                ist das besonders hilfreich, wenn die Variable null sein kann:</p>
+            <pre>var text: String? = ...
+text?.let {
+    println(it)
+}</pre>
+            <p>Die nullable Variable <em>text </em>wird hier in die Variable <em>it </em>überführt. Diese Variable kann nun nicht mehr <em>null </em>sein,
+                da der gesamte Block ja nur ausgeführt wird, wenn <em>text </em>eben nicht <em>null </em>ist. Dieses <em>it </em>ist
+                – wieder aus Groovy entliehen – eine Konvention in Kotlin. Hat ein
+                Lambda nur einen Parameter, so muss man diesen nicht explizit angeben,
+                sondern kann ihn stattdessen als <em>it</em> verwenden.</p>
+            <p>Eine weitere Besonderheit der <em>let</em>-Funktion ist, dass diese auch einen Wert zurückgeben kann.</p>
+            <pre>val fullName = person?.let {
+    “${it.firstName} ${it.lastName}”
+}</pre>
+            <p>Der letzte Ausdruck in diesem Lambda wird zurückgegeben (ohne <em>return</em>). In diesem Fall also ein String, der die beiden
+                Properties <em>firstName </em>und <em>lastName </em>mit Hilfe von String-Interpolation konkateniert.</p>
+            <p>Neben <em>let </em>gibt es noch weitere Extensions dieser Art, zum Beispiel <em>apply</em>:</p>
+            <pre>val redCar = Car().apply {
+  this.color = Color.RED
+  this.ps = 172
+  doors = 3
+}</pre>
+            <p>Im Unterschied zu <em>let </em>wird bei <em>apply </em>kein <em>it </em>verwendet, sondern <em>this</em>. Dieses <em>this</em> kann,
+                wie für <em>this</em> nun mal üblich, auch weggelassen werden (<em>doors = 3</em>). Was diese Funktion so nützlich macht, ist, dass
+                sie den Receiver wieder zurückgibt, ohne, dass ich explizit <em>return this</em> schreiben muss. Das bedeutet für das Beispiel: Erst
+                wird ein <em>Car</em>-Objekt erzeugt. Anschließend werden Farbe, PS und Anzahl der Türen gesetzt. Zuletzt wird genau dieses
+                <em>Car</em>-Objekt zurückgegeben. Also wird der Variable <em>redCar</em> dann auch genau dieses <em>Car</em>-Objekt zugewiesen.</p>
+            <blockquote><p>Viele Leute berichten, dass sie dank Kotlin wieder mehr Spaß am Programmieren haben.</p></blockquote>
+            <p>Mit <em>apply </em>bleiben
+                Initialisierungen eines Objekts dicht beieinander im selben Codeblock,
+                selbst wenn die API ursprünglich nicht so konzipiert war. Da es sich bei
+                diesem Codeblock um ein Lambda handelt, kann er auch in eine Variable
+                ausgelagert und zu einem späteren Zeitpunkt verwendet werden:</p>
+            <pre>val redCarConfig: Car.() -&gt; Unit = {
+  this.color = Color.RED
+  this.ps = 172
+  doors = 3
+}
+
+val newCar = Car().apply(redCarConfig)</pre>
+            <p>Die <em>apply</em>-Funktion
+                kann also als leichtgewichtige Alternative zum Builder Pattern gesehen
+                werden, da Konstruktion und Repräsentation eines Objekts voneinander
+                getrennt werden, sodass derselbe Konstruktionsprozess immer wieder
+                verwendet werden kann. Der Typ der <em>redCarConfig</em>-Variable ist dabei <em>Car.() -&gt; Unit</em>. Diese Schreibweise definiert,
+                dass es sich nicht um eine normale Funktion, sondern eine Extension Function für <em>Car</em> handelt, die <em>Unit </em>zurückliefert.
+                Man könnte <em>apply </em>also
+                als eine "Higher-Order Extension-Function" bezeichnen, da sie selbst
+                eine Extension Function ist, die als Parameter eine andere Extension
+                Function erwartet. Ohne diese Konstruktion wäre es nicht möglich,
+                innerhalb des <em>apply</em>-Blocks auf den Receiver als <em>this</em> zuzugreifen.</p>
+
+
+            <a id="c23899"></a>
+            <header><h2>Fazit</h2></header>
+            <p>Ich hoffe, dass
+                dieser Artikel einen guten Eindruck darüber gibt, warum es sich "lohnt",
+                Kotlin in einem Projekt einzusetzen, oder zumindest einmal
+                auszuprobieren. Viele Ideen in Kotlin finden sich auch in anderen
+                Programmiersprachen. Properties, Extensions, Nullsicherheit sind nichts
+                neues und für manche Sprachen sogar ein alter Hut. Aber Kotlin bringt
+                diese und viele andere elegante und nützliche Sprachfeatures auf eine
+                bisher unerreicht einfache und zugängliche Art auf die JVM. Ob Kotlin
+                nun das bessere Java ist, muss jeder für sich selbst entscheiden. Viele
+                Leute berichten allerdings darüber, dass sie dank Kotlin wieder mehr
+                Spaß am Programmieren haben.</p>
+            <p>Jedoch beschränkt sich Kotlin nicht
+                auf die JVM, sondern transpiliert ebenso zu JavaScript oder WebAssembly
+                und kann mittlerweile auch als Kotlin/Native für native Programmierung
+                (z. B. unter iOS) ausprobiert werden.</p>
+            <p>Kotlin ist vielleicht kein Material für eine PhD-Thesis, aber Kotlin ist definitiv eine moderne Sprache "<em>for a job</em>".</p>
+
+
+            <div class="frame quellen frame-type-text frame-layout-0   " id="c23889">
+                <header>
+                    <div class="h2-nonSEO">Quelle</div>
+                </header>
+                <ol>
+                    <li>James Gosling: <a href="http://www.win.tue.nl/~evink/education/avp/pdf/feel-of-java.pdf" target="_blank"
+                                          title="The feel of Java">The Feel of Java</a></li>
+                </ol>
+                <p>
+                    <a href="https://www.informatik-aktuell.de/entwicklung/programmiersprachen/ist-kotlin-das-bessere-java-eine-einfuehrung.html#top"><img
+                            alt=""
+                            height="50" src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/LinkToTop.png" width="50"></a></p></div>
+
+
+            <div class="frame default frame-type-shortcut frame-layout-0   " id="c23888">
+                <div class="frame default frame-type-html frame-layout-0   " id="c20788">
+                    <div id="socialshareprivacy">
+                        <ul class="social_share_privacy_area clearfix">
+                            <li class="facebook help_info clearfix"><span class="info">2
+ Klicks für mehr Datenschutz: Erst wenn Sie hier klicken, wird der 
+Button aktiv und Sie können Ihre Empfehlung an Facebook senden. Schon 
+beim Aktivieren werden Daten an Dritte übertragen – siehe <em>i</em>.</span><a class="switch off" href="#">nicht mit Facebook verbunden</a>
+                                <div class="fb_like dummy_btn"><img
+                                        alt="Facebook &quot;Share&quot;-Dummy"
+                                        class="fb_like_privacy_dummy" src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/dummy_facebook_share_de.png"></div>
+                            </li>
+                            <li class="twitter help_info clearfix"><span class="info">2
+ Klicks für mehr Datenschutz: Erst wenn Sie hier klicken, wird der 
+Button aktiv und Sie können Ihre Empfehlung an Twitter senden. Schon 
+beim Aktivieren werden Daten an Dritte übertragen – siehe <em>i</em>.</span><a class="switch off" href="#">nicht mit Twitter verbunden</a>
+                                <div class="tweet dummy_btn"><img
+                                        alt="&quot;Tweet this&quot;-Dummy"
+                                        class="tweet_this_dummy" src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/dummy_twitter.png"></div>
+                            </li>
+                            <li class="gplus help_info clearfix"><span class="info">2
+ Klicks für mehr Datenschutz: Erst wenn Sie hier klicken, wird der 
+Button aktiv und Sie können Ihre Empfehlung an Google+ senden. Schon 
+beim Aktivieren werden Daten an Dritte übertragen – siehe <em>i</em>.</span><a class="switch off" href="#">nicht mit Google+ verbunden</a>
+                                <div class="gplusone dummy_btn"><img
+                                        alt="&quot;Google+1&quot;-Dummy"
+                                        class="gplus_one_dummy" src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/dummy_gplus.png"></div>
+                            </li>
+                            <li class="settings_info down">
+                                <div class="settings_info_menu off"><a href="https://www.informatik-aktuell.de/datenschutz.html#c20840"
+                                                                       target="_blank"><span class="help_info icon"><span class="info">Wenn
+ Sie diese Felder durch einen Klick aktivieren, werden Informationen an 
+Facebook, Twitter oder Google in die USA übertragen und unter Umständen 
+auch dort gespeichert. Näheres erfahren Sie durch einen Klick auf das <em>i</em>.</span></span></a><a class="settings" href="#">Einstellungen</a>
+                                    <form>
+                                        <fieldset>
+                                            <legend>Dauerhaft aktivieren und Datenüber­tragung zustimmen:</legend>
+                                            <input id="r76_perma_status_facebook" name="perma_status_facebook" type="checkbox"><label
+                                                for="r76_perma_status_facebook">Facebook</label><input id="r76_perma_status_twitter" name="perma_status_twitter"
+                                                                                                       type="checkbox"><label
+                                                for="r76_perma_status_twitter">Twitter</label><input id="r76_perma_status_gplus" name="perma_status_gplus"
+                                                                                                     type="checkbox"><label
+                                                for="r76_perma_status_gplus">Google+</label></fieldset>
+                                    </form>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <a id="c23887"></a>
+            <header>
+                <div class="h2-nonSEO">Autor</div>
+            </header>
+            <div class="tx-pwteaser-pi1"><!--
+  
+        
+
+
+   -->
+                <div class="main odd"><a href="https://www.informatik-aktuell.de/autoren-cv/lovis-moeller.html"><img
+                        alt=""
+                        height="150" src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/csm_200-Lovis-Moeller_e376cf1699.jpg" width="150"></a>
+                    <h3><a href="https://www.informatik-aktuell.de/autoren-cv/lovis-moeller.html">Lovis Möller</a><br></h3><span>Lovis
+ Möller ist ein Kotlin early Adopter und Gründer der Kotlin User Group 
+Hamburg. Immer auf der Suche nach neuen Möglichkeiten, Denkweisen und 
+Perspektiven in der Softwareentwicklung.<a
+                                href="https://www.informatik-aktuell.de/autoren-cv/lovis-moeller.html"><br> &gt;&gt;&nbsp;Weiterlesen</a></span></div><!--
+   
+
+
+
+
+
+      
+    --></div>
+
+
+            <a id="c23885"></a>
+            <header>
+                <div class="h2-nonSEO">Das könnte Sie auch interessieren</div>
+            </header>
+            <div class="tx-pwteaser-pi1"><!--
+    
+        
+
+
+      -->
+                <div class="wrapper-3col">
+                    <div class="col3 odd"><a
+                            href="https://www.informatik-aktuell.de/entwicklung/programmiersprachen/lingua-franca-mit-typescript-nodejs-azure.html"><img
+                            alt=""
+                            height="113" src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/csm_720-AdobeStock_98172132_02e6da748c.jpg" width="200"></a>
+                        <h3>
+                            <a href="https://www.informatik-aktuell.de/entwicklung/programmiersprachen/lingua-franca-mit-typescript-nodejs-azure.html">Lingua
+                                franca mit TypeScript, Node.js &amp; Azure</a></h3><span class="teaser-subtitle"></span></div>
+                    <div class="col3 even"><a
+                            href="https://www.informatik-aktuell.de/entwicklung/programmiersprachen/mit-android-jetpack-die-app-entwicklung-beschleunigen.html"><img
+                            alt=""
+                            height="113" src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/csm_720-AdobeStock_201063616_10d8d45b98.jpg" width="200"></a>
+                        <h3>
+                            <a href="https://www.informatik-aktuell.de/entwicklung/programmiersprachen/mit-android-jetpack-die-app-entwicklung-beschleunigen.html">Mit
+                                Android Jetpack die App-Entwicklung beschleunigen</a></h3><span class="teaser-subtitle"></span></div>
+                    <div class="col3 odd"><a href="https://www.informatik-aktuell.de/entwicklung/programmiersprachen/einfuehrung-in-ansible.html"><img
+                            alt=""
+                            height="113" src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/csm_720-Ansible_ac8c32b175.png" width="200"></a>
+                        <h3><a href="https://www.informatik-aktuell.de/entwicklung/programmiersprachen/einfuehrung-in-ansible.html">Einführung in
+                            Ansible</a></h3><span class="teaser-subtitle"></span></div>
+                    <div class="col3 even"><a
+                            href="https://www.informatik-aktuell.de/entwicklung/programmiersprachen/progressive-web-apps-echte-cross-platform-apps-mit-angular.html"><img
+                            alt=""
+                            height="113" src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/csm_720-AdobeStock_219909361_9520eb78a5.jpg" width="200"></a>
+                        <h3>
+                            <a href="https://www.informatik-aktuell.de/entwicklung/programmiersprachen/progressive-web-apps-echte-cross-platform-apps-mit-angular.html">Progressive-Web-Apps:
+                                Echte Cross-Platform-Apps mit Angular</a></h3><span class="teaser-subtitle"></span></div>
+                    <div class="col3 odd"><a
+                            href="https://www.informatik-aktuell.de/entwicklung/programmiersprachen/nodejs-unblock-the-event-loop.html"><img
+                            alt=""
+                            height="113" src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/csm_720-AdobeStock_39844404_eec2f9dc92.jpg" width="200"></a>
+                        <h3><a href="https://www.informatik-aktuell.de/entwicklung/programmiersprachen/nodejs-unblock-the-event-loop.html">Node.js:
+                            Unblock the Event-Loop</a></h3><span class="teaser-subtitle"></span></div>
+                    <div class="col3 even"><a
+                            href="https://www.informatik-aktuell.de/entwicklung/programmiersprachen/authentication-mit-java-ee-8.html"><img
+                            alt=""
+                            height="113" src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/csm_720-AdobeStock_116177963_4128c20ad6.jpg" width="200"></a>
+                        <h3><a href="https://www.informatik-aktuell.de/entwicklung/programmiersprachen/authentication-mit-java-ee-8.html">Authentication
+                            mit Java EE 8</a></h3><span class="teaser-subtitle"></span></div>
+                </div><!--
+         
+
+
+
+
+
+      
+  --></div>
+
+
+            <div class="frame default frame-type-list frame-layout-0   " id="c23884">
+                <div class="toctoc-comments-pi1">
+
+                    <div class="tx-tc-commentsAjaxData tx-tc-nodisp" id="tx-tc-cAD-data-cont-23884">
+                        <span id="tx-tc-cAD-23884">287051</span><span id="tx-tc-cADAtt-23884">286970</span><span
+                            id="tx-tc-cADLi-23884">286954</span><span id="tx-tc-cADLo-23884">286955</span><span id="tx-tc-cADLS-23884">286296</span>
+                        <span id="tx-tc-cADC-23884"></span><span id="tx-tc-cThisData-23884">287052</span>
+                        <span id="tx-tc-cADImg-23884">286956</span>
+                    </div>
+
+
+                    <div class="tx-tc-cts" id="uid0351323884">
+                        <div id="tx-tc-cts-tt_content_23884">
+
+                            <div id="tx-tc-cts-dp-tt_content_23884">
+                                <a id="tx-tc-cts-att_content_23884"></a>
+                                <div class="tx-tc-cts-dp">
+
+
+                                    <div class="tx-tc-ct-box" id="uid351323884">
+                                        <div class="tx-tc-text-top">
+                                            <div class="tx-tc-nodisp tx-tc-follows-two-less"></div>
+                                            <div class="tx-tc-atrts-ctlink">
+                                                &nbsp;
+                                                <span class="tx-tc-openerform" id="tx-tc-openerform23884__00">Kommentieren</span>
+                                                <a id="commentit_a_23884"></a>
+                                            </div>
+
+
+                                            <div class="tx-tc-tv2spacer"></div>
+                                            <div class="tx-tc-atrts-dp" id="tx-tc-atrts-dp-tt_content_23884">
+                                                <div class="tx-tc-rts-area" id="tx-tc-rts-tt_content_23884"></div>
+                                            </div>
+
+                                            <div class="tx-tc-ct-cnt" id="tx-tc-ct-cnt-23884">
+                                                <span><span class="tx-tc-nbrofcomments">2</span> Kommentare verfügbar</span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="tx-tc-nodisp" id="confirm23884">
+                                        <div class="header"><span>Bitte bestätigen Sie</span></div>
+                                        <div class="message"></div>
+                                        <div class="buttons">
+                                            <div class="no simpletxtcmoddlg-close">Nein</div>
+                                            <div class="yesconfirm">Ja</div>
+                                        </div>
+                                    </div>
+                                    <div class="tx-tc-nodisp" id="information23884">
+                                        <div class="header"><span>Information</span></div>
+                                        <div class="message"></div>
+                                        <div class="buttons">
+                                            <div class="yes simpletxtcmoddlg-close">Ok</div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="tx-tc-cts-ct-box tx-tc-mihgt-ctbox tx-tc-ct-box-rlvlm-0" id="tx-tc-cts-ct-tx-tc-cts_349">
+                                        <div class="tx-tc-sortinfo tx-tc-nodisp"
+                                             id="tx-tc-sortinfos_23884__0349__01__00__01528280690__01__00__00"></div>
+                                        <div class="tx-tc-ct-innerctbox" id="tx-tc-cts-ct-dp-tx-tc-cts_349">
+                                            <div class="tx-tc-cts-ct-dp">
+                                                <div class="tx-tc-ct-box">
+                                                    <div class="tx-tc-ct-uc" id="tx-tc-cts-uc-349">
+                                                        <div class="tx-tc-ct-uc-pic2" id="tx-tc-cts-uc-pic2-349"></div>
+                                                        <div class="tx-tc-ct-box-ctclose">
+                                                            <span class="tx-tc-ucclose tx-tc-CloseButton" id="tx-tc-cts-uc-cls-349"
+                                                                  title="Schliessen"></span>
+                                                        </div>
+                                                        <div class="tx-tc-ucinner" id="tx-tc-cts-uc-inner-349"></div>
+                                                    </div>
+                                                    <div class="tx-tc-ze"></div>
+                                                    <div class="tx-tc-ct-box-ctpic">
+                                                        <div class="tx-tc-ct-box-picturecrop32"><a class="tx-tc-picclasslink" href="javascript:void(0)"
+                                                                                                   id="" rel="nofollow"><img
+                                                                alt="Sasa Djuric"
+                                                                class="tx-tc-userpic tx-tc-uimgsize" id="tx-tc-cts-img-349" src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/profile.png"></a>
+                                                        </div>
+                                                        <span id="tctrvw__0__349__350__350rr"><img
+                                                                alt="Kommentare aufklappen"
+                                                                class="tx-tc-expandicon tx-tc-nodisp" id="tx-tc-cts-img-exp-0-349"
+                                                                src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/tcexpand.png"></span><span id="tctrvw__1__349__350__350rr"><img
+                                                            alt="Kommentare zuklappen"
+                                                            class="tx-tc-expandicon tx-tc-blockdisp" id="tx-tc-cts-img-exp-1-349"
+                                                            src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/tccollapse.png"></span>
+                                                    </div>
+                                                    <div class="tx-tc-ct-box-cttxt tx-tc-tipemo-1" id="tx-tc-tipemo-1-tx-tc-ct-box-cttxt-__0349">
+
+                                                        <a id="tx-tc-ct-349"></a>
+
+                                                        <p class="tx-tc-text" id="tx-tc-ct-box-cttxt-349"><span
+                                                                class="tx-tc-commenttextuclink tx-tc-textlink"
+                                                                id="tx-tc-nameclasslink__349__23884__MTk1Ljg4LjExNy4xNzAuMA==__PGltZyBzcmM9Imh0dHBzOi8vd3d3LmluZm9ybWF0aWstYWt0dWVsbC5kZXR5cG8zY29uZi9leHQvdG9jdG9jX2NvbW1lbnRzL3Jlcy9jc3MvdGhlbWVzL3Rpc3F1cy9pbWcvcHJvZmlsZS5wbmciIGNsYXNzPSJ0eC10Yy11c2VycGljIHR4LXRjLXVpbWdzaXplIiB0aXRsZT0iU2FzYSBEanVyaWMiICBpZD0idHgtdGMtY3RzLWltZy0zNDkiIC8+__8000"><b></b>&nbsp;<b>Sasa Djuric</b> -&nbsp;</span>Die
+                                                            Definition des let parameters ist falsch.<br>
+                                                            Nicht ()-&gt;Unit sondern (T)-&gt;R, da let einen wert annimmt und ein Ergebnis
+                                                            zurückliefert.</p>
+
+                                                        <div class="tx-tc-rt">
+                                                            <div class="tx-tc-rts-area" id="tx-tc-rts-tx_toctoc_comments_comments_349">
+
+                                                                <div class="tx-tc-rts-container">
+                                                                    <div class="tx-tc-rts-li" id="tx-tc-rts-dp-tx_toctoc_comments_comments_349">
+                                                                        <div class="tx-tc-rts">
+                                                                            <div class="tx-tc-dyndate" style="opacity: 1;">
+                                                                                <div class="tx-tc-ctdate" id="tx-tc-ctdatedisp-349">Vor 1 Jahr 2
+                                                                                    Monaten
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="tx-tc-nodisp" id="tx-tc-ctdatetime-349">1528280690</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="tx-tc-ct-ry-report-line" id="tx-tc-ct-ry-rl-349">
+
+                                                        <div class="tx-tc-ct-ry tx-tc-blockdisp" id="tx-tc-ct-ry-fh-349"><span
+                                                                class="tx-tc-ct-div-ry-data tx-tc-textlink"
+                                                                id="tx-tc-ct-div-ry-349__023884__0tt_content_23884__0triggerform__0238846g93496g9">Antworten</span>
+                                                        </div>
+                                                        <div class="tx-tc-ct-rply tx-tc-margin0 tx-tc-nodisp" id="tx-tc-cts-rply-349">
+                                                            <div class="tx-tc-pi1" id="tx-tc-pi1-form-tt_content_238846g93496g9">
+                                                                <span class="tx-tc-initpreviewvrs tx-tc-nodisp"
+                                                                      id="tx-tc-initpreviewvrs-238846g93496g9"></span>
+                                                                <div class="tx-tc-state-0" id="tx-tc-form-tt_content_238846g93496g9">
+
+                                                                    <div id="tx-tc-form-dp-tt_content_238846g93496g9">
+                                                                        <div class="tx-tc-form-dp">
+
+                                                                            <div class="tx-tc-ct-box-ctpic2">
+                                                                                <div class="tx-tc-ct-box-picturecrop322"></div>
+                                                                            </div>
+                                                                            <div class="tx-tc-ct-box-cttxt-reply tx-tc-frmsqrhgt"
+                                                                                 id="tx-tc-formsqueezer-238846g93496g9">
+                                                                                <form autocomplete="off" class="tx-tc-form-for-newcomment"
+                                                                                      enctype="multipart/form-data" id="cf238846g93496g9"
+                                                                                      method="post" name="ncf238846g93496g9">
+                                                                                    <fieldset
+                                                                                            class="tx-tc-ct-fieldset"
+                                                                                            id="cffs238846g93496g9__0tt_content_238846g93496g9__01__08650509e35984775dd14cb701c763628__0addcomment__0form__00__0__0false__0tt_content_238846g93496g9__070">
+                                                                                        <input id="toctoc_comments_pi1_238846g93496g9itemurl" name="toctoc_comments_pi1[itemurl]"
+                                                                                               type="hidden"
+                                                                                               value="https://www.informatik-aktuell.de/entwicklung/programmiersprachen/ist-kotlin-das-bessere-java-eine-einfuehrung.html">
+                                                                                        <input id="toctoc_comments_pi1_238846g93496g9itemurlchk" name="toctoc_comments_pi1[itemurlchk]"
+                                                                                               type="hidden"
+                                                                                               value="9c407a32ef9c5323367b0a39ea98cdd7">
+
+                                                                                        <div class="tx-tc-cts-form-fieldtextarea">
+                                                                                            <div class="tx-tc-divtextarea tx-tc-dtadyn"
+                                                                                                 id="textarea-238846g93496g9">
+                                                                                                <textarea autocomplete="off"
+                                                                                                          class="tx-tc-ctinput-textarea" cols="42"
+                                                                                                          id="toctoc_comments_pi1_contenttextbox_238846g93496g9" name="toctoc_comments_pi1[content]"
+                                                                                                          placeholder="Antworten..."
+                                                                                                          rows="1"></textarea>
+
+                                                                                                <span class="tx-tc-wtrmrk-tcnt tx-tc-nodisp"
+                                                                                                      id="tx-tc-wtrmrk-tcnt-238846g93496g9__0QW50d29ydGVuLi4u"></span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="tx-tcfh tx-tcfh112 tx-tc-nodisp"
+                                                                                             id="formhider-238846g93496g9">
+                                                                                            <div class="tx-tc-ct-form-field-wpp tx-tc-nodisp"
+                                                                                                 id="tx-tc-form-dp-wpp-238846g93496g9">
+                                                                                                <div class="tx-tc-pvs-prevnext tx-tc-nodisp"
+                                                                                                     id="tx-tc-cts-pvsprevnext-238846g93496g9">
+                                                                                                    <img alt="Vorheriger"
+                                                                                                         class="tx-tc-pvs-prev tx-tc-nodisp tx-tc-fright" height="11"
+                                                                                                         id="tx-tc-cts-pvsprev-238846g93496g9"
+                                                                                                         src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/prev.png"
+                                                                                                         title="Vorheriger" width="12">
+                                                                                                    <img alt="Nächster"
+                                                                                                         class="tx-tc-pvs-next tx-tc-nodisp tx-tc-fright" height="11"
+                                                                                                         id="tx-tc-cts-pvsnext-238846g93496g9"
+                                                                                                         src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/next.png"
+                                                                                                         title="Nächster" width="12">
+                                                                                                    <img alt="Vorschaubilder verbergen"
+                                                                                                         class="tx-tc-pvs-nopreviewpic tx-tc-nodisp tx-tc-fright"
+                                                                                                         height="11"
+                                                                                                         id="tx-tc-cts-nopreviewpic-238846g93496g9"
+                                                                                                         src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/nopreviewpic.png"
+                                                                                                         title="Vorschaubilder verbergen" width="12">
+                                                                                                </div>
+                                                                                                <div class="tx-tc-pvs-pvsfuncs tx-tc-nodisp"
+                                                                                                     id="tx-tc-cts-pvsfuncs-238846g93496g9">
+                                                                                                    <img alt="Webseitenvorschau schliessen"
+                                                                                                         class="tx-tc-pvs-pvsnopreview tx-tc-nodisp"
+                                                                                                         height="11"
+                                                                                                         id="tx-tc-cts-pvsnopreview-238846g93496g9"
+                                                                                                         src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/nopreviewpic.png"
+                                                                                                         title="Webseitenvorschau schliessen" width="12">
+                                                                                                </div>
+                                                                                                <div id="tx-tc-form-wpp-238846g93496g9">
+                                                                                                    <img alt="Vorschau wird geladen ..."
+                                                                                                         class="tx-tc-working tx-tc-blockdisp"
+                                                                                                         height="11"
+                                                                                                         id="tx-tc-form-wpp-working238846g93496g9"
+                                                                                                         src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/workingslides.gif" title="Vorschau wird geladen ..."
+                                                                                                         width="16">
+                                                                                                </div>
+                                                                                            </div>
+
+
+                                                                                            <div class="tx-tc-ct-form-field tx-tc-width100-85">
+
+                                                                                                <input class="tx-tc-ct-input tx-tc-ct-input-lastname tx-tc-fleft"
+                                                                                                       id="toctoc_comments_pi1_238846g93496g9lastname" name="toctoc_comments_pi1[lastname]" placeholder="Name*"
+                                                                                                       size="34"
+                                                                                                       type="text">
+
+                                                                                                <div class="tx-tc-ct-form-gender tx-tc-nodisp"
+                                                                                                     id="tx-tc-ct-form-gender238846g93496g9">
+                                                                                                    <label class="tx-tc-ct-labelgender"><img
+                                                                                                            alt="Benutze männlichen Avatar für meine Kommentare"
+                                                                                                            class="tx-tc-defuserpic tx-tc-defuserpic_m tx-tc-pointer tx-tc-opa1"
+                                                                                                            id="tx-toctoc-comments-comments-img-gender-0-238846g93496g9"
+                                                                                                            src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/profile.png"
+                                                                                                            title="Benutze männlichen Avatar für meine Kommentare">
+                                                                                                        <img alt="Benutze weiblichen Avatar für meine Kommentare"
+                                                                                                             class="tx-tc-defuserpic tx-tc-defuserpic_f tx-tc-pointer tx-tc-opa40"
+                                                                                                             id="tx-toctoc-comments-comments-img-gender-1-238846g93496g9"
+                                                                                                             src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/profilef.png"
+                                                                                                             title="Benutze weiblichen Avatar für meine Kommentare"></label>
+                                                                                                    <input id="toctoc_comments_pi1_238846g93496g9gender"
+                                                                                                           name="toctoc_comments_pi1[gender]"
+                                                                                                           type="hidden"
+                                                                                                           value="">
+                                                                                                </div>
+                                                                                            </div>
+
+
+                                                                                            <div class="tx-tc-ct-form-field tx-tc-width100-85">
+
+                                                                                                <input class="tx-tc-ct-input tx-tc-ct-input-email"
+                                                                                                       id="toctoc_comments_pi1_238846g93496g9email" name="toctoc_comments_pi1[email]" placeholder="E-Mail*"
+                                                                                                       size="34"
+                                                                                                       type="text">
+
+                                                                                            </div>
+
+
+                                                                                            <input id="toctoc_comments_pi1_238846g93496g9#commenttitle"
+                                                                                                   name="toctoc_comments_pi1[commenttitle]"
+                                                                                                   type="hidden"
+                                                                                                   value="">
+
+                                                                                            <input id="toctoc_comments_pi1_238846g93496g9#firstname" name="toctoc_comments_pi1[firstname]"
+                                                                                                   type="hidden"
+                                                                                                   value="">
+
+                                                                                            <input id="toctoc_comments_pi1_238846g93496g9#location" name="toctoc_comments_pi1[location]"
+                                                                                                   type="hidden"
+                                                                                                   value="">
+
+                                                                                            <input id="toctoc_comments_pi1_238846g93496g9#homepage" name="toctoc_comments_pi1[homepage]"
+                                                                                                   type="hidden"
+                                                                                                   value="">
+
+                                                                                            <div class="tx-tc-ct-form-reqhint"><span
+                                                                                                    class="tx-tc-ct-reqhint">*: Pflichtfeld</span>
+                                                                                            </div>
+
+
+                                                                                            <div class="tx-tc-ct-ntf-wrap">
+                                                                                                <div class="tx-tc-ct-form-field-ntf"
+                                                                                                     id="tx-tc-ct-form-field-ntf-238846g93496g9">
+                                                                                                    <div class="tx-tc-ct-form-field-1nl">
+                                                                                                        <label class="tx-tc-ct-label-ntf tx-tc-ct-label-notify">Benachrichtigung</label>
+                                                                                                        <input class="tx-tc-ntf-check"
+                                                                                                               id="toctoc_comments_pi1_238846g93496g9notify"
+                                                                                                               name="toctoc_comments_pi1[notify]"
+                                                                                                               type="checkbox"
+                                                                                                               value="0">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+
+
+                                                                                            <input id="toctoc_comments_pi1_238846g93496g9cid" name="toctoc_comments_pi1[cid]"
+                                                                                                   type="hidden"
+                                                                                                   value="238846g93496g9">
+                                                                                            <input id="toctoc_comments_pi1_238846g93496g9level" name="toctoc_comments_pi1[level]"
+                                                                                                   type="hidden"
+                                                                                                   value="1">
+                                                                                        </div>
+                                                                                        <div class="tx-tc-div-submit"
+                                                                                             id="tx-tc-div-submit238846g93496g9">
+                                                                                            <input id="toctoc_comments_pi1_238846g93496g9insert" name="insert"
+                                                                                                   type="hidden"
+                                                                                                   value="insert"><input id="toctoc_comments_pi1_238846g93496g9commentparentid"
+                                                                                                                         name="toctoc_comments_pi1[commentparentid]"
+                                                                                                                         type="hidden"
+                                                                                                                         value="349">
+                                                                                            <input class="tx-tc-ct-submit tx-tc-nodisp tx-tc-sbinit"
+                                                                                                   id="toctoc_comments_pi1_submit_238846g93496g9"
+                                                                                                   name="toctoc_comments_pi1[submit]"
+                                                                                                   type="button"
+                                                                                                   value="Absenden">
+                                                                                            <div class="tx-tc-prvcnt-data"
+                                                                                                 id="tx-tc-prvcnt-data-238846g93496g9">
+                                                                                                <div class="tx-tc-ct-prv-icon-dp"
+                                                                                                     id="tx-tc-cts-prv-ct-dp-238846g93496g9"><img
+                                                                                                        alt="Kommentarvorschau"
+                                                                                                        class="tx-tc-ct-prv-icon tx-tc-nodisp"
+                                                                                                        height="16"
+                                                                                                        id="prv-ct-238846g93496g9"
+                                                                                                        src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/previewct.png" title="Kommentarvorschau"
+                                                                                                        width="16"></div>
+                                                                                            </div>
+
+                                                                                            <div class="tx-tc-termscondtext"><label
+                                                                                                    class="tx-tc-ct-label-ntf">Ich akzeptiere die <a
+                                                                                                    href="https://www.informatik-aktuell.de/datenschutz.html"
+                                                                                                    rel="nofollow"
+                                                                                                    target="terms">Datenschutzerklärung</a></label><input
+                                                                                                    class="tx-tc-ntf-check tx-tc-terms-check"
+                                                                                                    id="toctoc_comments_pi1_238846g93496g9acceptterms"
+                                                                                                    name="toctoc_comments_pi1[acceptterms]"
+                                                                                                    type="checkbox"
+                                                                                                    value="0"></div>
+                                                                                        </div>
+                                                                                        <span class="tx-tc-frmerrhndl tx-tc-nodisp"
+                                                                                              id="tx-tc-frmerrhndl__0238846g93496g9"></span>
+
+
+                                                                                        <input name="typo3_user_int" type="hidden" value="1"><span
+                                                                                            class="tx-tc-setuserdata tx-tc-nodisp"
+                                                                                            id="tx-tc-setuserdata-238846g93496g9"></span>
+                                                                                    </fieldset>
+                                                                                </form>
+
+                                                                                <div class="tx-tc-ct-prv-frameover"
+                                                                                     id="tx-tc-cts-prv-ct-238846g93496g9">
+                                                                                    <div class="tx-tc-prvcnt-data-off tx-tc-ct-prv tx-tc-nodisp"
+                                                                                         id="tx-tc-cts-div-ct-prv-238846g93496g9"><img
+                                                                                            alt="Kommentarvorschau schliessen"
+                                                                                            class="tx-tc-ct-prv tx-tc-pointer tx-tc-blockdisp"
+                                                                                            height="11"
+                                                                                            id="tx-tc-cts-img-prv-ct-238846g93496g9"
+                                                                                            src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/nopreviewpic.png"
+                                                                                            title="Kommentarvorschau schliessen" width="12"></div>
+                                                                                    <div class="tx-tc-ct-prv-frame"
+                                                                                         id="tx-tc-cts-prv-content-238846g93496g9"></div>
+                                                                                </div>
+                                                                                <a id="comment_a_238846g93496g9"></a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="tx-tc-nbrsubcomments" id="tx-tc-cts-explink-349"><span
+                                                                class="tx-tc-lnkexp tx-tc-textlink"
+                                                                id="tctrvw__1__349__350__350rr__nbcl">1 Antwort</span></div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="tx-tc-cts-ct-box tx-tc-mihgt-ctbox tx-tc-ct-box-rlvlm-1 tx-tc-indent-subcmt tx-tc-cts-ct-box-sc"
+                                         id="tx-tc-cts-ct-tx-tc-cts_350">
+                                        <div class="tx-tc-sortinfo tx-tc-nodisp"
+                                             id="tx-tc-sortinfos_23884__0350__01__00__01528282652__01__01__01"></div>
+                                        <div class="tx-tc-ct-innerctbox" id="tx-tc-cts-ct-dp-tx-tc-cts_350">
+                                            <div class="tx-tc-cts-ct-dp tx-tc-cts-ct-dp-sc">
+                                                <div class="tx-tc-ct-box tx-tc-ct-box-sc">
+                                                    <div class="tx-tc-ct-uc" id="tx-tc-cts-uc-350">
+                                                        <div class="tx-tc-ct-uc-pic2" id="tx-tc-cts-uc-pic2-350"></div>
+                                                        <div class="tx-tc-ct-box-ctclose">
+                                                            <span class="tx-tc-ucclose tx-tc-CloseButton" id="tx-tc-cts-uc-cls-350"
+                                                                  title="Schliessen"></span>
+                                                        </div>
+                                                        <div class="tx-tc-ucinner" id="tx-tc-cts-uc-inner-350">
+                                                        </div>
+                                                    </div>
+                                                    <div class="tx-tc-ze tx-tc-ze-sc"></div>
+                                                    <div class="tx-tc-ct-box-ctpic tx-tc-ct-box-ctpic-sc">
+                                                        <div class="tx-tc-ct-box-picturecrop32 tx-tc-ct-box-picturecrop32-sc"><a
+                                                                class="tx-tc-picclasslink" href="javascript:void(0)" id="" rel="nofollow"><img
+                                                                alt="Lovis"
+                                                                class="tx-tc-userpic tx-tc-uimgsize" id="tx-tc-cts-img-350" src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/profile.png"></a></div>
+
+                                                    </div>
+                                                    <div class="tx-tc-ct-box-cttxt tx-tc-ct-box-cttxt-sc tx-tc-tipemo-1"
+                                                         id="tx-tc-tipemo-1-tx-tc-ct-box-cttxt-__0350">
+
+                                                        <a id="tx-tc-ct-350"></a>
+                                                        <p class="tx-tc-text tx-tc-text-sc" id="tx-tc-ct-box-cttxt-350"><span
+                                                                class="tx-tc-commenttextuclink tx-tc-textlink"
+                                                                id="tx-tc-nameclasslink__350__23884__MmEwNDo0NTQwOmFhMDQ6M2QwMDo1MGEyOjUyYjE6NDQ4ODpmNmEuMA==__PGltZyBzcmM9Imh0dHBzOi8vd3d3LmluZm9ybWF0aWstYWt0dWVsbC5kZXR5cG8zY29uZi9leHQvdG9jdG9jX2NvbW1lbnRzL3Jlcy9jc3MvdGhlbWVzL3Rpc3F1cy9pbWcvcHJvZmlsZS5wbmciIGNsYXNzPSJ0eC10Yy11c2VycGljIHR4LXRjLXVpbWdzaXplIiB0aXRsZT0iTG92aXMiICBpZD0idHgtdGMtY3RzLWltZy0zNTAiIC8+__8000"><b></b>&nbsp;<b>Lovis</b> -&nbsp;</span>Hi
+                                                            Sasa,<br>
+                                                            gut beobachtet! Die Definition des Higher-Order-Parameters ist tatsächlich (T)-&gt;R. <br>
+                                                            In diesem Fall ging ich davon aus, dass "..." Unit zurückliefert, so
+                                                            dass der Typ (T) -&gt; Unit ist. Hat mich beim schreiben wohl etwas
+                                                            durcheinander <span class="tx-tc-inlinedisp" id="tx-tc-acropped-350"><br><span
+                                                                    class="tx-tc-tcsroc tx-tc-textlink" id="tx-tc-tcsroc-350">mehr anzeigen ...</span></span><span
+                                                                    class="tx-tc-nodisp"
+                                                                    id="tx-tc-cropped-350"> gebracht. Ich werde es korrigieren.</span></p>
+
+                                                        <div class="tx-tc-rt tx-tc-rt-sc">
+                                                            <div class="tx-tc-rts-area tx-tc-rts-area-sc"
+                                                                 id="tx-tc-rts-tx_toctoc_comments_comments_350">
+
+                                                                <div class="tx-tc-rts-container">
+                                                                    <div class="tx-tc-rts-li" id="tx-tc-rts-dp-tx_toctoc_comments_comments_350">
+                                                                        <div class="tx-tc-rts">
+                                                                            <div class="tx-tc-dyndate" style="opacity: 1;">
+                                                                                <div class="tx-tc-ctdate" id="tx-tc-ctdatedisp-350">Vor 1 Jahr 2
+                                                                                    Monaten
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="tx-tc-nodisp" id="tx-tc-ctdatetime-350">1528282652</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="tx-tc-ct-ry-report-line" id="tx-tc-ct-ry-rl-350">
+
+                                                        <div class="tx-tc-ct-ry tx-tc-blockdisp" id="tx-tc-ct-ry-fh-350"><span
+                                                                class="tx-tc-ct-div-ry-data tx-tc-textlink"
+                                                                id="tx-tc-ct-div-ry-350__023884__0tt_content_23884__0triggerform__0238846g93506g9">Antworten</span>
+                                                        </div>
+                                                        <div class="tx-tc-ct-rply tx-tc-margin0 tx-tc-nodisp" id="tx-tc-cts-rply-350">
+                                                            <div class="tx-tc-pi1" id="tx-tc-pi1-form-tt_content_238846g93506g9">
+                                                                <span class="tx-tc-initpreviewvrs tx-tc-nodisp"
+                                                                      id="tx-tc-initpreviewvrs-238846g93506g9"></span>
+                                                                <div class="tx-tc-state-0" id="tx-tc-form-tt_content_238846g93506g9">
+
+                                                                    <div id="tx-tc-form-dp-tt_content_238846g93506g9">
+                                                                        <div class="tx-tc-form-dp">
+
+                                                                            <div class="tx-tc-ct-box-ctpic2">
+                                                                                <div class="tx-tc-ct-box-picturecrop322"></div>
+                                                                            </div>
+                                                                            <div class="tx-tc-ct-box-cttxt-reply tx-tc-frmsqrhgt"
+                                                                                 id="tx-tc-formsqueezer-238846g93506g9">
+                                                                                <form autocomplete="off" class="tx-tc-form-for-newcomment"
+                                                                                      enctype="multipart/form-data" id="cf238846g93506g9"
+                                                                                      method="post" name="ncf238846g93506g9">
+                                                                                    <fieldset
+                                                                                            class="tx-tc-ct-fieldset"
+                                                                                            id="cffs238846g93506g9__0tt_content_238846g93506g9__01__0ad20a43612edb0f0074ba4a09514c703__0addcomment__0form__00__0__0false__0tt_content_238846g93506g9__070">
+                                                                                        <input id="toctoc_comments_pi1_238846g93506g9itemurl" name="toctoc_comments_pi1[itemurl]"
+                                                                                               type="hidden"
+                                                                                               value="https://www.informatik-aktuell.de/entwicklung/programmiersprachen/ist-kotlin-das-bessere-java-eine-einfuehrung.html">
+                                                                                        <input id="toctoc_comments_pi1_238846g93506g9itemurlchk" name="toctoc_comments_pi1[itemurlchk]"
+                                                                                               type="hidden"
+                                                                                               value="9c407a32ef9c5323367b0a39ea98cdd7">
+
+                                                                                        <div class="tx-tc-cts-form-fieldtextarea">
+                                                                                            <div class="tx-tc-divtextarea tx-tc-dtadyn"
+                                                                                                 id="textarea-238846g93506g9">
+                                                                                                <textarea autocomplete="off"
+                                                                                                          class="tx-tc-ctinput-textarea" cols="42"
+                                                                                                          id="toctoc_comments_pi1_contenttextbox_238846g93506g9" name="toctoc_comments_pi1[content]"
+                                                                                                          placeholder="Antworten..."
+                                                                                                          rows="1"></textarea>
+
+                                                                                                <span class="tx-tc-wtrmrk-tcnt tx-tc-nodisp"
+                                                                                                      id="tx-tc-wtrmrk-tcnt-238846g93506g9__0QW50d29ydGVuLi4u"></span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="tx-tcfh tx-tcfh112 tx-tc-nodisp"
+                                                                                             id="formhider-238846g93506g9">
+                                                                                            <div class="tx-tc-ct-form-field-wpp tx-tc-nodisp"
+                                                                                                 id="tx-tc-form-dp-wpp-238846g93506g9">
+                                                                                                <div class="tx-tc-pvs-prevnext tx-tc-nodisp"
+                                                                                                     id="tx-tc-cts-pvsprevnext-238846g93506g9">
+                                                                                                    <img alt="Vorheriger"
+                                                                                                         class="tx-tc-pvs-prev tx-tc-nodisp tx-tc-fright" height="11"
+                                                                                                         id="tx-tc-cts-pvsprev-238846g93506g9"
+                                                                                                         src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/prev.png"
+                                                                                                         title="Vorheriger" width="12">
+                                                                                                    <img alt="Nächster"
+                                                                                                         class="tx-tc-pvs-next tx-tc-nodisp tx-tc-fright" height="11"
+                                                                                                         id="tx-tc-cts-pvsnext-238846g93506g9"
+                                                                                                         src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/next.png"
+                                                                                                         title="Nächster" width="12">
+                                                                                                    <img alt="Vorschaubilder verbergen"
+                                                                                                         class="tx-tc-pvs-nopreviewpic tx-tc-nodisp tx-tc-fright"
+                                                                                                         height="11"
+                                                                                                         id="tx-tc-cts-nopreviewpic-238846g93506g9"
+                                                                                                         src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/nopreviewpic.png"
+                                                                                                         title="Vorschaubilder verbergen" width="12">
+                                                                                                </div>
+                                                                                                <div class="tx-tc-pvs-pvsfuncs tx-tc-nodisp"
+                                                                                                     id="tx-tc-cts-pvsfuncs-238846g93506g9">
+                                                                                                    <img alt="Webseitenvorschau schliessen"
+                                                                                                         class="tx-tc-pvs-pvsnopreview tx-tc-nodisp"
+                                                                                                         height="11"
+                                                                                                         id="tx-tc-cts-pvsnopreview-238846g93506g9"
+                                                                                                         src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/nopreviewpic.png"
+                                                                                                         title="Webseitenvorschau schliessen" width="12">
+                                                                                                </div>
+                                                                                                <div id="tx-tc-form-wpp-238846g93506g9">
+                                                                                                    <img alt="Vorschau wird geladen ..."
+                                                                                                         class="tx-tc-working tx-tc-blockdisp"
+                                                                                                         height="11"
+                                                                                                         id="tx-tc-form-wpp-working238846g93506g9"
+                                                                                                         src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/workingslides.gif" title="Vorschau wird geladen ..."
+                                                                                                         width="16">
+                                                                                                </div>
+                                                                                            </div>
+
+
+                                                                                            <div class="tx-tc-ct-form-field tx-tc-width100-85">
+
+                                                                                                <input class="tx-tc-ct-input tx-tc-ct-input-lastname tx-tc-fleft"
+                                                                                                       id="toctoc_comments_pi1_238846g93506g9lastname" name="toctoc_comments_pi1[lastname]" placeholder="Name*"
+                                                                                                       size="32"
+                                                                                                       type="text">
+
+                                                                                                <div class="tx-tc-ct-form-gender tx-tc-nodisp"
+                                                                                                     id="tx-tc-ct-form-gender238846g93506g9">
+                                                                                                    <label class="tx-tc-ct-labelgender"><img
+                                                                                                            alt="Benutze männlichen Avatar für meine Kommentare"
+                                                                                                            class="tx-tc-defuserpic tx-tc-defuserpic_m tx-tc-pointer tx-tc-opa1"
+                                                                                                            id="tx-toctoc-comments-comments-img-gender-0-238846g93506g9"
+                                                                                                            src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/profile.png"
+                                                                                                            title="Benutze männlichen Avatar für meine Kommentare">
+                                                                                                        <img alt="Benutze weiblichen Avatar für meine Kommentare"
+                                                                                                             class="tx-tc-defuserpic tx-tc-defuserpic_f tx-tc-pointer tx-tc-opa40"
+                                                                                                             id="tx-toctoc-comments-comments-img-gender-1-238846g93506g9"
+                                                                                                             src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/profilef.png"
+                                                                                                             title="Benutze weiblichen Avatar für meine Kommentare"></label>
+                                                                                                    <input id="toctoc_comments_pi1_238846g93506g9gender"
+                                                                                                           name="toctoc_comments_pi1[gender]"
+                                                                                                           type="hidden"
+                                                                                                           value="">
+                                                                                                </div>
+                                                                                            </div>
+
+
+                                                                                            <div class="tx-tc-ct-form-field tx-tc-width100-85">
+
+                                                                                                <input class="tx-tc-ct-input tx-tc-ct-input-email"
+                                                                                                       id="toctoc_comments_pi1_238846g93506g9email" name="toctoc_comments_pi1[email]" placeholder="E-Mail*"
+                                                                                                       size="32"
+                                                                                                       type="text">
+
+                                                                                            </div>
+
+
+                                                                                            <input id="toctoc_comments_pi1_238846g93506g9#commenttitle"
+                                                                                                   name="toctoc_comments_pi1[commenttitle]"
+                                                                                                   type="hidden"
+                                                                                                   value="">
+
+                                                                                            <input id="toctoc_comments_pi1_238846g93506g9#firstname" name="toctoc_comments_pi1[firstname]"
+                                                                                                   type="hidden"
+                                                                                                   value="">
+
+                                                                                            <input id="toctoc_comments_pi1_238846g93506g9#location" name="toctoc_comments_pi1[location]"
+                                                                                                   type="hidden"
+                                                                                                   value="">
+
+                                                                                            <input id="toctoc_comments_pi1_238846g93506g9#homepage" name="toctoc_comments_pi1[homepage]"
+                                                                                                   type="hidden"
+                                                                                                   value="">
+
+                                                                                            <div class="tx-tc-ct-form-reqhint"><span
+                                                                                                    class="tx-tc-ct-reqhint">*: Pflichtfeld</span>
+                                                                                            </div>
+
+
+                                                                                            <div class="tx-tc-ct-ntf-wrap">
+                                                                                                <div class="tx-tc-ct-form-field-ntf"
+                                                                                                     id="tx-tc-ct-form-field-ntf-238846g93506g9">
+                                                                                                    <div class="tx-tc-ct-form-field-1nl">
+                                                                                                        <label class="tx-tc-ct-label-ntf tx-tc-ct-label-notify">Benachrichtigung</label>
+                                                                                                        <input class="tx-tc-ntf-check"
+                                                                                                               id="toctoc_comments_pi1_238846g93506g9notify"
+                                                                                                               name="toctoc_comments_pi1[notify]"
+                                                                                                               type="checkbox"
+                                                                                                               value="0">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+
+
+                                                                                            <input id="toctoc_comments_pi1_238846g93506g9cid" name="toctoc_comments_pi1[cid]"
+                                                                                                   type="hidden"
+                                                                                                   value="238846g93506g9">
+                                                                                            <input id="toctoc_comments_pi1_238846g93506g9level" name="toctoc_comments_pi1[level]"
+                                                                                                   type="hidden"
+                                                                                                   value="2">
+                                                                                        </div>
+                                                                                        <div class="tx-tc-div-submit"
+                                                                                             id="tx-tc-div-submit238846g93506g9">
+                                                                                            <input id="toctoc_comments_pi1_238846g93506g9insert" name="insert"
+                                                                                                   type="hidden"
+                                                                                                   value="insert"><input id="toctoc_comments_pi1_238846g93506g9commentparentid"
+                                                                                                                         name="toctoc_comments_pi1[commentparentid]"
+                                                                                                                         type="hidden"
+                                                                                                                         value="350">
+                                                                                            <input class="tx-tc-ct-submit tx-tc-nodisp tx-tc-sbinit"
+                                                                                                   id="toctoc_comments_pi1_submit_238846g93506g9"
+                                                                                                   name="toctoc_comments_pi1[submit]"
+                                                                                                   type="button"
+                                                                                                   value="Absenden">
+                                                                                            <div class="tx-tc-prvcnt-data"
+                                                                                                 id="tx-tc-prvcnt-data-238846g93506g9">
+                                                                                                <div class="tx-tc-ct-prv-icon-dp"
+                                                                                                     id="tx-tc-cts-prv-ct-dp-238846g93506g9"><img
+                                                                                                        alt="Kommentarvorschau"
+                                                                                                        class="tx-tc-ct-prv-icon tx-tc-nodisp"
+                                                                                                        height="16"
+                                                                                                        id="prv-ct-238846g93506g9"
+                                                                                                        src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/previewct.png" title="Kommentarvorschau"
+                                                                                                        width="16"></div>
+                                                                                            </div>
+
+                                                                                            <div class="tx-tc-termscondtext"><label
+                                                                                                    class="tx-tc-ct-label-ntf">Ich akzeptiere die <a
+                                                                                                    href="https://www.informatik-aktuell.de/datenschutz.html"
+                                                                                                    rel="nofollow"
+                                                                                                    target="terms">Datenschutzerklärung</a></label><input
+                                                                                                    class="tx-tc-ntf-check tx-tc-terms-check"
+                                                                                                    id="toctoc_comments_pi1_238846g93506g9acceptterms"
+                                                                                                    name="toctoc_comments_pi1[acceptterms]"
+                                                                                                    type="checkbox"
+                                                                                                    value="0"></div>
+                                                                                        </div>
+                                                                                        <span class="tx-tc-frmerrhndl tx-tc-nodisp"
+                                                                                              id="tx-tc-frmerrhndl__0238846g93506g9"></span>
+
+
+                                                                                        <input name="typo3_user_int" type="hidden" value="1"><span
+                                                                                            class="tx-tc-setuserdata tx-tc-nodisp"
+                                                                                            id="tx-tc-setuserdata-238846g93506g9"></span>
+                                                                                    </fieldset>
+                                                                                </form>
+
+                                                                                <div class="tx-tc-ct-prv-frameover"
+                                                                                     id="tx-tc-cts-prv-ct-238846g93506g9">
+                                                                                    <div class="tx-tc-prvcnt-data-off tx-tc-ct-prv tx-tc-nodisp"
+                                                                                         id="tx-tc-cts-div-ct-prv-238846g93506g9"><img
+                                                                                            alt="Kommentarvorschau schliessen"
+                                                                                            class="tx-tc-ct-prv tx-tc-pointer tx-tc-blockdisp"
+                                                                                            height="11"
+                                                                                            id="tx-tc-cts-img-prv-ct-238846g93506g9"
+                                                                                            src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/nopreviewpic.png"
+                                                                                            title="Kommentarvorschau schliessen" width="12"></div>
+                                                                                    <div class="tx-tc-ct-prv-frame"
+                                                                                         id="tx-tc-cts-prv-content-238846g93506g9"></div>
+                                                                                </div>
+                                                                                <a id="comment_a_238846g93506g9"></a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div class="tx-tc-updatecidlist tx-tc-nodisp" id="tx-tc-updatecidlist23884__0tt_content_23884"></div>
+
+
+                        </div>
+                    </div>
+                    <a id="comment-ry-23884"></a>
+                    <div class="tx-tc-ct-ry-frameover" id="tx-tc-ct-ry-frame-23884">
+                        <div class="tx-tc-cocfuncs tx-tc-nodisp" id="tx-tc-cts-cocfuncs-23884"><img alt="Antwort abbrechen"
+                                                                                                    class="tx-tc-coc tx-tc-nodisp"
+                                                                                                    height="11" id="tx-tc-cts-nococ-23884"
+                                                                                                    src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/nopreviewpic.png" title="Antwort abbrechen"
+                                                                                                    width="12"></div>
+                        <div class="tx-tc-ct-rybox-title tx-tc-nodisp" id="tx-tc-ct-rybox-title-23884">Ihr Kommentar ist eine Antwort auf den
+                            folgenden Kommentar
+                        </div>
+                        <div class="tx-tc-ct-rybox tx-tc-nodisp" id="tx-tc-ct-rybox-23884"></div>
+                    </div>
+
+                    <div class="tx-tc-pi1" id="tx-tc-pi1-form-tt_content_23884">
+                        <span class="tx-tc-initpreviewvrs tx-tc-nodisp" id="tx-tc-initpreviewvrs-23884"></span>
+                        <div class="tx-tc-state-0" id="tx-tc-form-tt_content_23884">
+
+                            <div id="tx-tc-form-dp-tt_content_23884">
+                                <div class="tx-tc-form-dp">
+
+                                    <div class="tx-tc-ct-box-ctpic2">
+                                        <div class="tx-tc-ct-box-picturecrop322"></div>
+                                    </div>
+                                    <div class="tx-tc-ct-box-cttxt tx-tc-frmsqrhgt" id="tx-tc-formsqueezer-23884">
+                                        <form autocomplete="off" class="tx-tc-form-for-newcomment" enctype="multipart/form-data" id="cf23884" method="post"
+                                              name="ncf23884">
+                                            <fieldset
+                                                    class="tx-tc-ct-fieldset"
+                                                    id="cffs23884__0tt_content_23884__01__08046b446d60e2b572d00f8b588d74322__0addcomment__0form__00__0__0false__0tt_content_23884__070">
+                                                <input id="toctoc_comments_pi1_23884itemurl" name="toctoc_comments_pi1[itemurl]" type="hidden"
+                                                       value="https://www.informatik-aktuell.de/entwicklung/programmiersprachen/ist-kotlin-das-bessere-java-eine-einfuehrung.html">
+                                                <input id="toctoc_comments_pi1_23884itemurlchk" name="toctoc_comments_pi1[itemurlchk]" type="hidden"
+                                                       value="9c407a32ef9c5323367b0a39ea98cdd7">
+
+                                                <div class="tx-tc-cts-form-fieldtextarea">
+                                                    <div class="tx-tc-divtextarea tx-tc-dtadyn" id="textarea-23884">
+                                                        <textarea autocomplete="off" class="tx-tc-ctinput-textarea" cols="42" id="toctoc_comments_pi1_contenttextbox_23884"
+                                                                  name="toctoc_comments_pi1[content]" placeholder="Kommentar hinzufügen..."
+                                                                  rows="1"></textarea>
+
+                                                        <span class="tx-tc-wtrmrk-tcnt tx-tc-nodisp"
+                                                              id="tx-tc-wtrmrk-tcnt-23884__0S29tbWVudGFyIGhpbnp1ZsO8Z2VuLi4u"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="tx-tcfh tx-tcfh112 tx-tc-nodisp" id="formhider-23884">
+                                                    <div class="tx-tc-ct-form-field-wpp tx-tc-nodisp" id="tx-tc-form-dp-wpp-23884">
+                                                        <div class="tx-tc-pvs-prevnext tx-tc-nodisp" id="tx-tc-cts-pvsprevnext-23884">
+                                                            <img alt="Vorheriger" class="tx-tc-pvs-prev tx-tc-nodisp tx-tc-fright" height="11"
+                                                                 id="tx-tc-cts-pvsprev-23884"
+                                                                 src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/prev.png" title="Vorheriger" width="12">
+                                                            <img alt="Nächster" class="tx-tc-pvs-next tx-tc-nodisp tx-tc-fright" height="11"
+                                                                 id="tx-tc-cts-pvsnext-23884"
+                                                                 src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/next.png" title="Nächster" width="12">
+                                                            <img alt="Vorschaubilder verbergen" class="tx-tc-pvs-nopreviewpic tx-tc-nodisp tx-tc-fright"
+                                                                 height="11"
+                                                                 id="tx-tc-cts-nopreviewpic-23884"
+                                                                 src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/nopreviewpic.png" title="Vorschaubilder verbergen" width="12">
+                                                        </div>
+                                                        <div class="tx-tc-pvs-pvsfuncs tx-tc-nodisp" id="tx-tc-cts-pvsfuncs-23884">
+                                                            <img alt="Webseitenvorschau schliessen"
+                                                                 class="tx-tc-pvs-pvsnopreview tx-tc-nodisp"
+                                                                 height="11" id="tx-tc-cts-pvsnopreview-23884"
+                                                                 src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/nopreviewpic.png" title="Webseitenvorschau schliessen" width="12">
+                                                        </div>
+                                                        <div id="tx-tc-form-wpp-23884">
+                                                            <img alt="Vorschau wird geladen ..." class="tx-tc-working tx-tc-blockdisp"
+                                                                 height="11"
+                                                                 id="tx-tc-form-wpp-working23884" src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/workingslides.gif" title="Vorschau wird geladen ..."
+                                                                 width="16">
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="tx-tc-ct-form-field tx-tc-width100-85">
+
+                                                        <input class="tx-tc-ct-input tx-tc-ct-input-lastname tx-tc-fleft" id="toctoc_comments_pi1_23884lastname"
+                                                               name="toctoc_comments_pi1[lastname]" placeholder="Name*" size="35"
+                                                               type="text">
+
+                                                        <div class="tx-tc-ct-form-gender tx-tc-nodisp" id="tx-tc-ct-form-gender23884">
+                                                            <label class="tx-tc-ct-labelgender"><img
+                                                                    alt="Benutze männlichen Avatar für meine Kommentare"
+                                                                    class="tx-tc-defuserpic tx-tc-defuserpic_m tx-tc-pointer tx-tc-opa1"
+                                                                    id="tx-toctoc-comments-comments-img-gender-0-23884"
+                                                                    src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/profile.png"
+                                                                    title="Benutze männlichen Avatar für meine Kommentare"> <img
+                                                                    alt="Benutze weiblichen Avatar für meine Kommentare"
+                                                                    class="tx-tc-defuserpic tx-tc-defuserpic_f tx-tc-pointer tx-tc-opa40"
+                                                                    id="tx-toctoc-comments-comments-img-gender-1-23884"
+                                                                    src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/profilef.png"
+                                                                    title="Benutze weiblichen Avatar für meine Kommentare"></label>
+                                                            <input id="toctoc_comments_pi1_23884gender" name="toctoc_comments_pi1[gender]"
+                                                                   type="hidden" value="">
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="tx-tc-ct-form-field tx-tc-width100-85">
+
+                                                        <input class="tx-tc-ct-input tx-tc-ct-input-email" id="toctoc_comments_pi1_23884email" name="toctoc_comments_pi1[email]" placeholder="E-Mail*"
+                                                               size="35" type="text">
+
+                                                    </div>
+
+
+                                                    <input id="toctoc_comments_pi1_23884#commenttitle" name="toctoc_comments_pi1[commenttitle]"
+                                                           type="hidden" value="">
+
+                                                    <input id="toctoc_comments_pi1_23884#firstname" name="toctoc_comments_pi1[firstname]"
+                                                           type="hidden" value="">
+
+                                                    <input id="toctoc_comments_pi1_23884#location" name="toctoc_comments_pi1[location]" type="hidden"
+                                                           value="">
+
+                                                    <input id="toctoc_comments_pi1_23884#homepage" name="toctoc_comments_pi1[homepage]" type="hidden"
+                                                           value="">
+
+                                                    <div class="tx-tc-ct-form-reqhint"><span class="tx-tc-ct-reqhint">*: Pflichtfeld</span></div>
+
+
+                                                    <div class="tx-tc-ct-ntf-wrap">
+                                                        <div class="tx-tc-ct-form-field-ntf" id="tx-tc-ct-form-field-ntf-23884">
+                                                            <div class="tx-tc-ct-form-field-1nl">
+                                                                <label class="tx-tc-ct-label-ntf tx-tc-ct-label-notify">Benachrichtigung</label>
+                                                                <input class="tx-tc-ntf-check" id="toctoc_comments_pi1_23884notify" name="toctoc_comments_pi1[notify]"
+                                                                       type="checkbox" value="0">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <input id="toctoc_comments_pi1_23884cid" name="toctoc_comments_pi1[cid]" type="hidden"
+                                                           value="23884">
+                                                    <input id="toctoc_comments_pi1_23884level" name="toctoc_comments_pi1[level]" type="hidden"
+                                                           value="0">
+                                                </div>
+                                                <div class="tx-tc-div-submit" id="tx-tc-div-submit23884">
+                                                    <input id="toctoc_comments_pi1_23884insert" name="insert" type="hidden" value="insert"><input
+                                                        id="toctoc_comments_pi1_23884commentparentid" name="toctoc_comments_pi1[commentparentid]"
+                                                        type="hidden" value="0">
+                                                    <input class="tx-tc-ct-submit tx-tc-nodisp tx-tc-sbinit" id="toctoc_comments_pi1_submit_23884"
+                                                           name="toctoc_comments_pi1[submit]" type="button" value="Absenden">
+                                                    <div class="tx-tc-prvcnt-data" id="tx-tc-prvcnt-data-23884">
+                                                        <div class="tx-tc-ct-prv-icon-dp" id="tx-tc-cts-prv-ct-dp-23884"><img alt="Kommentarvorschau"
+                                                                                                                              class="tx-tc-ct-prv-icon tx-tc-nodisp"
+                                                                                                                              height="16"
+                                                                                                                              id="prv-ct-23884"
+                                                                                                                              src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/previewct.png"
+                                                                                                                              title="Kommentarvorschau" width="16">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="tx-tc-termscondtext"><label class="tx-tc-ct-label-ntf">Ich akzeptiere die <a
+                                                            href="https://www.informatik-aktuell.de/datenschutz.html" rel="nofollow" target="terms">Datenschutzerklärung</a></label><input
+                                                            class="tx-tc-ntf-check tx-tc-terms-check" id="toctoc_comments_pi1_23884acceptterms"
+                                                            name="toctoc_comments_pi1[acceptterms]" type="checkbox"
+                                                            value="0"></div>
+                                                </div>
+                                                <span class="tx-tc-frmerrhndl tx-tc-nodisp" id="tx-tc-frmerrhndl__023884"></span>
+
+
+                                                <input name="typo3_user_int" type="hidden" value="1"><span class="tx-tc-setuserdata tx-tc-nodisp"
+                                                                                                           id="tx-tc-setuserdata-23884"></span>
+                                            </fieldset>
+                                        </form>
+
+                                        <div class="tx-tc-ct-prv-frameover" id="tx-tc-cts-prv-ct-23884">
+                                            <div class="tx-tc-prvcnt-data-off tx-tc-ct-prv tx-tc-nodisp" id="tx-tc-cts-div-ct-prv-23884"><img
+                                                    alt="Kommentarvorschau schliessen"
+                                                    class="tx-tc-ct-prv tx-tc-pointer tx-tc-blockdisp"
+                                                    height="11" id="tx-tc-cts-img-prv-ct-23884"
+                                                    src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/nopreviewpic.png" title="Kommentarvorschau schliessen" width="12"></div>
+                                            <div class="tx-tc-ct-prv-frame" id="tx-tc-cts-prv-content-23884"></div>
+                                        </div>
+                                        <a id="comment_a_23884"></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="MobileAd">
+        <a href="https://www.ittage.informatik-aktuell.de/" target="_blank"><img
+                alt=""
+                height="200" src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/ITT2019-320-mobile-Banner.png" width="320"></a>
+    </div>
+
+    <div id="footer">
+        <div class="footergrid">
+            <div class="footer-1">
+                <div class="frame default frame-type-textpic frame-layout-0   " id="c7236">
+                    <header>
+                        <div class="h1-nonSEO">Newsletter</div>
+                    </header>
+                    <div class="ce-textpic ce-left ce-below">
+                        <div class="ce-bodytext">
+                            <ul>
+                                <li> Aktuelle Artikel</li>
+                                <li>Aktuelle Nachrichten</li>
+                                <li>Aktuelle Konferenztermine</li>
+                            </ul>
+                        </div>
+                        <div class="ce-gallery" data-ce-columns="1" data-ce-images="1">
+                            <div class="ce-row">
+                                <div class="ce-column">
+                                    <figure class="image"><a href="https://www.informatik-aktuell.de/newsletter-anmeldung.html"
+                                                             title="Newsletter Abonnieren"><img alt="Newsletter Abonnieren" class="image-embed-item"
+                                                                                                height="39"
+                                                                                                src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/csm_283-newsletterbutton_1460967ec5.png"
+                                                                                                title="Newsletter Abonnieren" width="200"></a></figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="footer-2">
+                <a id="c2707"></a>
+                <header>
+                    <div class="h1-nonSEO">Kategorien</div>
+                </header>
+                <p><a class="internal-link" href="https://www.informatik-aktuell.de/">Startseite</a></p>
+                <p><a class="internal-link" href="https://www.informatik-aktuell.de/management-und-recht.html">Management</a></p>
+                <p><a class="internal-link" href="https://www.informatik-aktuell.de/entwicklung.html">Entwicklung</a></p>
+                <p><a class="internal-link" href="https://www.informatik-aktuell.de/betrieb.html">Betrieb</a></p>
+
+            </div>
+            <div class="footer-3">
+                <div class="frame default frame-type-text frame-layout-0   " id="c2705">
+                    <header>
+                        <div class="h1-nonSEO">Service</div>
+                    </header>
+                    <p><a class="internal-link" href="https://www.informatik-aktuell.de/aktuelle-meldungen.html">Aktuelle Meldungen</a></p>
+                    <p><a class="internal-link" href="https://www.informatik-aktuell.de/service/konferenzkalender.html">Konferenzkalender</a></p>
+                    <p><a class="internal-link" href="https://www.informatik-aktuell.de/it-jobs.html" title="Interner Link">IT-Jobs</a></p>
+                    <p><a class="internal-link" href="https://www.informatik-aktuell.de/rss-feeds.html">RSS-Feeds</a></p>
+                    <p><a class="internal-link" href="https://www.informatik-aktuell.de/sitemap.html" title="Sitemap">Sitemap</a></p></div>
+
+            </div>
+            <div class="footer-4">
+                <div class="frame default frame-type-text frame-layout-0   " id="c2706">
+                    <header>
+                        <div class="h1-nonSEO">Information</div>
+                    </header>
+                    <p><a class="internal-link" href="https://www.informatik-aktuell.de/impressum.html" title="Impressum">Impressum</a></p>
+                    <p><a class="internal-link" href="https://www.informatik-aktuell.de/ueber-uns.html" title="Über uns">Über Uns</a></p>
+                    <p><a class="internal-link" href="https://www.informatik-aktuell.de/media.html" title="Mediadaten">Media</a></p>
+                    <p><a class="internal-link" href="https://www.informatik-aktuell.de/datenschutz-fakten.html" title="Datenschutz">Datenschutz</a>
+                    </p>
+                    <p><a class="internal-link" href="https://www.informatik-aktuell.de/datenschutz-opt-out.html" title="Datenschutz Opt-Out">Datenschutz
+                        Opt-Out</a></p>
+                    <p><a class="internal-link" href="https://www.informatik-aktuell.de/nutzungsbedingungen.html" title="Nutzungsbedingungen">Nutzungsbedingungen</a>
+                    </p>
+                    <p><a class="internal-link" href="https://www.informatik-aktuell.de/kontakt.html" title="Kontakt">Kontakt</a></p></div>
+
+            </div>
+            <div class="footer-5">
+                <a id="c2703"></a>
+                <div class="frame-space-before-small"></div>
+                <header>
+                    <div class="h1-nonSEO">Folgen Sie uns</div>
+                </header>
+                <div class="ce-image ce-left ce-above">
+                    <div class="ce-gallery" data-ce-columns="5" data-ce-images="5">
+                        <div class="ce-row">
+                            <div class="ce-column">
+                                <figure class="image"><a href="https://www.facebook.com/informatikaktuell" target="_blank"
+                                                         title="Informatik Aktuell auf Facebook"><img alt="Informatik Aktuell auf Facebook" class="image-embed-item"
+                                                                              height="38"
+                                                                              src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/38-facebook-flat.png"
+                                                                              title="Informatik Aktuell auf Facebook" width="38"></a></figure>
+                            </div>
+                            <div class="ce-column">
+                                <figure class="image"><a href="https://twitter.com/InformatikAktue" target="_blank"
+                                                         title="Informatik Aktuell auf Twitter"><img alt="Informatik Aktuell auf Twitter" class="image-embed-item"
+                                                                              height="38"
+                                                                              src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/csm_64-twitter-flat_abecb6753f.png"
+                                                                              title="Informatik Aktuell auf Twitter" width="38"></a></figure>
+                            </div>
+                            <div class="ce-column">
+                                <figure class="image"><a href="https://www.xing.com/communities/groups/informatik-aktuell-1007063"
+                                                         target="_blank" title="Informatik Aktuell auf XING"><img alt="Informatik Aktuell auf XING"
+                                                                                                                  class="image-embed-item"
+                                                                                                                  height="38"
+                                                                                                                  src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/csm_64-xing-flat_605aff3dd5.png"
+                                                                                                                  title="Informatik Aktuell auf XING" width="38"></a></figure>
+                            </div>
+                            <div class="ce-column">
+                                <figure class="image"><a href="https://www.linkedin.com/groups/Informatik-Aktuell-8113417"
+                                                         target="_blank" title="Informatik Aktuell auf LinkedIn"><img alt="Informatik Aktuell auf LinkedIn"
+                                                                                                                      class="image-embed-item"
+                                                                                                                      height="38"
+                                                                                                                      src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/csm_64-linkedin-flat_7c9f231f98.png"
+                                                                                                                      title="Informatik Aktuell auf LinkedIn" width="38"></a>
+                                </figure>
+                            </div>
+                            <div class="ce-column">
+                                <figure class="image"><a href="https://www.informatik-aktuell.de/rss-feeds.html" title="Informatik Aktuell RSS Feeds"><img
+                                        alt="Informatik Aktuell RSS Feeds" class="image-embed-item" height="38"
+                                        src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/csm_64-rss-flat_fc5deee205.png"
+                                        title="Informatik Aktuell RSS Feeds" width="38"></a></figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        © Alkmene Verlags- und Mediengesellschaft mbH&nbsp;2019
+    </div>
+</div>
+
+<script src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/merged-b863a89efd7ee42255e8e0966753cb00-89cdbbea44f6abf871f.gzip"
+        type="text/javascript"></script>
+
+
+<script src="Ist%20Kotlin%20das%20bessere%20Java%20%20Eine%20Einf%C3%BChrung.%20%20%20Informatik%20Aktuell_files/tx-tc-ftr-9210.js"
+        type="text/javascript"></script>
+
+<div class="lightboxOverlay" id="lightboxOverlay" style="display: none;"></div>
+<div class="lightbox" id="lightbox" style="display: none;">
+    <div class="lb-outerContainer">
+        <div class="lb-container"><img class="lb-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
+            <div class="lb-nav"><a class="lb-prev" href=""></a><a class="lb-next" href=""></a></div>
+            <div class="lb-loader"><a class="lb-cancel"></a></div>
+        </div>
+    </div>
+    <div class="lb-dataContainer">
+        <div class="lb-data">
+            <div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div>
+            <div class="lb-closeContainer"><a class="lb-close"></a></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <style>body {
+        transition: opacity ease-in 0.2s;
+    }
+
+    body[unresolved] {
+        opacity: 0;
+        display: block;
+        overflow: hidden;
+        position: relative;
+    }
+    </style>
+
+    <title>Kotlin overview &nbsp;|&nbsp; Android Developers</title>
+
+    <meta content="Kotlin overview &nbsp;|&nbsp; Android Developers" property="og:title">
+
+
+    <meta content="https://developer.android.com/kotlin/overview" property="og:url">
+
+    <meta content="/images/android-developers.png" property="og:image">
+    <meta content="/images/android-developers.png" property="og:image:secure_url">
+    <meta content="1200" property="og:image:width">
+    <meta content="675" property="og:image:height">
+    <meta content="en" property="og:locale">
+    <meta content="summary_large_image" name="twitter:card">
+
+
+    <meta content="Android Developers" property="og:site_name">
+    <meta content="website" property="og:type">
+
+    <meta content="#78c257" name="theme-color">
+
+    <meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link crossorigin="use-credentials" href="https://developer.android.com/_pwa/android/manifest.json" rel="manifest">
+    <link crossorigin="" href="https://www.gstatic.com/" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect">
+    <link crossorigin="" href="https://fonts.googleapis.com/" rel="preconnect">
+    <link href="Kotlin%20overview%20%C2%A0%20%C2%A0%20Android%20Developers_files/css.css" rel="stylesheet">
+    <link href="Kotlin%20overview%20%C2%A0%20%C2%A0%20Android%20Developers_files/app.css" rel="stylesheet">
+    <noscript>
+        <link href="https://www.gstatic.com/devrel-devsite/vaf8baf42c0837f5f008e8c7cd622dab17fda7175a36251cef2ba8d3369798ea7/android/css/ce_bundle.css"
+              rel="stylesheet">
+    </noscript>
+    <link href="https://www.gstatic.com/devrel-devsite/vaf8baf42c0837f5f008e8c7cd622dab17fda7175a36251cef2ba8d3369798ea7/android/images/favicon.png"
+          rel="shortcut icon">
+    <link href="https://www.gstatic.com/devrel-devsite/vaf8baf42c0837f5f008e8c7cd622dab17fda7175a36251cef2ba8d3369798ea7/android/images/touchicon-180.png"
+          rel="apple-touch-icon">
+    <link href="https://developer.android.com/kotlin/overview" rel="canonical">
+    <link data-title="Android Developers" href="https://developer.android.com/s/opensearch.xml" rel="search"
+          type="application/opensearchdescription+xml">
+    <script async="" id="www-widgetapi-script" src="Kotlin%20overview%20%C2%A0%20%C2%A0%20Android%20Developers_files/www-widgetapi.js"
+            type="text/javascript"></script>
+    <script async="" src="Kotlin%20overview%20%C2%A0%20%C2%A0%20Android%20Developers_files/linkid.js" type="text/javascript"></script>
+    <script async="" src="Kotlin%20overview%20%C2%A0%20%C2%A0%20Android%20Developers_files/gtm.js"></script>
+    <script src="Kotlin%20overview%20%C2%A0%20%C2%A0%20Android%20Developers_files/webcomponents-lite.js"></script>
+    <script src="Kotlin%20overview%20%C2%A0%20%C2%A0%20Android%20Developers_files/devsite_app.js"></script>
+    <script src="Kotlin%20overview%20%C2%A0%20%C2%A0%20Android%20Developers_files/analytics.js"></script>
+    <script src="Kotlin%20overview%20%C2%A0%20%C2%A0%20Android%20Developers_files/devsite_heading_module.js"></script>
+    <link href="Kotlin%20overview%20%C2%A0%20%C2%A0%20Android%20Developers_files/devsite_heading.css" rel="stylesheet" type="text/css">
+    <script src="Kotlin%20overview%20%C2%A0%20%C2%A0%20Android%20Developers_files/devsite_page_rating_module.js"></script>
+    <link href="Kotlin%20overview%20%C2%A0%20%C2%A0%20Android%20Developers_files/devsite_page_rating.css" rel="stylesheet" type="text/css">
+    <script src="Kotlin%20overview%20%C2%A0%20%C2%A0%20Android%20Developers_files/devsite_snackbar_module.js"></script>
+    <link href="Kotlin%20overview%20%C2%A0%20%C2%A0%20Android%20Developers_files/devsite_snackbar.css" rel="stylesheet" type="text/css">
+    <script src="Kotlin%20overview%20%C2%A0%20%C2%A0%20Android%20Developers_files/devsite_tooltip_module.js"></script>
+    <link href="Kotlin%20overview%20%C2%A0%20%C2%A0%20Android%20Developers_files/devsite_tooltip.css" rel="stylesheet" type="text/css">
+    <script src="Kotlin%20overview%20%C2%A0%20%C2%A0%20Android%20Developers_files/devsite_youtube_module.js"></script>
+    <link href="Kotlin%20overview%20%C2%A0%20%C2%A0%20Android%20Developers_files/devsite_youtube.css" rel="stylesheet" type="text/css">
+    <link href="Kotlin%20overview%20%C2%A0%20%C2%A0%20Android%20Developers_files/devsite_content_footer.css" rel="stylesheet" type="text/css">
+    <style type="text/css"></style>
+    <script src="Kotlin%20overview%20%C2%A0%20%C2%A0%20Android%20Developers_files/iframe_api"></script>
+</head>
+<body class="" layout="docs" ready="" theme="android-theme" type="article">
+<devsite-progress id="app-progress"></devsite-progress>
+<div class="devsite-wrapper">
+    <devsite-header bottom-row--height="104" bottom-tabs--height="48" fixed="" top-row--height="48">
+
+
+        <div class="devsite-header--inner">
+            <div class="devsite-top-logo-row-wrapper-wrapper">
+                <div class="devsite-top-logo-row-wrapper">
+                    <div class="devsite-top-logo-row">
+                        <button aria-label="Close menu" class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+                                data-category="Site-Wide Custom Events"
+                                data-label="Navigation menu button" id="devsite-hamburger-menu" type="button">
+                        </button>
+                        <div class="devsite-product-name-wrapper">
+                            <a class="devsite-site-logo-link gc-analytics-event" data-category="Site-Wide Custom Events"
+                               data-label="Site logo" href="https://developer.android.com/">
+                                <img alt="Android Developers" class="devsite-site-logo"
+                                     src="Kotlin%20overview%20%C2%A0%20%C2%A0%20Android%20Developers_files/lockup.svg">
+                            </a>
+                            <span class="devsite-product-name">
+            <ul class="devsite-breadcrumb-list">
+    <li class="devsite-breadcrumb-item
+             ">
+                              </li>
+  </ul>
+          </span>
+
+                        </div>
+                        <div class="devsite-top-logo-row-middle">
+                            <div class="devsite-header-upper-tabs">
+                                <devsite-tabs class="upper-tabs" connected="">
+
+                                    <div class="devsite-tabs-wrapper">
+                                        <tab>
+                                            <a class="gc-analytics-event" data-category="Site-Wide Custom Events"
+                                               data-label="Tab: Platform" href="https://developer.android.com/about">
+                                                Platform
+                                            </a>
+
+                                        </tab>
+                                        <tab>
+                                            <a class="gc-analytics-event" data-category="Site-Wide Custom Events"
+                                               data-label="Tab: Android Studio" href="https://developer.android.com/studio">
+                                                Android Studio
+                                            </a>
+
+                                        </tab>
+                                        <tab>
+                                            <a class="gc-analytics-event" data-category="Site-Wide Custom Events"
+                                               data-label="Tab: Google Play" href="https://developer.android.com/distribute">
+                                                Google Play
+                                            </a>
+
+                                        </tab>
+                                        <tab>
+                                            <a class="gc-analytics-event" data-category="Site-Wide Custom Events"
+                                               data-label="Tab: Jetpack" href="https://developer.android.com/jetpack">
+                                                Jetpack
+                                            </a>
+
+                                        </tab>
+                                        <tab active="">
+                                            <a aria-label="Kotlin, selected" class="gc-analytics-event" data-category="Site-Wide Custom Events"
+                                               data-label="Tab: Kotlin" href="https://developer.android.com/kotlin">
+                                                Kotlin
+                                            </a>
+
+                                        </tab>
+                                        <tab>
+                                            <a class="gc-analytics-event" data-category="Site-Wide Custom Events"
+                                               data-label="Tab: Docs" href="https://developer.android.com/docs">
+                                                Docs
+                                            </a>
+
+                                        </tab>
+                                        <tab>
+                                            <a class="gc-analytics-event" data-category="Site-Wide Custom Events"
+                                               data-label="Tab: News" href="https://developer.android.com/news">
+                                                News
+                                            </a>
+
+                                        </tab>
+                                        <tab hidden="" overflow-tab=""><a class="devsite-icon devsite-icon-arrow-drop-down" href="#">More</a>
+                                            <div class="devsite-tabs-overflow-menu" hidden="" scrollbars=""></div>
+                                        </tab>
+                                    </div>
+                                </devsite-tabs>
+
+                            </div>
+                            <devsite-search enable-query-completion="" enable-search="" enable-signin="" enable-suggestions="">
+                                <form action="https://developer.android.com/s/results/" class="devsite-search-form" method="GET">
+                                    <div class="devsite-search-container">
+                                        <div class="devsite-searchbox">
+                                            <input aria-label="Search box" autocomplete="off" class="devsite-search-field devsite-search-query" name="q"
+                                                   placeholder="Search" type="text">
+                                            <div aria-hidden="true" class="devsite-search-image material-icons"></div>
+                                        </div>
+                                        <button aria-label="Open search box" class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                                                search-open=""
+                                                type="button"></button>
+                                    </div>
+                                    <div class="devsite-popout">
+                                        <div aria-haspopup="true" class="devsite-popout-result devsite-suggest-results-container" devsite-hide=""
+                                             role="menu"></div>
+                                        <div aria-haspopup="true" class="devsite-popout-result devsite-history-container" devsite-hide=""
+                                             role="menu"></div>
+                                    </div>
+                                </form>
+                                <button aria-label="Close search box" class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                                        search-close=""
+                                        type="button"></button>
+                            </devsite-search>
+
+                            <devsite-search-background style="opacity: 1;"></devsite-search-background>
+                        </div>
+
+                        <devsite-language-selector>
+                            <devsite-select class="devsite-language-selector-menu">
+                                <select class="devsite-language-selector-select" name="language" track-name="click" track-type="languageSelector">
+                                    <option selected="selected">Language</option>
+                                    <option track-metadata-original-language="en" track-metadata-selected-language="id" track-name="changed"
+                                            track-type="languageSelector" value="id">
+                                        Bahasa Indonesia
+                                    </option>
+                                    <option track-metadata-original-language="en" track-metadata-selected-language="de" track-name="changed"
+                                            track-type="languageSelector" value="de">
+                                        Deutsch
+                                    </option>
+                                    <option track-metadata-original-language="en" track-metadata-selected-language="en" track-name="changed"
+                                            track-type="languageSelector" value="en">
+                                        English
+                                    </option>
+                                    <option track-metadata-original-language="en" track-metadata-selected-language="es" track-name="changed"
+                                            track-type="languageSelector" value="es">
+                                        Español
+                                    </option>
+                                    <option track-metadata-original-language="en" track-metadata-selected-language="es_419" track-name="changed"
+                                            track-type="languageSelector" value="es_419">
+                                        Español – América Latina
+                                    </option>
+                                    <option track-metadata-original-language="en" track-metadata-selected-language="fr" track-name="changed"
+                                            track-type="languageSelector" value="fr">
+                                        Français
+                                    </option>
+                                    <option track-metadata-original-language="en" track-metadata-selected-language="pt_br" track-name="changed"
+                                            track-type="languageSelector" value="pt_br">
+                                        Português – Brasil
+                                    </option>
+                                    <option track-metadata-original-language="en" track-metadata-selected-language="vi" track-name="changed"
+                                            track-type="languageSelector" value="vi">
+                                        Tiếng Việt
+                                    </option>
+                                    <option track-metadata-original-language="en" track-metadata-selected-language="tr" track-name="changed"
+                                            track-type="languageSelector" value="tr">
+                                        Türkçe
+                                    </option>
+                                    <option track-metadata-original-language="en" track-metadata-selected-language="ru" track-name="changed"
+                                            track-type="languageSelector" value="ru">
+                                        Русский
+                                    </option>
+                                    <option track-metadata-original-language="en" track-metadata-selected-language="th" track-name="changed"
+                                            track-type="languageSelector" value="th">
+                                        ภาษาไทย
+                                    </option>
+                                    <option track-metadata-original-language="en" track-metadata-selected-language="zh_cn" track-name="changed"
+                                            track-type="languageSelector" value="zh_cn">
+                                        中文 – 简体
+                                    </option>
+                                    <option track-metadata-original-language="en" track-metadata-selected-language="zh_tw" track-name="changed"
+                                            track-type="languageSelector" value="zh_tw">
+                                        中文 – 繁體
+                                    </option>
+                                    <option track-metadata-original-language="en" track-metadata-selected-language="ja" track-name="changed"
+                                            track-type="languageSelector" value="ja">
+                                        日本語
+                                    </option>
+                                    <option track-metadata-original-language="en" track-metadata-selected-language="ko" track-name="changed"
+                                            track-type="languageSelector" value="ko">
+                                        한국어
+                                    </option>
+                                </select>
+                                <div class="devsite-select">
+                                    <button class="devsite-select-toggle">Language</button>
+                                    <ul class="devsite-select-list" scrollbars="">
+                                        <li class="devsite-select-item" data-index="0">Language</li>
+                                        <li class="devsite-select-item" data-index="1">Bahasa Indonesia</li>
+                                        <li class="devsite-select-item" data-index="2">Deutsch</li>
+                                        <li class="devsite-select-item" data-index="3">English</li>
+                                        <li class="devsite-select-item" data-index="4">Español</li>
+                                        <li class="devsite-select-item" data-index="5">Español – América Latina</li>
+                                        <li class="devsite-select-item" data-index="6">Français</li>
+                                        <li class="devsite-select-item" data-index="7">Português – Brasil</li>
+                                        <li class="devsite-select-item" data-index="8">Tiếng Việt</li>
+                                        <li class="devsite-select-item" data-index="9">Türkçe</li>
+                                        <li class="devsite-select-item" data-index="10">Русский</li>
+                                        <li class="devsite-select-item" data-index="11">ภาษาไทย</li>
+                                        <li class="devsite-select-item" data-index="12">中文 – 简体</li>
+                                        <li class="devsite-select-item" data-index="13">中文 – 繁體</li>
+                                        <li class="devsite-select-item" data-index="14">日本語</li>
+                                        <li class="devsite-select-item" data-index="15">한국어</li>
+                                    </ul>
+                                </div>
+                            </devsite-select>
+                        </devsite-language-selector>
+
+
+                        <devsite-user
+                                sign-in-url="https://developer.android.com/_d/signin?continue=https%3A%2F%2Fdeveloper.android.com%2Fkotlin%2Foverview"
+                                sign-out-url="https://developer.android.com/_d/signout?continue=https%3A%2F%2Fdeveloper.android.com%2Fkotlin%2Foverview"
+                                url="https://developer.android.com/_d/signout?continue=https%3A%2F%2Fdeveloper.android.com%2Fkotlin%2Foverview">
+                            <div class="ogb-wrapper ogb-si"><a
+                                    class="devsite-user-signin button devsite-top-button"
+                                    href="https://developer.android.com/_d/signin?continue=https%3A%2F%2Fdeveloper.android.com%2Fkotlin%2Foverview">
+                                Sign in
+                            </a></div>
+                        </devsite-user>
+                    </div>
+                </div>
+            </div>
+            <div class="devsite-collapsible-section
+    " style="transform: translate3d(0px, 0px, 0px);">
+                <div class="devsite-header-background">
+                    <div class="devsite-product-id-row">
+                        <div class="devsite-product-description-row">
+                            <ul class="devsite-breadcrumb-list">
+                                <li class="devsite-breadcrumb-item
+             ">
+                                    <a class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events"
+                                       data-label="Lower Header" data-value="1" href="https://developer.android.com/kotlin">
+                                        Kotlin
+
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="devsite-doc-set-nav-row">
+                        <devsite-tabs class="lower-tabs" connected="">
+
+                            <div class="devsite-tabs-wrapper">
+                                <tab>
+                                    <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Overview"
+                                       href="https://developer.android.com/kotlin">
+                                        Overview
+                                    </a>
+
+                                </tab>
+                                <tab active="">
+                                    <a aria-label="Guides, selected" class="gc-analytics-event" data-category="Site-Wide Custom Events"
+                                       data-label="Tab: Guides" href="https://developer.android.com/kotlin/learn">
+                                        Guides
+                                    </a>
+
+                                </tab>
+                                <tab hidden="" overflow-tab=""><a class="devsite-icon devsite-icon-arrow-drop-down" href="#">More</a>
+                                    <div class="devsite-tabs-overflow-menu" hidden="" scrollbars=""></div>
+                                </tab>
+                            </div>
+                        </devsite-tabs>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </devsite-header>
+    <div class="devsite-book-nav-bg" fixed=""></div>
+    <devsite-book-nav animatable="" fixed="" scrollbars="" style="top: 152px; max-height: 1132px;">
+
+
+        <nav class="devsite-book-nav devsite-nav nocontent">
+            <div class="devsite-mobile-header">
+                <button aria-label="Close navigation" class="devsite-header-icon-button button-flat material-icons gc-analytics-event" data-category="Site-Wide Custom Events"
+                        data-label="Close navigation" id="devsite-close-nav" type="button">
+                </button>
+            </div>
+
+            <div class="devsite-book-nav-wrapper">
+                <div class="devsite-mobile-nav-top">
+                    <ul class="devsite-nav-list">
+                        <li class="devsite-nav-item">
+                            <a class="devsite-nav-title gc-analytics-event
+            " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Platform" href="https://developer.android.com/about"><span>
+      </span><span class="devsite-nav-text"><span>Platform</span></span><span>
+        </span></a>
+
+                        </li>
+                        <li class="devsite-nav-item">
+                            <a class="devsite-nav-title gc-analytics-event
+            " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Android Studio" href="https://developer.android.com/studio"><span>
+      </span><span class="devsite-nav-text"><span>Android Studio</span></span><span>
+        </span></a>
+
+                        </li>
+                        <li class="devsite-nav-item">
+                            <a class="devsite-nav-title gc-analytics-event
+            " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Google Play" href="https://developer.android.com/distribute"><span>
+      </span><span class="devsite-nav-text"><span>Google Play</span></span><span>
+        </span></a>
+
+                        </li>
+                        <li class="devsite-nav-item">
+                            <a class="devsite-nav-title gc-analytics-event
+            " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Jetpack" href="https://developer.android.com/jetpack"><span>
+      </span><span class="devsite-nav-text"><span>Jetpack</span></span><span>
+        </span></a>
+
+                        </li>
+                        <li class="devsite-nav-item">
+                            <a class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events"
+                               data-label="Responsive Tab: Kotlin" href="https://developer.android.com/kotlin"><span>
+      </span><span class="devsite-nav-text"><span>Kotlin</span></span><span>
+        </span></a>
+
+                            <ul class="devsite-nav-responsive-tabs">
+                                <li class="devsite-nav-item">
+                                    <a class="devsite-nav-title gc-analytics-event
+            " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Overview" href="https://developer.android.com/kotlin"><span>
+      </span><span class="devsite-nav-text"><span>Overview</span></span><span>
+        </span></a>
+                                </li>
+
+                                <li class="devsite-nav-item">
+                                    <a class="devsite-nav-title gc-analytics-event
+            " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Guides" href="https://developer.android.com/kotlin/learn" id="devsite-nav-forward"><span>
+      </span><span class="devsite-nav-text" menu="_book"><span>Guides</span></span><span>
+        </span><span aria-hidden="true" class="devsite-nav-icon material-icons" data-icon="forward" menu="_book"><span>
+    </span></span><span>
+        </span></a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="devsite-nav-item">
+                            <a class="devsite-nav-title gc-analytics-event
+            " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Docs" href="https://developer.android.com/docs"><span>
+      </span><span class="devsite-nav-text"><span>Docs</span></span><span>
+        </span></a>
+
+                        </li>
+                        <li class="devsite-nav-item">
+                            <a class="devsite-nav-title gc-analytics-event
+            " data-category="Site-Wide Custom Events" data-label="Responsive Tab: News" href="https://developer.android.com/news"><span>
+      </span><span class="devsite-nav-text"><span>News</span></span><span>
+        </span></a>
+
+                        </li>
+                    </ul>
+                </div>
+                <div class="devsite-mobile-nav-bottom">
+                    <ul class="devsite-nav-list" menu="_book">
+                        <li class="devsite-nav-item"><a class="devsite-nav-title" href="https://developer.android.com/kotlin/learn"><span
+                                class="devsite-nav-text"><span>Learn the Kotlin language</span></span></a></li>
+                        <li class="devsite-nav-item"><a class="devsite-nav-title" href="https://developer.android.com/kotlin/resources"><span
+                                class="devsite-nav-text"><span>Additional Kotlin resources</span></span></a></li>
+                        <li class="devsite-nav-item"><a class="devsite-nav-title" href="https://developer.android.com/kotlin/faq"><span
+                                class="devsite-nav-text"><span>Kotlin on Android FAQ</span></span></a></li>
+                        <li class="devsite-nav-item"><a class="devsite-nav-title" href="https://developer.android.com/kotlin/add-kotlin"><span
+                                class="devsite-nav-text"><span>Add Kotlin to an existing app</span></span></a></li>
+                        <li class="devsite-nav-item"><a class="devsite-nav-title" href="https://developer.android.com/kotlin/common-patterns"><span
+                                class="devsite-nav-text"><span>Use common Kotlin patterns with Android</span></span></a></li>
+                        <li class="devsite-nav-item"><a class="devsite-nav-title" href="https://developer.android.com/kotlin/ktx"><span
+                                class="devsite-nav-text"><span>Android KTX</span></span></a></li>
+                        <li class="devsite-nav-item"><a class="devsite-nav-title" href="https://developer.android.com/kotlin/coroutines"><span
+                                class="devsite-nav-text"><span>Improve app performance with Kotlin coroutines</span></span></a></li>
+                        <li class="devsite-nav-item"><a class="devsite-nav-title"
+                                                        href="https://developer.android.com/kotlin/adopt-for-large-teams"><span
+                                class="devsite-nav-text"><span>Adopt Kotlin for large teams</span></span></a></li>
+                        <li class="devsite-nav-item"><a class="devsite-nav-title" href="https://developer.android.com/kotlin/interop"><span
+                                class="devsite-nav-text"><span>Kotlin-Java interop guide</span></span></a></li>
+                        <li class="devsite-nav-item"><a class="devsite-nav-title" href="https://developer.android.com/kotlin/style-guide"><span
+                                class="devsite-nav-text"><span>Kotlin style guide</span></span></a></li>
+                    </ul>
+
+
+                </div>
+            </div>
+        </nav>
+    </devsite-book-nav>
+    <div id="gc-wrapper" style="margin-top: 152px;">
+        <div class="devsite-main-content" has-book-nav="" has-toc="">
+            <devsite-toc class="devsite-nav devsite-toc" fixed="" max-height="1028" offset="0"></devsite-toc>
+            <devsite-content>
+
+
+                <article class="devsite-article">
+                    <article class="devsite-article-inner">
+                        <div class="devsite-article-meta">
+                            <ul class="devsite-breadcrumb-list">
+                                <li class="devsite-breadcrumb-item
+             ">
+                                    <a class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events"
+                                       data-label="Breadcrumbs" data-value="1" href="https://developer.android.com/">
+                                        Android Developers
+
+                                    </a>
+                                </li>
+                                <li class="devsite-breadcrumb-item
+             ">
+                                    <div aria-hidden="true" class="devsite-breadcrumb-guillemet material-icons"></div>
+                                    <a class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events"
+                                       data-label="Breadcrumbs" data-value="2" href="https://developer.android.com/kotlin">
+                                        Kotlin
+
+                                    </a>
+                                </li>
+                                <li class="devsite-breadcrumb-item
+             ">
+                                    <div aria-hidden="true" class="devsite-breadcrumb-guillemet material-icons"></div>
+                                    <a class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events"
+                                       data-label="Breadcrumbs" data-value="3" href="https://developer.android.com/kotlin/learn">
+                                        Guides
+
+                                    </a>
+                                </li>
+                            </ul>
+                            <devsite-page-rating hover-rating-star="0" position="header" selected-rating="0">
+                                <div>
+                                    <div class="devsite-rating-stars">
+                                        <div aria-label="Site content star ratings, rating 1 out of 5"
+                                             class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="1" data-title="Unusable documentation"
+                                             role="button"></div>
+                                        <div aria-label="Site content star ratings, rating 2 out of 5"
+                                             class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="2" data-title="Poor documentation"
+                                             role="button"></div>
+                                        <div aria-label="Site content star ratings, rating 3 out of 5"
+                                             class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="3" data-title="OK documentation"
+                                             role="button"></div>
+                                        <div aria-label="Site content star ratings, rating 4 out of 5"
+                                             class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="4" data-title="Good documentation"
+                                             role="button"></div>
+                                        <div aria-label="Site content star ratings, rating 5 out of 5"
+                                             class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="5" data-title="Excellent documentation"
+                                             role="button"></div>
+                                    </div>
+                                    <div class="devsite-rating-internal"><span class="devsite-rating-stats"></span></div>
+                                </div>
+                            </devsite-page-rating>
+                        </div>
+
+                        <devsite-heading class="devsite-page-title" for="kotlin-overview" level="h1" text="Kotlin overview"><h1 class=""
+                                                                                                                                id="kotlin-overview"
+                                                                                                                                is-upgraded="">
+                            Kotlin overview</h1></devsite-heading>
+
+                        <devsite-toc class="devsite-nav devsite-toc-embedded" devsite-toc-embedded="">
+                        </devsite-toc>
+
+                        <div class="devsite-article-body clearfix
+      ">
+
+
+                            <p>Kotlin is an open-source, statically-typed programming language that supports
+                                both object-oriented and functional programming. Kotlin provides similar
+                                syntax and concepts from other languages, including C#, Java, and Scala, among
+                                many others. Kotlin does not aim to be unique—instead, it draws
+                                inspiration from decades of language development. It exists in variants that
+                                target the JVM (Kotlin/JVM), JavaScript (Kotlin/JS), and native code
+                                (Kotlin/Native).</p>
+
+                            <div class="video-wrapper-left">
+                                <devsite-youtube aria-label="You are currently on an element that contains a YouTube video titled: Getting Started with Kotlin. Continue tabbing to hear the contained options." autohide="1" showinfo="0" tabindex="0"
+                                                 video-id="czKo-jPVweg">
+                                    <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"
+                                            data-gtm-yt-inspected-9642297_17="true" data-title="YouTube video player"
+                                            frameborder="0" height="360" id="widget2" src="Kotlin%20overview%20%C2%A0%20%C2%A0%20Android%20Developers_files/czKo-jPVweg.htm"
+                                            width="640"></iframe>
+                                </devsite-youtube>
+                            </div>
+
+                            <p>Kotlin is managed by the
+                                <a class="external" href="https://kotlinlang.org/foundation/kotlin-foundation.html">Kotlin Foundation</a>,
+                                a group created by <a class="external" href="https://www.jetbrains.com/">JetBrains</a> and
+                                Google, that is tasked with advancing and continuing development of the language.
+                                Kotlin is officially supported by Google for Android development, meaning that
+                                Android documentation and tooling is designed with Kotlin in mind.</p>
+
+                            <p>Certain Android APIs, like <a href="https://developer.android.com/kotlin/ktx">Android KTX</a>, are Kotlin-specific, but
+                                most are written in Java and can be called from either Java or Kotlin. Kotlin’s
+                                interoperability with Java is core to its growth. It means that you can call
+                                into Java code from Kotlin and vice-versa, leveraging all of your existing Java
+                                libraries. Kotlin’s popularity results in a nicer development experience on
+                                Android, but development of the Android framework continues with both Kotlin and
+                                Java in mind.</p>
+
+                            <p>Kotlin's interoperability with Java means that you don’t have to adopt Kotlin
+                                all at once. You can have projects with both Kotlin and Java code. For more
+                                information on adding Kotlin to an existing app, see
+                                <a href="https://developer.android.com/kotlin/add-kotlin">Add Kotlin to an existing app</a>. If you are a part of a
+                                larger team, the size of your organization and codebase may necessitate special
+                                focus. For tips and other information, see
+                                <a href="https://developer.android.com/kotlin/adopt-for-large-teams">Adopt Kotlin for large teams</a>.</p>
+
+                            <p>If you’re looking to start from scratch with Kotlin, we offer a
+                                <a href="https://developer.android.com/kotlin/learn">30-minute crash course</a> to help you get started with Kotlin.
+                                You
+                                can find the official Kotlin documentation at
+                                <a class="external" href="https://kotlinlang.org/">https://kotlinlang.org</a>. For recommended books, see
+                                <a class="external" href="https://kotlinlang.org/docs/books.html">Books</a>.</p>
+
+                            <p>For Android-specific Kotlin examples, see
+                                <a href="https://developer.android.com/kotlin/common-patterns">Common Kotlin Patterns in Android</a>.</p>
+
+                        </div>
+
+
+                        <devsite-page-rating hover-rating-star="0" position="footer" selected-rating="0">
+                            <div>
+                                <div class="devsite-rating-caption">Was this page helpful?</div>
+                                <div class="devsite-rating-stars">
+                                    <div aria-label="Site content star ratings, rating 1 out of 5" class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons"
+                                         data-rating-val="1" data-title="Unusable documentation"
+                                         role="button"></div>
+                                    <div aria-label="Site content star ratings, rating 2 out of 5" class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons"
+                                         data-rating-val="2" data-title="Poor documentation"
+                                         role="button"></div>
+                                    <div aria-label="Site content star ratings, rating 3 out of 5" class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons"
+                                         data-rating-val="3" data-title="OK documentation" role="button"></div>
+                                    <div aria-label="Site content star ratings, rating 4 out of 5" class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons"
+                                         data-rating-val="4" data-title="Good documentation"
+                                         role="button"></div>
+                                    <div aria-label="Site content star ratings, rating 5 out of 5" class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons"
+                                         data-rating-val="5" data-title="Excellent documentation"
+                                         role="button"></div>
+                                </div>
+                                <div class="devsite-rating-internal"><span class="devsite-rating-stats"></span></div>
+                            </div>
+                        </devsite-page-rating>
+
+                    </article>
+                </article>
+
+                <devsite-content-footer class="nocontent">
+                    <p>Content and code samples on this page are subject to the licenses described in the <a
+                            href="https://developer.android.com/license">Content License</a>. Java is a registered trademark of Oracle and/or its
+                        affiliates.</p>
+                </devsite-content-footer>
+
+
+            </devsite-content>
+        </div>
+        <devsite-footer-promos class="devsite-footer">
+            <nav>
+                <ul class="devsite-footer-promos-list">
+                    <li class="devsite-footer-promo">
+                        <a class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events"
+                           data-label="Footer Twitter Promo" href="https://twitter.com/AndroidDev">
+                            <img alt="Twitter"
+                                 class="devsite-footer-promo-icon" src="Kotlin%20overview%20%C2%A0%20%C2%A0%20Android%20Developers_files/logo-twitter.svg">
+                            Twitter
+                        </a>
+                        <div class="devsite-footer-promo-description">Follow @AndroidDev on Twitter</div>
+                    </li>
+                    <li class="devsite-footer-promo">
+                        <a class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events"
+                           data-label="Footer YouTube Promo" href="https://www.youtube.com/user/androiddevelopers">
+                            <img alt="YouTube"
+                                 class="devsite-footer-promo-icon" src="Kotlin%20overview%20%C2%A0%20%C2%A0%20Android%20Developers_files/youtube_48dp.png">
+                            YouTube
+                        </a>
+                        <div class="devsite-footer-promo-description">Check out Android Developers on YouTube</div>
+                    </li>
+                </ul>
+            </nav>
+
+        </devsite-footer-promos>
+        <devsite-footer-linkboxes class="devsite-footer">
+            <nav class="devsite-footer-linkboxes nocontent">
+                <ul class="devsite-footer-linkboxes-list">
+                    <li class="devsite-footer-linkbox ">
+                        <h3 class="devsite-footer-linkbox-heading">More Android</h3>
+                        <ul class="devsite-footer-linkbox-list">
+                            <li class="devsite-footer-linkbox-item">
+                                <a class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)" href="https://www.android.com/">
+                                    Android
+                                </a>
+                            </li>
+                            <li class="devsite-footer-linkbox-item">
+                                <a class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)" href="https://www.android.com/enterprise/">
+                                    Enterprise
+                                </a>
+                            </li>
+                            <li class="devsite-footer-linkbox-item">
+                                <a class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)" href="https://www.android.com/security-center/">
+                                    Security
+                                </a>
+                            </li>
+                            <li class="devsite-footer-linkbox-item">
+                                <a class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)" href="https://source.android.com/">
+                                    Source
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="devsite-footer-linkbox ">
+                        <h3 class="devsite-footer-linkbox-heading">Support</h3>
+                        <ul class="devsite-footer-linkbox-list">
+                            <li class="devsite-footer-linkbox-item">
+                                <a class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)" href="https://issuetracker.google.com/issues/new?component=190923&amp;template=841312">
+                                    Report platform bug
+                                </a>
+                            </li>
+                            <li class="devsite-footer-linkbox-item">
+                                <a class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)" href="https://issuetracker.google.com/issues/new?component=192697">
+                                    Report documentation bug
+                                </a>
+                            </li>
+                            <li class="devsite-footer-linkbox-item">
+                                <a class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)" href="https://support.google.com/googleplay/android-developer">
+                                    Google Play support
+                                </a>
+                            </li>
+                            <li class="devsite-footer-linkbox-item">
+                                <a class="devsite-footer-linkbox-link
+                    gc-analytics-event"
+                                   data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)" href="https://google.qualtrics.com/jfe/form/SV_ewWXIoEVLBcyp7f??reserved=1&amp;utm_source=FooterLink&amp;Q_Language=en&amp;utm_medium=own_srch&amp;utm_campaign=developer.android.com&amp;utm_term=0&amp;utm_content=0&amp;productTag=reg&amp;campaignDate=may19&amp;pType=devel&amp;referral_code=gV420370">
+                                    Join research studies
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="devsite-footer-linkbox ">
+                        <h3 class="devsite-footer-linkbox-heading">Documentation</h3>
+                        <ul class="devsite-footer-linkbox-list">
+                            <li class="devsite-footer-linkbox-item">
+                                <a class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)" href="https://developer.android.com/guide">
+                                    Developer guides
+                                </a>
+                            </li>
+                            <li class="devsite-footer-linkbox-item">
+                                <a class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)" href="https://developer.android.com/design">
+                                    Design guides
+                                </a>
+                            </li>
+                            <li class="devsite-footer-linkbox-item">
+                                <a class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)" href="https://developer.android.com/reference">
+                                    API reference
+                                </a>
+                            </li>
+                            <li class="devsite-footer-linkbox-item">
+                                <a class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)" href="https://developer.android.com/samples">
+                                    Samples
+                                </a>
+                            </li>
+                            <li class="devsite-footer-linkbox-item">
+                                <a class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 5)" href="https://developer.android.com/studio/intro">
+                                    Android Studio
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </devsite-footer-linkboxes>
+        <devsite-footer-utility class="devsite-footer">
+
+            <div class="devsite-footer-utility">
+                <nav class="devsite-nav devsite-footer-sites">
+                    <a class="devsite-footer-sites-logo-link gc-analytics-event" data-category="Site-Wide Custom Events"
+                       data-label="Footer Google Developers Link" href="https://developers.google.com/">
+                        <img alt="Google Developers" class="devsite-footer-sites-logo"
+                             src="Kotlin%20overview%20%C2%A0%20%C2%A0%20Android%20Developers_files/lockup-color.png">
+                    </a>
+                    <ul class="devsite-footer-sites-list">
+                        <li class="devsite-footer-sites-item">
+                            <a class="devsite-footer-sites-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Android Link" href="https://developer.android.com/">
+                                Android
+                            </a>
+                        </li>
+                        <li class="devsite-footer-sites-item">
+                            <a class="devsite-footer-sites-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Chrome Link" href="https://developer.chrome.com/home">
+                                Chrome
+                            </a>
+                        </li>
+                        <li class="devsite-footer-sites-item">
+                            <a class="devsite-footer-sites-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Firebase Link" href="https://firebase.google.com/">
+                                Firebase
+                            </a>
+                        </li>
+                        <li class="devsite-footer-sites-item">
+                            <a class="devsite-footer-sites-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Google Cloud Platform Link" href="https://cloud.google.com/">
+                                Google Cloud Platform
+                            </a>
+                        </li>
+                        <li class="devsite-footer-sites-item">
+                            <a class="devsite-footer-sites-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer All products Link" href="https://developers.google.com/products/">
+                                All products
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <nav class="devsite-nav">
+                    <ul class="devsite-footer-utility-list">
+                        <li class="devsite-footer-utility-item
+                 ">
+                            <a class="devsite-footer-utility-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Privacy link"
+                               href="https://policies.google.com/privacy">
+                                Privacy
+                            </a>
+                        </li>
+                        <li class="devsite-footer-utility-item
+                 ">
+                            <a class="devsite-footer-utility-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer License link"
+                               href="https://developer.android.com/license">
+                                License
+                            </a>
+                        </li>
+                        <li class="devsite-footer-utility-item
+                 ">
+                            <a class="devsite-footer-utility-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events"
+                               data-label="Footer Brand guidelines link" href="https://developer.android.com/distribute/marketing-tools/brand-guidelines">
+                                Brand guidelines
+                            </a>
+                        </li>
+                        <li class="devsite-footer-utility-item
+                 devsite-footer-utility-button">
+                            <span class="devsite-footer-utility-description">Get news and tips by email</span>
+                            <a class="devsite-footer-utility-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Subscribe link"
+                               href="https://developer.android.com/updates">
+                                Subscribe
+                            </a>
+                        </li>
+                    </ul>
+
+                    <devsite-language-selector>
+                        <devsite-select class="devsite-language-selector-menu">
+                            <select class="devsite-language-selector-select" name="language" track-name="click" track-type="languageSelector">
+                                <option selected="selected">Language</option>
+                                <option track-metadata-original-language="en" track-metadata-selected-language="id" track-name="changed" track-type="languageSelector"
+                                        value="id">
+                                    Bahasa Indonesia
+                                </option>
+                                <option track-metadata-original-language="en" track-metadata-selected-language="de" track-name="changed" track-type="languageSelector"
+                                        value="de">
+                                    Deutsch
+                                </option>
+                                <option track-metadata-original-language="en" track-metadata-selected-language="en" track-name="changed" track-type="languageSelector"
+                                        value="en">
+                                    English
+                                </option>
+                                <option track-metadata-original-language="en" track-metadata-selected-language="es" track-name="changed" track-type="languageSelector"
+                                        value="es">
+                                    Español
+                                </option>
+                                <option track-metadata-original-language="en" track-metadata-selected-language="es_419" track-name="changed"
+                                        track-type="languageSelector" value="es_419">
+                                    Español – América Latina
+                                </option>
+                                <option track-metadata-original-language="en" track-metadata-selected-language="fr" track-name="changed" track-type="languageSelector"
+                                        value="fr">
+                                    Français
+                                </option>
+                                <option track-metadata-original-language="en" track-metadata-selected-language="pt_br" track-name="changed"
+                                        track-type="languageSelector" value="pt_br">
+                                    Português – Brasil
+                                </option>
+                                <option track-metadata-original-language="en" track-metadata-selected-language="vi" track-name="changed" track-type="languageSelector"
+                                        value="vi">
+                                    Tiếng Việt
+                                </option>
+                                <option track-metadata-original-language="en" track-metadata-selected-language="tr" track-name="changed" track-type="languageSelector"
+                                        value="tr">
+                                    Türkçe
+                                </option>
+                                <option track-metadata-original-language="en" track-metadata-selected-language="ru" track-name="changed" track-type="languageSelector"
+                                        value="ru">
+                                    Русский
+                                </option>
+                                <option track-metadata-original-language="en" track-metadata-selected-language="th" track-name="changed" track-type="languageSelector"
+                                        value="th">
+                                    ภาษาไทย
+                                </option>
+                                <option track-metadata-original-language="en" track-metadata-selected-language="zh_cn" track-name="changed"
+                                        track-type="languageSelector" value="zh_cn">
+                                    中文 – 简体
+                                </option>
+                                <option track-metadata-original-language="en" track-metadata-selected-language="zh_tw" track-name="changed"
+                                        track-type="languageSelector" value="zh_tw">
+                                    中文 – 繁體
+                                </option>
+                                <option track-metadata-original-language="en" track-metadata-selected-language="ja" track-name="changed" track-type="languageSelector"
+                                        value="ja">
+                                    日本語
+                                </option>
+                                <option track-metadata-original-language="en" track-metadata-selected-language="ko" track-name="changed" track-type="languageSelector"
+                                        value="ko">
+                                    한국어
+                                </option>
+                            </select>
+                            <div class="devsite-select">
+                                <button class="devsite-select-toggle">Language</button>
+                                <ul class="devsite-select-list" scrollbars="">
+                                    <li class="devsite-select-item" data-index="0">Language</li>
+                                    <li class="devsite-select-item" data-index="1">Bahasa Indonesia</li>
+                                    <li class="devsite-select-item" data-index="2">Deutsch</li>
+                                    <li class="devsite-select-item" data-index="3">English</li>
+                                    <li class="devsite-select-item" data-index="4">Español</li>
+                                    <li class="devsite-select-item" data-index="5">Español – América Latina</li>
+                                    <li class="devsite-select-item" data-index="6">Français</li>
+                                    <li class="devsite-select-item" data-index="7">Português – Brasil</li>
+                                    <li class="devsite-select-item" data-index="8">Tiếng Việt</li>
+                                    <li class="devsite-select-item" data-index="9">Türkçe</li>
+                                    <li class="devsite-select-item" data-index="10">Русский</li>
+                                    <li class="devsite-select-item" data-index="11">ภาษาไทย</li>
+                                    <li class="devsite-select-item" data-index="12">中文 – 简体</li>
+                                    <li class="devsite-select-item" data-index="13">中文 – 繁體</li>
+                                    <li class="devsite-select-item" data-index="14">日本語</li>
+                                    <li class="devsite-select-item" data-index="15">한국어</li>
+                                </ul>
+                            </div>
+                        </devsite-select>
+                    </devsite-language-selector>
+
+                </nav>
+            </div>
+        </devsite-footer-utility>
+    </div>
+</div>
+<devsite-sitemask></devsite-sitemask>
+<devsite-snackbar type="cookie-notification">
+    <div class="devsite-snackbar-snack" show="" type="cookie-notification">
+        <div class="devsite-snackbar-inner">
+            <div class="devsite-snackbar-message">We serve cookies on this site to analyse traffic, remember your preferences, and optimise your
+                experience.
+            </div>
+            <a class="devsite-snackbar-link button" href="https://policies.google.com/technologies/cookies">More details</a>
+            <button class="devsite-snackbar-action">OK</button>
+        </div>
+    </div>
+</devsite-snackbar>
+<devsite-tooltip></devsite-tooltip>
+<devsite-analytics>
+    <script async="" src="Kotlin%20overview%20%C2%A0%20%C2%A0%20Android%20Developers_files/app_loader.js"></script>
+    <script analytics="" type="application/json">[
+        {
+            "metrics": {
+                "ratings_value": "metric1",
+                "ratings_count": "metric2"
+            },
+            "dimensions": {
+                "dimension6": "en",
+                "dimension4": "Android Developers",
+                "dimension5": "en",
+                "dimension3": false,
+                "dimension1": "Signed out"
+            },
+            "gaid": "UA-5831155-1"
+        },
+        {
+            "metrics": {
+                "ratings_value": "metric1",
+                "ratings_count": "metric2"
+            },
+            "dimensions": {
+                "dimension6": "en",
+                "dimension4": "Android Developers",
+                "dimension5": "en",
+                "dimension3": false,
+                "dimension1": "Signed out"
+            },
+            "gaid": "UA-49880327-2"
+        }
+    ]</script>
+    <script gtm="" type="application/json">[
+        "GTM-KMSWPCJ"
+    ]</script>
+</devsite-analytics>
+<script>
+    (function (d, e, v, E, l, o, p, r, s, _, __) {
+        d['GoogleDevelopersObject'] = [!0, l, o, p, r, s];
+        _ = e.createElement(v);
+        _.async = 1;
+        _.src = E;
+        __ = e.getElementsByTagName(v)[0];
+        __.parentNode.insertBefore(_, __);
+    })(window, document, 'script',
+        'https://www.gstatic.com/devrel-devsite/vaf8baf42c0837f5f008e8c7cd622dab17fda7175a36251cef2ba8d3369798ea7/js/app_loader.js',
+        'en',
+        'https://www.gstatic.com/devrel-devsite/vaf8baf42c0837f5f008e8c7cd622dab17fda7175a36251cef2ba8d3369798ea7/android/js/devsite_app.js',
+        'https://www.gstatic.com/devrel-devsite/vaf8baf42c0837f5f008e8c7cd622dab17fda7175a36251cef2ba8d3369798ea7',
+        'https://www.gstatic.com/devrel-devsite/vaf8baf42c0837f5f008e8c7cd622dab17fda7175a36251cef2ba8d3369798ea7/android',
+        !1,
+        ['/_pwa/android/manifest.json',
+            '/_static/images/video-placeholder.svg',
+            'https://www.gstatic.com/devrel-devsite/vaf8baf42c0837f5f008e8c7cd622dab17fda7175a36251cef2ba8d3369798ea7/android/images/favicon.png', 'https://www.gstatic.com/devrel-devsite/vaf8baf42c0837f5f008e8c7cd622dab17fda7175a36251cef2ba8d3369798ea7/android/images/lockup.svg', 'https://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700|Material+Icons'],
+        'https://android-dot-devsite-v2-prod.appspot.com')
+</script>
+</body>
+</html>
